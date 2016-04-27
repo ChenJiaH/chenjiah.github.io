@@ -947,6 +947,7 @@ a {
   transition: color 0.3s;
   text-overflow: ellipsis;
   white-space: nowrap;
+  overflow: hidden;
 }
 .article-title:hover {
   color: #b0a0aa;
@@ -957,10 +958,7 @@ a {
 }
 .article-header {
   border-left: 5px solid;
-  padding: 15px 0px 15px 25px;
-}
-.article-header h1 {
-  overflow: hidden;
+  padding: 15px 150px 15px 25px;
 }
 .article-info.info-on-right {
   margin: 10px 0 0 0;
