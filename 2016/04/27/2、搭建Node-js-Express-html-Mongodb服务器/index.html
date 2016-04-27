@@ -11,18 +11,7 @@
 安装node.js
 安装Express（用webstorm的小伙伴们可省略此步）
 安装Mongodb
-安装Navicat for MySQL（数据库可视化工具，中文，习惯用命令行的可不用）
-
-
-####非webstorm开发
-
-创建一个express项目
-
-
-   express –sessions newProject
-
-
-对package.json进行编辑，主要是依赖depend">
+安装Navicat for MySQL（数据库可视化工具，中文，习惯用命令行的可不用）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2、搭建Node.js, Express, html, Mongodb服务器">
 <meta property="og:url" content="http://chenjiah.github.io/2016/04/27/2、搭建Node-js-Express-html-Mongodb服务器/index.html">
@@ -32,19 +21,8 @@
 安装node.js
 安装Express（用webstorm的小伙伴们可省略此步）
 安装Mongodb
-安装Navicat for MySQL（数据库可视化工具，中文，习惯用命令行的可不用）
-
-
-####非webstorm开发
-
-创建一个express项目
-
-
-   express –sessions newProject
-
-
-对package.json进行编辑，主要是依赖depend">
-<meta property="og:updated_time" content="2016-04-27T10:02:34.000Z">
+安装Navicat for MySQL（数据库可视化工具，中文，习惯用命令行的可不用）">
+<meta property="og:updated_time" content="2016-04-27T10:13:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2、搭建Node.js, Express, html, Mongodb服务器">
 <meta name="twitter:description" content="开发前准备
@@ -52,18 +30,7 @@
 安装node.js
 安装Express（用webstorm的小伙伴们可省略此步）
 安装Mongodb
-安装Navicat for MySQL（数据库可视化工具，中文，习惯用命令行的可不用）
-
-
-####非webstorm开发
-
-创建一个express项目
-
-
-   express –sessions newProject
-
-
-对package.json进行编辑，主要是依赖depend">
+安装Navicat for MySQL（数据库可视化工具，中文，习惯用命令行的可不用）">
   
     <link rel="alternative" href="/atom.xml" title="McChen - 博客" type="application/atom+xml">
   
@@ -287,6 +254,7 @@
 <li>安装Mongodb</li>
 <li>安装Navicat for MySQL（数据库可视化工具，中文，习惯用命令行的可不用）</li>
 </ul>
+<a id="more"></a>
 <hr>
 <p>####非webstorm开发</p>
 <ol>
@@ -297,20 +265,18 @@
 </blockquote>
 <ol>
 <li><p>对package.json进行编辑，主要是依赖dependencies</p>
-<blockquote>
-<pre><code>  `{`
-    `&quot;name&quot;: &quot;newProject&quot;,`
-    `&quot;version&quot;: &quot;0.0.1&quot;,`
-    `&quot;private&quot;: true,`
-    `&quot;scripts&quot;: {`
-        `&quot;start&quot;: &quot;node app.js&quot;`
-    `},`
-    `&quot;dependencies&quot;: {`
-        `&quot;express&quot;: &quot;3.4.8&quot;,`
-        `&quot;jade&quot;: &quot;*&quot;`
-    `}`
-`}`
-</code></pre></blockquote>
+<p> {</p>
+<pre><code>&quot;name&quot;: &quot;newProject&quot;,
+&quot;version&quot;: &quot;0.0.1&quot;,
+&quot;private&quot;: true,
+&quot;scripts&quot;: {
+    &quot;start&quot;: &quot;node app.js&quot;
+},
+&quot;dependencies&quot;: {
+    &quot;express&quot;: &quot;3.4.8&quot;,
+    &quot;jade&quot;: &quot;*&quot;
+}
+</code></pre><p> }</p>
 </li>
 <li><p>安装依赖，完成之后执行node app.js</p>
 <blockquote>
@@ -320,13 +286,23 @@
 </li>
 <li><p>配置入口文件及express参数</p>
 <ul>
-<li><p>在app.js最后面加上下面代码，实例化Express并赋值给app变量<br>  <code>var app = express();</code></p>
+<li><p>在app.js最后面加上下面代码，实例化Express并赋值给app变量</p>
+<p>var app = express();</p>
 </li>
-<li><p>接着对express的参数进行配置，这里设置了端口，寻找views的目录，用什么模板引擎来处理这些views，和一些其它的东西。还要注意最后一行，它告诉Express把public/目录下的静态文件作为顶层目录的文件来托管。<br><code>// all environments</code><br><code>app.set(&#39;port&#39;, process.env.PORT || 3000);</code><br><code>app.set(&#39;views&#39;, path.join(__dirname, &#39;views&#39;));</code><br><code>app.set(&#39;view engine&#39;, &#39;ejs&#39;);</code><br><code>app.use(express.favicon());</code><br><code>app.use(express.logger(&#39;dev&#39;));</code><br><code>app.use(express.bodyParser());</code><br><code>app.use(express.methodOverride());</code><br><code>app.use(app.router);</code><br><code>app.use(express.static(path.join(__dirname, &#39;public&#39;)));</code></p>
+<li><p>接着对express的参数进行配置，这里设置了端口，寻找views的目录，用什么模板引擎来处理这些views，和一些其它的东西。还要注意最后一行，它告诉Express把public/目录下的静态文件作为顶层目录的文件来托管。</p>
+<p>// all environments<br>app.set(‘port’, process.env.PORT || 3000);<br>app.set(‘views’, path.join(<strong>dirname, ‘views’));<br>app.set(‘view engine’, ‘ejs’);<br>app.use(express.favicon());<br>app.use(express.logger(‘dev’));<br>app.use(express.bodyParser());<br>app.use(express.methodOverride());<br>app.use(app.router);<br>app.use(express.static(path.join(</strong>dirname, ‘public’)));</p>
 </li>
-<li>接下来把最后一行<br><code>app.use(express.bodyParser());</code><br>替换成<br><code>app.use(express.urlencoded());</code><br>保证引的路径为pubilc</li>
-<li>继续增加插件检查和过期提醒<br><code>app.get(&#39;/&#39;, routes.index);</code><br><code>app.get(&#39;/users&#39;, user.list);</code><br><code>http.createServer(app).listen(app.get(&#39;port&#39;), function(){</code><br><code>console.log(&#39;Express server listening on port &#39; + app.get(&#39;port&#39;));</code><br><code>});</code></li>
-<li>创建一个http server并且启动它</li>
+<li><p>接下来把最后一行</p>
+<p>app.use(express.bodyParser());</p>
+<p>替换成</p>
+<p>app.use(express.urlencoded());</p>
+<p>保证引的路径为pubilc</p>
+</li>
+<li><p>继续增加插件检查和过期提醒</p>
+<p>app.get(‘/‘, routes.index);<br>app.get(‘/users’, user.list);<br>http.createServer(app).listen(app.get(‘port’), function(){<br>console.log(‘Express server listening on port ‘ + app.get(‘port’));<br>});</p>
+</li>
+<li><p>创建一个http server并且启动它</p>
+</li>
 </ul>
 </li>
 </ol>
@@ -344,13 +320,13 @@
 <li><p>把mongo连接到node</p>
 <ul>
 <li>在app.js中插入以下代码<br><code>app.get(&#39;/myDataBase&#39;, routes.myDataBase(db));</code>  // 当用户访问myDataBase时，把db传递到路由</li>
-<li>创建对应的myDataBase路由<br><code>router.myDataBase= function(db) {</code><br>  <code>return function(req, res) {</code><pre><code>`var collection = db.get(&apos;myCollection&apos;);`
- `collection.find({},{},function(e,docs){`
-     `res.render(&apos;myPage&apos;, {`
-         `&quot;data&quot; : docs`
-    `});`
-`});`
-</code></pre> <code>};</code><br><code>};</code></li>
+<li>创建对应的myDataBase路由<br>router.myDataBase= function(db) {<br>  return function(req, res) {<pre><code>var collection = db.get(&apos;myCollection&apos;);
+ collection.find({},{},function(e,docs){
+     res.render(&apos;myPage&apos;, {
+         &quot;data&quot; : docs
+    });
+});
+</code></pre> };<br>};</li>
 <li>创建对应的模板，我这里采用的是jade，即myPage.jade<br><code>doctype html</code><br><code>html</code><br><code>head</code><br><code>title= &quot;McChen&quot;</code><br><code>link(rel=&#39;icon&#39;, href=&#39;http://www.jd.com/favicon.ico&#39;)</code><br><code>link(rel=&#39;stylesheet&#39;, href=&#39;http://static.360buyimg.com/finance/mobile/base/cm/1.0.0/reset.css&#39;)</code><br><code>link(rel=&#39;stylesheet&#39;, href=&#39;/stylesheets/style.css&#39;)</code><br><code>script(src=&quot;/javascripts/test.js&quot;)</code><br><code>body</code><br><code>h1 McChen</code><br><code>p.name.title Learning Node</code><br><code>p name: #{data[0].username}</code></li>
 <li>保存文件，重启node服务器，你会发现data[0]=XXX，已经从数据库中成功取出来了</li>
 </ul>

@@ -225,85 +225,6 @@
 <li>安装Mongodb</li>
 <li>安装Navicat for MySQL（数据库可视化工具，中文，习惯用命令行的可不用）</li>
 </ul>
-<hr>
-<p>####非webstorm开发</p>
-<ol>
-<li>创建一个express项目</li>
-</ol>
-<blockquote>
-<p>   express –sessions newProject</p>
-</blockquote>
-<ol>
-<li><p>对package.json进行编辑，主要是依赖dependencies</p>
-<blockquote>
-<pre><code>  `{`
-    `&quot;name&quot;: &quot;newProject&quot;,`
-    `&quot;version&quot;: &quot;0.0.1&quot;,`
-    `&quot;private&quot;: true,`
-    `&quot;scripts&quot;: {`
-        `&quot;start&quot;: &quot;node app.js&quot;`
-    `},`
-    `&quot;dependencies&quot;: {`
-        `&quot;express&quot;: &quot;3.4.8&quot;,`
-        `&quot;jade&quot;: &quot;*&quot;`
-    `}`
-`}`
-</code></pre></blockquote>
-</li>
-<li><p>安装依赖，完成之后执行node app.js</p>
-<blockquote>
-<pre><code>npm install
-</code></pre><p> 浏览器打开localhost:3000即可发现一个简单express页面建立完成了</p>
-</blockquote>
-</li>
-<li><p>配置入口文件及express参数</p>
-<ul>
-<li><p>在app.js最后面加上下面代码，实例化Express并赋值给app变量<br>  <code>var app = express();</code></p>
-</li>
-<li><p>接着对express的参数进行配置，这里设置了端口，寻找views的目录，用什么模板引擎来处理这些views，和一些其它的东西。还要注意最后一行，它告诉Express把public/目录下的静态文件作为顶层目录的文件来托管。<br><code>// all environments</code><br><code>app.set(&#39;port&#39;, process.env.PORT || 3000);</code><br><code>app.set(&#39;views&#39;, path.join(__dirname, &#39;views&#39;));</code><br><code>app.set(&#39;view engine&#39;, &#39;ejs&#39;);</code><br><code>app.use(express.favicon());</code><br><code>app.use(express.logger(&#39;dev&#39;));</code><br><code>app.use(express.bodyParser());</code><br><code>app.use(express.methodOverride());</code><br><code>app.use(app.router);</code><br><code>app.use(express.static(path.join(__dirname, &#39;public&#39;)));</code></p>
-</li>
-<li>接下来把最后一行<br><code>app.use(express.bodyParser());</code><br>替换成<br><code>app.use(express.urlencoded());</code><br>保证引的路径为pubilc</li>
-<li>继续增加插件检查和过期提醒<br><code>app.get(&#39;/&#39;, routes.index);</code><br><code>app.get(&#39;/users&#39;, user.list);</code><br><code>http.createServer(app).listen(app.get(&#39;port&#39;), function(){</code><br><code>console.log(&#39;Express server listening on port &#39; + app.get(&#39;port&#39;));</code><br><code>});</code></li>
-<li>创建一个http server并且启动它</li>
-</ul>
-</li>
-</ol>
-<hr>
-<p>####webstorm开发</p>
-<ol>
-<li><p>直接new一个新Node.js Express App 项目，直接搞定上面全部流程</p>
-</li>
-<li><p>安装mongodb，安装完成后在bin文件夹路径下执行：<br> <code>mongod --dbpath D:\database</code><br> 表示把数据保存在D盘database文件夹下</p>
-</li>
-<li><p>新开一个cmd进入bin文件夹后，执行：<br> <code>mongo</code><br> 这时候表示已经连接上了数据库，接下来就可以进行操作了。</p>
-</li>
-<li><p>新建一个属于自己的数据库，并写入数据<br> <code>use myDataBase</code><br> <code>db.myCollection.insert({ “username” : “XXX″, “email” : “XXX” })</code><br> db表示刚才创建的myDataBase的数据库，myCollection表示在里面创建了一张表，后面是插入的字段</p>
-</li>
-<li><p>把mongo连接到node</p>
-<ul>
-<li>在app.js中插入以下代码<br><code>app.get(&#39;/myDataBase&#39;, routes.myDataBase(db));</code>  // 当用户访问myDataBase时，把db传递到路由</li>
-<li>创建对应的myDataBase路由<br><code>router.myDataBase= function(db) {</code><br>  <code>return function(req, res) {</code><pre><code>`var collection = db.get(&apos;myCollection&apos;);`
- `collection.find({},{},function(e,docs){`
-     `res.render(&apos;myPage&apos;, {`
-         `&quot;data&quot; : docs`
-    `});`
-`});`
-</code></pre> <code>};</code><br><code>};</code></li>
-<li>创建对应的模板，我这里采用的是jade，即myPage.jade<br><code>doctype html</code><br><code>html</code><br><code>head</code><br><code>title= &quot;McChen&quot;</code><br><code>link(rel=&#39;icon&#39;, href=&#39;http://www.jd.com/favicon.ico&#39;)</code><br><code>link(rel=&#39;stylesheet&#39;, href=&#39;http://static.360buyimg.com/finance/mobile/base/cm/1.0.0/reset.css&#39;)</code><br><code>link(rel=&#39;stylesheet&#39;, href=&#39;/stylesheets/style.css&#39;)</code><br><code>script(src=&quot;/javascripts/test.js&quot;)</code><br><code>body</code><br><code>h1 McChen</code><br><code>p.name.title Learning Node</code><br><code>p name: #{data[0].username}</code></li>
-<li>保存文件，重启node服务器，你会发现data[0]=XXX，已经从数据库中成功取出来了</li>
-</ul>
-</li>
-</ol>
-<blockquote>
-<p>接下来是附加模块</p>
-</blockquote>
-<ol>
-<li>往数据库中写入数据，可以通过ajax，然后render数据库的数据。</li>
-</ol>
-<blockquote>
-<p>OK，Do it now~ 让我们做一个简单的登录页面吧</p>
-</blockquote>
-
       
     </div>
     
@@ -320,6 +241,10 @@
 	</div>
 
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/27/2、搭建Node-js-Express-html-Mongodb服务器/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
