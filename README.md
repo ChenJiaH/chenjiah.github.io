@@ -1,3 +1,3 @@
-# chenjiah.github.io
-McChen's Blog
-http://mcchen.club
+# McChen 的博客
+
+#### http://mcchen.club
