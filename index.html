@@ -114,7 +114,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						
+						<a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a>
 					</div>
 				</section>
 				
@@ -198,11 +198,11 @@
 
       <div class="body-wrap">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-1、初识Nodejs及简单的实例应用" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/27/hello-world/" class="article-date">
-  	<time datetime="2016-04-27T08:16:06.638Z" itemprop="datePublished">2016-04-27</time>
+      <a href="/2016/04/27/1、初识Nodejs及简单的实例应用/" class="article-date">
+  	<time datetime="2016-04-27T09:19:01.000Z" itemprop="datePublished">2016-04-27</time>
 </a>
     </div>
   
@@ -215,7 +215,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/27/hello-world/">Hello World</a>
+      <a class="article-title" href="/2016/04/27/1、初识Nodejs及简单的实例应用/">1、初识Nodejs及简单的实例应用</a>
     </h1>
   
 
@@ -224,15 +224,246 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p><strong>Node.js应用场景</strong></p>
+<ul>
+<li>高并发、高性能服务器</li>
+</ul>
+<p><strong>Node.js最重要特性</strong></p>
+<ul>
+<li>通过单线程实现异步处理环境</li>
+</ul>
+<hr>
+<p><strong>实现高性能的两种机制</strong></p>
+<p>一. 非阻塞型I/O</p>
+<ul>
+<li>在执行访问数据库的代码之后可以立即转而执行后面的代码，把数据库返回结果的处理代码放在回调函数中执行。（传统阻塞型I/O表现为在执行访问数据库的代码后，线程将暂停下来，等待数据库返回结果再继续执行）</li>
+</ul>
+<p>二. 事件环</p>
+<ul>
+<li>在一个时刻只能执行一个事件回调函数，但是在执行一个事件回调的中途可以转而处理其他事件（包括触发新的事件、声明该事件的回调函数等），然后返回继续执行原事件回调函数</li>
+</ul>
+<hr>
+<p><strong>Node.js v0.10中的核心模块</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">模块名</th>
+<th style="text-align:left">模块功能</th>
+<th style="text-align:left">stability(稳定度)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">assert</td>
+<td style="text-align:left">为应用程序的单元测试添加断言处理</td>
+<td style="text-align:left">5-Locked(今后不会被修改)</td>
+</tr>
+<tr>
+<td style="text-align:left">buffer</td>
+<td style="text-align:left">用于实现二进制数据的存储与转换</td>
+<td style="text-align:left">3-stable(稳定)</td>
+</tr>
+<tr>
+<td style="text-align:left">child_process</td>
+<td style="text-align:left">用于实现子进程的创建与管理</td>
+<td style="text-align:left">3-stable(稳定)</td>
+</tr>
+<tr>
+<td style="text-align:left">cluster</td>
+<td style="text-align:left">用于实现多进程</td>
+<td style="text-align:left">1-Experimental(实验性阶段)</td>
+</tr>
+<tr>
+<td style="text-align:left">console</td>
+<td style="text-align:left">用于为控制台输出信息</td>
+<td style="text-align:left">4-API Frozen(今后API部分不会被修改)</td>
+</tr>
+<tr>
+<td style="text-align:left">crypto</td>
+<td style="text-align:left">用于实现数据的加密解密处理</td>
+<td style="text-align:left">2-Unstable(不稳定)</td>
+</tr>
+<tr>
+<td style="text-align:left">debugger</td>
+<td style="text-align:left">用于实现一个内置调试器来帮助开发者调试应用程序</td>
+<td style="text-align:left">3-stable(稳定)</td>
+</tr>
+<tr>
+<td style="text-align:left">dns</td>
+<td style="text-align:left">用于实现与DNS相关的处理</td>
+<td style="text-align:left">3-stable(稳定)</td>
+</tr>
+<tr>
+<td style="text-align:left">domain</td>
+<td style="text-align:left">用于实现多个I/O之间的协作处理</td>
+<td style="text-align:left">2-Unstable(不稳定)</td>
+</tr>
+<tr>
+<td style="text-align:left">events</td>
+<td style="text-align:left">用于为事件处理提供一个基础类</td>
+<td style="text-align:left">4-API Frozen(今后API部分不会被修改)</td>
+</tr>
+<tr>
+<td style="text-align:left">fs</td>
+<td style="text-align:left">用于操作文件及文件系统</td>
+<td style="text-align:left">3-stable(稳定)</td>
+</tr>
+<tr>
+<td style="text-align:left">http</td>
+<td style="text-align:left">用于实现HTTP服务器端及客户端</td>
+<td style="text-align:left">3-stable(稳定)</td>
+</tr>
+<tr>
+<td style="text-align:left">https</td>
+<td style="text-align:left">用于实现HTTPS服务器端及客户端</td>
+<td style="text-align:left">3-stable(稳定)</td>
+</tr>
+<tr>
+<td style="text-align:left">net</td>
+<td style="text-align:left">用于创建TCP服务器与客户端</td>
+<td style="text-align:left">3-stable(稳定)</td>
+</tr>
+<tr>
+<td style="text-align:left">os</td>
+<td style="text-align:left">用于获取操作系统信息</td>
+<td style="text-align:left">4-API Frozen(今后API部分不会被修改)</td>
+</tr>
+<tr>
+<td style="text-align:left">path</td>
+<td style="text-align:left">用于处理文件路径</td>
+<td style="text-align:left">3-stable(稳定)</td>
+</tr>
+<tr>
+<td style="text-align:left">punycode</td>
+<td style="text-align:left">用于实现Punycode字符串的编码及解码</td>
+<td style="text-align:left">2-Unstable(不稳定)</td>
+</tr>
+<tr>
+<td style="text-align:left">querystring</td>
+<td style="text-align:left">用于处理HTTP请求中使用的查询字符串</td>
+<td style="text-align:left">3-stable(稳定)</td>
+</tr>
+<tr>
+<td style="text-align:left">readline</td>
+<td style="text-align:left">用于读取一行标准输入流</td>
+<td style="text-align:left">2-Unstable(不稳定)</td>
+</tr>
+<tr>
+<td style="text-align:left">repl</td>
+<td style="text-align:left">用于实现REPL(Read-Eval-Print-Loop)交互式运行环境</td>
+<td style="text-align:left">(无)</td>
+</tr>
+<tr>
+<td style="text-align:left">stream</td>
+<td style="text-align:left">用于为流的输入/输出处理提供一个基础类</td>
+<td style="text-align:left">2-Unstable(不稳定)</td>
+</tr>
+<tr>
+<td style="text-align:left">string_decoder</td>
+<td style="text-align:left">用于实现从二进制数据到字符串数据之间的转换</td>
+<td style="text-align:left">3-stable(稳定)</td>
+</tr>
+<tr>
+<td style="text-align:left">tls</td>
+<td style="text-align:left">用于使用OpenSSL来实现TLS/SSL通信处理</td>
+<td style="text-align:left">3-stable(稳定)</td>
+</tr>
+<tr>
+<td style="text-align:left">tty</td>
+<td style="text-align:left">用于获取来自于TTY终端的信息</td>
+<td style="text-align:left">2-Unstable(不稳定)</td>
+</tr>
+<tr>
+<td style="text-align:left">url</td>
+<td style="text-align:left">用于实现URL字符串的解析与格式化</td>
+<td style="text-align:left">3-stable(稳定)</td>
+</tr>
+<tr>
+<td style="text-align:left">util</td>
+<td style="text-align:left">用于实现各种实用函数</td>
+<td style="text-align:left">5-Locked(今后不会被修改)</td>
+</tr>
+<tr>
+<td style="text-align:left">vm</td>
+<td style="text-align:left">用于为Javascript脚本代码提供一个独立的运行环境</td>
+<td style="text-align:left">2-Unstable(不稳定)</td>
+</tr>
+<tr>
+<td style="text-align:left">zlib</td>
+<td style="text-align:left">内部使用zlib类库来实现数据的压缩及解压处理</td>
+<td style="text-align:left">3-stable(稳定)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><strong>Node.js v0.10中追加的类、函数与对象</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">类、函数及对象名</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Buffer类</td>
+<td style="text-align:left">用于为二进制数据的存储提供一个缓存区</td>
+</tr>
+<tr>
+<td style="text-align:left">setTimeout函数</td>
+<td style="text-align:left">用于在制定时间到达时执行一个指定函数，指定方法为从当前时刻之后多少毫秒</td>
+</tr>
+<tr>
+<td style="text-align:left">clearTimeout函数</td>
+<td style="text-align:left">用于取消在setTimeout函数内指定的函数的执行</td>
+</tr>
+<tr>
+<td style="text-align:left">setInterval函数</td>
+<td style="text-align:left">用于指定每隔多少时间执行一个指定函数</td>
+</tr>
+<tr>
+<td style="text-align:left">clearInterval函数</td>
+<td style="text-align:left">用于取消在setInterval函数内指定的函数的执行</td>
+</tr>
+<tr>
+<td style="text-align:left">require函数</td>
+<td style="text-align:left">用于加载模块</td>
+</tr>
+<tr>
+<td style="text-align:left">module对象</td>
+<td style="text-align:left">用于访问信息模块</td>
+</tr>
+<tr>
+<td style="text-align:left">process对象</td>
+<td style="text-align:left">用于访问进程信息</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>###举个栗子</p>
+<blockquote>
+<p>先在node项目中建立一个demo.js，代码如下：</p>
+</blockquote>
+<pre><code>var http = require(&apos;http&apos;);
+    http.createServer(function (req, res) {
+    res.writeHead(200, {&apos;Content-Type&apos;: &apos;text/html&apos;});
+    res.write(&apos;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;/head&gt;&apos;);
+    res.end(&quot;&lt;div style=&apos;font-size: 50px;&apos;&gt;I&apos;m McChen&lt;/div&gt;&quot;);
+}).listen(1337, &apos;127.0.0.1&apos;);
+console.log(&apos;Server running at http://127.0.0.1:1337/&apos;);
+</code></pre><blockquote>
+<p>再在命令行中执行node demo.js</p>
+</blockquote>
+<pre><code>node .\demo.js
+ //Tips: 命令行中将显示 Server running at http://127.0.0.1:1337/
+</code></pre><blockquote>
+<p>在任意浏览器打开 <a href="http://127.0.0.1:1337/" target="_blank" rel="external">http://127.0.0.1:1337/</a> ，将发现页面中会显示 “I’m McChen”</p>
+</blockquote>
+<hr>
+<p>###结语</p>
+<blockquote>
+<p>本节主要介绍了Node.js的概况，以及一个简单的小栗子。（至于怎么安装Node，这个就不要问了吧-_-!）</p>
+</blockquote>
 
       
     </div>
@@ -240,6 +471,10 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
+	</div>
+
       
 
       
