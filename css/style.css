@@ -936,8 +936,8 @@ a {
   margin-left: 0px;
   font-weight: 300;
   line-height: 35px;
-  margin-bottom: 20px;
   font-size: 26px;
+  display: block;
   -webkit-transition: color 0.3s;
   -moz-transition: color 0.3s;
   -o-transition: color 0.3s;
@@ -945,6 +945,8 @@ a {
   -moz-transition: color 0.3s;
   -ms-transition: color 0.3s;
   transition: color 0.3s;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .article-title:hover {
   color: #b0a0aa;
@@ -956,6 +958,9 @@ a {
 .article-header {
   border-left: 5px solid;
   padding: 15px 0px 15px 25px;
+}
+.article-header h1 {
+  overflow: hidden;
 }
 .article-info.info-on-right {
   margin: 10px 0 0 0;
