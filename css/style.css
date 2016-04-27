@@ -1635,23 +1635,17 @@ pre .css ~ * .id {
   color: #fd971f;
 }
 #footer {
-  font-size: 12px;
+  background-image: url("css/images/bg_footer.gif");
+  font-size: 13px;
   font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
-  text-shadow: 0 1px #fff;
   position: absolute;
   bottom: 30px;
-  opacity: 0.6;
   width: 100%;
+  word-wrap: break-word;
   text-align: center;
-}
-#footer .outer {
-  padding: 0 30px;
-}
-.footer-left {
-  float: left;
-}
-.footer-right {
-  float: right;
+  line-height: 20px;
+  padding: 12px;
+  color: #8b8d72;
 }
 .share {
   padding: 0px 75px 30px 40px;
