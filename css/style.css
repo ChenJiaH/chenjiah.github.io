@@ -1635,7 +1635,7 @@ pre .css ~ * .id {
   color: #fd971f;
 }
 #footer {
-  background-image: url("css/images/bg_footer.gif");
+  background-image: url("images/bg_footer.gif");
   font-size: 13px;
   font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
   position: absolute;
