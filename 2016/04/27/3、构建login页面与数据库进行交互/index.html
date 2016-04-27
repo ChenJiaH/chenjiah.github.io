@@ -6,46 +6,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>3、构建login页面与数据库进行交互 | McChen - 博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="####项目文件结构
-
- 先把文件结构贴出来利于后续流程说明
+  <meta name="description" content="####步骤
 
 
-
-####步骤
-
-
-首先新建一个login.jade文件，代码如下（注意缩进，间隔为2字间距，md不缩进-_-!）extends layoutblock link link(rel=&amp;#39;stylesheet&amp;#39;, href=&amp;#39;/stylesheets/1.0.0/login.css&amp;#39;)block cont">
+首先新建一个login.jade文件，代码如下（注意缩进，间隔为2字间距，md不缩进-_-!）extends layoutblock link link(rel=&amp;#39;stylesheet&amp;#39;, href=&amp;#39;/stylesheets/1.0.0/login.css&amp;#39;)block content">
 <meta property="og:type" content="article">
 <meta property="og:title" content="3、构建login页面与数据库进行交互">
 <meta property="og:url" content="http://chenjiah.github.io/2016/04/27/3、构建login页面与数据库进行交互/index.html">
 <meta property="og:site_name" content="McChen - 博客">
-<meta property="og:description" content="####项目文件结构
-
- 先把文件结构贴出来利于后续流程说明
+<meta property="og:description" content="####步骤
 
 
-
-####步骤
-
-
-首先新建一个login.jade文件，代码如下（注意缩进，间隔为2字间距，md不缩进-_-!）extends layoutblock link link(rel=&amp;#39;stylesheet&amp;#39;, href=&amp;#39;/stylesheets/1.0.0/login.css&amp;#39;)block cont">
-<meta property="og:image" content="http://chenjiah.github.io/./2016-03-30_204549.png">
-<meta property="og:image" content="http://chenjiah.github.io/./2016-03-30_210056.png">
-<meta property="og:updated_time" content="2016-04-27T10:50:42.000Z">
+首先新建一个login.jade文件，代码如下（注意缩进，间隔为2字间距，md不缩进-_-!）extends layoutblock link link(rel=&amp;#39;stylesheet&amp;#39;, href=&amp;#39;/stylesheets/1.0.0/login.css&amp;#39;)block content">
+<meta property="og:updated_time" content="2016-04-27T10:53:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="3、构建login页面与数据库进行交互">
-<meta name="twitter:description" content="####项目文件结构
-
- 先把文件结构贴出来利于后续流程说明
+<meta name="twitter:description" content="####步骤
 
 
-
-####步骤
-
-
-首先新建一个login.jade文件，代码如下（注意缩进，间隔为2字间距，md不缩进-_-!）extends layoutblock link link(rel=&amp;#39;stylesheet&amp;#39;, href=&amp;#39;/stylesheets/1.0.0/login.css&amp;#39;)block cont">
-<meta name="twitter:image" content="http://chenjiah.github.io/./2016-03-30_204549.png">
+首先新建一个login.jade文件，代码如下（注意缩进，间隔为2字间距，md不缩进-_-!）extends layoutblock link link(rel=&amp;#39;stylesheet&amp;#39;, href=&amp;#39;/stylesheets/1.0.0/login.css&amp;#39;)block content">
   
     <link rel="alternative" href="/atom.xml" title="McChen - 博客" type="application/atom+xml">
   
@@ -262,26 +241,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>####项目文件结构</p>
-<blockquote>
-<p> 先把文件结构贴出来利于后续流程说明</p>
-</blockquote>
-<p><img src="./2016-03-30_204549.png" alt="Alt text"></p>
-<hr>
-<p>####步骤</p>
+        <p>####步骤</p>
 <hr>
 <ol>
-<li>首先新建一个login.jade文件，代码如下（注意缩进，间隔为2字间距，md不缩进-_-!）<br><code>extends layout</code><br><code>block link</code><br> <code>link(rel=&#39;stylesheet&#39;, href=&#39;/stylesheets/1.0.0/login.css&#39;)</code><br><code>block content</code><br> <code>canvas#jm-funnyBackground</code><br> <code>div.loginBox.abs-mt</code><pre><code>`div.title`
-   `h3`
-`div.u-name`
-    `h4 用户名：`
-   ` input.username#Name(tabindex=&apos;1&apos;, placeholder=&apos;请输入用户名&apos;,name=&apos;Name&apos;, type=&apos;text&apos;)`
-`div.u-pwd`
-    `h4 密码：`
-    `input.password#Password(tabindex=&apos;2&apos;, placeholder=&apos;请输入密码&apos;,name=&apos;Password&apos;, type=&apos;password&apos;)`
-    `a.logon#Logon(href=&apos;javascript:;&apos;) 登录`
-</code></pre><code>block script</code><br> <code>script(src=&#39;/javascripts/modules/funnyBackground/funnyBackground.js&#39;)</code><br> <code>script(src=&#39;/javascripts/modules/login/login.js&#39;)</code></li>
+<li>首先新建一个login.jade文件，代码如下（注意缩进，间隔为2字间距，md不缩进-_-!）<br><code>extends layout</code><br><code>block link</code><br> <code>link(rel=&#39;stylesheet&#39;, href=&#39;/stylesheets/1.0.0/login.css&#39;)</code><br><code>block content</code></li>
 </ol>
+<a id="more"></a>
+<pre><code>`canvas#jm-funnyBackground`
+`div.loginBox.abs-mt`
+    `div.title`
+       `h3`
+    `div.u-name`
+        `h4 用户名：`
+       ` input.username#Name(tabindex=&apos;1&apos;, placeholder=&apos;请输入用户名&apos;,name=&apos;Name&apos;, type=&apos;text&apos;)`
+    `div.u-pwd`
+        `h4 密码：`
+        `input.password#Password(tabindex=&apos;2&apos;, placeholder=&apos;请输入密码&apos;,name=&apos;Password&apos;, type=&apos;password&apos;)`
+        `a.logon#Logon(href=&apos;javascript:;&apos;) 登录`
+</code></pre><p><code>block script</code><br>    <code>script(src=&#39;/javascripts/modules/funnyBackground/funnyBackground.js&#39;)</code><br>    <code>script(src=&#39;/javascripts/modules/login/login.js&#39;)</code></p>
 <blockquote>
 <p> extend是jade模板的一大特色，继承，另外一大特色是mixin，以后再叙。</p>
 </blockquote>
@@ -294,7 +271,7 @@
 <ul>
 <li>use database，建立database数据库</li>
 <li>接下来为数据库里添加用户表，存放登录用户名和密码，db.usercollection.insert({“username”:”admin”, “password”:”123456”})</li>
-<li>这时候可以通过mongoVUE或者cmd find 可以看到在database这数据库中已经增加了一张usercollection的表，里面有三个字段，_id，username, password，如下图：<br><img src="./2016-03-30_210056.png" alt="Alt text"></li>
+<li>这时候可以通过mongoVUE或者cmd find 可以看到在database这数据库中已经增加了一张usercollection的表，里面有三个字段，_id，username, password</li>
 </ul>
 <ol>
 <li>接下来就是交互部分<blockquote>
