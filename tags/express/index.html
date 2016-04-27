@@ -192,6 +192,157 @@
 
       <div class="body-wrap">
   
+    <article id="post-3、构建login页面与数据库进行交互" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/27/3、构建login页面与数据库进行交互/" class="article-date">
+  	<time datetime="2016-04-27T10:50:20.000Z" itemprop="datePublished">2016-04-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/27/3、构建login页面与数据库进行交互/">3、构建login页面与数据库进行交互</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>####项目文件结构</p>
+<blockquote>
+<p> 先把文件结构贴出来利于后续流程说明</p>
+</blockquote>
+<p><img src="./2016-03-30_204549.png" alt="Alt text"></p>
+<hr>
+<p>####步骤</p>
+<hr>
+<ol>
+<li>首先新建一个login.jade文件，代码如下（注意缩进，间隔为2字间距，md不缩进-_-!）<br><code>extends layout</code><br><code>block link</code><br> <code>link(rel=&#39;stylesheet&#39;, href=&#39;/stylesheets/1.0.0/login.css&#39;)</code><br><code>block content</code><br> <code>canvas#jm-funnyBackground</code><br> <code>div.loginBox.abs-mt</code><pre><code>`div.title`
+   `h3`
+`div.u-name`
+    `h4 用户名：`
+   ` input.username#Name(tabindex=&apos;1&apos;, placeholder=&apos;请输入用户名&apos;,name=&apos;Name&apos;, type=&apos;text&apos;)`
+`div.u-pwd`
+    `h4 密码：`
+    `input.password#Password(tabindex=&apos;2&apos;, placeholder=&apos;请输入密码&apos;,name=&apos;Password&apos;, type=&apos;password&apos;)`
+    `a.logon#Logon(href=&apos;javascript:;&apos;) 登录`
+</code></pre><code>block script</code><br> <code>script(src=&#39;/javascripts/modules/funnyBackground/funnyBackground.js&#39;)</code><br> <code>script(src=&#39;/javascripts/modules/login/login.js&#39;)</code></li>
+</ol>
+<blockquote>
+<p> extend是jade模板的一大特色，继承，另外一大特色是mixin，以后再叙。</p>
+</blockquote>
+<ol>
+<li><p>编写对应scss和js并引入，此步不表。无非就是script的scr和link的src罢了。</p>
+</li>
+<li><p>根据上一篇文章，开两个cmd，一个mongod –dbpath D:\database，另外一个mongo。</p>
+</li>
+</ol>
+<ul>
+<li>use database，建立database数据库</li>
+<li>接下来为数据库里添加用户表，存放登录用户名和密码，db.usercollection.insert({“username”:”admin”, “password”:”123456”})</li>
+<li>这时候可以通过mongoVUE或者cmd find 可以看到在database这数据库中已经增加了一张usercollection的表，里面有三个字段，_id，username, password，如下图：<br><img src="./2016-03-30_210056.png" alt="Alt text"></li>
+</ul>
+<ol>
+<li>接下来就是交互部分<blockquote>
+<p>login.js 截取部分交互代码<br> ` self.getAjaxData(“/login”,{username: username,password:password},”post”,”json”,self.loginCallback)  // 发ajax请求到localhost:3000/login</p>
+<pre><code>loginCallback: function (data) {  // ajax成功回调
+    if(data.code == 200){
+        window.location = &apos;/index&apos;;
+    } else if(data.code == 201) {
+        alert(&quot;您输入的用户名或密码不正确&quot;);
+    }
+},
+getAjaxData: function (url, data, type, dataType, callback, failFn) {
+    $.ajax({
+        url: url,
+        data: data,
+        type: type,
+        dataType: dataType,
+        success: function (data) {
+            callback &amp;&amp; callback(data);
+        },
+        error: function () {
+            failFn &amp;&amp; failFn();
+        }
+    });
+} `
+</code></pre></blockquote>
+</li>
+</ol>
+<ul>
+<li>首先通过ajax给localhost:3000/login发出请求</li>
+<li>然后在node中处理请求，req.body.*就是ajax传入的data<br>`router.post(‘/login’, function (req, res, next) {<br>  // 请求带过来的data在req.body里<br>  var username = req.body.username;<br>  var password = req.body.password;<br>  var collection = db.get(‘usercollection’); //获得数据库中的集合(类似关系数据库中的表)<br>  collection.find({“username”: username, “password”: password}, {}, function (e, docs) { //取得所有的集合数据, 渲染到页面上,关键字是data，第一个{}表示where，第二个{}表示显示隐藏，第三个为回调函数<pre><code>if (docs != &quot;&quot;) {
+    req.session.username = docs[0].username;
+    req.session.password = docs[0].password;
+    res.send({&quot;code&quot;: 200});    // 200 表示登录成功
+} else {
+    res.send({&quot;code&quot;: 201});    // 201 表示登录失败
+}
+</code></pre>  });<br>});`</li>
+<li>node通过res.send给ajax返回了一个json，里面只有一个状态参数code</li>
+<li>login.js去判断，如果登录成功，则进行页面跳转，window.location = “/index”</li>
+<li>node拦截localhost:3000/index，并进行数据渲染，这里利用了session进行参数存储，判断登录状态亦可使用<br>`/<em>GET index page </em>/<br>router.get(‘/index’, function (req, res, next) {<br>  var docs = res.session;<br>  res.render(‘index’, {<pre><code>&quot;data&quot;: docs
+</code></pre>  });<br>});`</li>
+</ul>
+<ol>
+<li>因为express4.X以上已经把session模块分离出来了，所以必须要多引入依赖模块express-session</li>
+</ol>
+<ul>
+<li>在app.js中增加<br><code>var session = require(&#39;express-session&#39;);</code><br><code>app.use(session({
+  secret: &quot;McChen&quot;,  // 必填参数，可随意取名
+  name: &quot;loginMes&quot;, // 存入cookies的参数名
+  cookie: {maxAge: 60000 * 60 * 24 * 15},  // cookie的生命周期
+  resave: false,  // 必须，否则session会报错
+  saveUninitialized: true  必须，否则session会报错
+}));</code><br>*之后便可以愉快的利用res.session进行存储了</li>
+</ul>
+<blockquote>
+<p>至此，一个与数据库交互的登录页面已经基本完成</p>
+</blockquote>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/art-template/">art-template</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/express/">express</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/Node-js学习/">Node.js学习</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-2、搭建Node-js-Express-html-Mongodb服务器" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">

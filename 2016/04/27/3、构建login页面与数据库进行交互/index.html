@@ -4,17 +4,48 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Tag: Node.js | McChen - 博客</title>
+  <title>3、构建login页面与数据库进行交互 | McChen - 博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前端 博客 Node 学习">
-<meta property="og:type" content="website">
-<meta property="og:title" content="McChen - 博客">
-<meta property="og:url" content="http://chenjiah.github.io/tags/Node-js/index.html">
+  <meta name="description" content="####项目文件结构
+
+ 先把文件结构贴出来利于后续流程说明
+
+
+
+####步骤
+
+
+首先新建一个login.jade文件，代码如下（注意缩进，间隔为2字间距，md不缩进-_-!）extends layoutblock link link(rel=&amp;#39;stylesheet&amp;#39;, href=&amp;#39;/stylesheets/1.0.0/login.css&amp;#39;)block cont">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3、构建login页面与数据库进行交互">
+<meta property="og:url" content="http://chenjiah.github.io/2016/04/27/3、构建login页面与数据库进行交互/index.html">
 <meta property="og:site_name" content="McChen - 博客">
-<meta property="og:description" content="前端 博客 Node 学习">
+<meta property="og:description" content="####项目文件结构
+
+ 先把文件结构贴出来利于后续流程说明
+
+
+
+####步骤
+
+
+首先新建一个login.jade文件，代码如下（注意缩进，间隔为2字间距，md不缩进-_-!）extends layoutblock link link(rel=&amp;#39;stylesheet&amp;#39;, href=&amp;#39;/stylesheets/1.0.0/login.css&amp;#39;)block cont">
+<meta property="og:image" content="http://chenjiah.github.io/./2016-03-30_204549.png">
+<meta property="og:image" content="http://chenjiah.github.io/./2016-03-30_210056.png">
+<meta property="og:updated_time" content="2016-04-27T10:50:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="McChen - 博客">
-<meta name="twitter:description" content="前端 博客 Node 学习">
+<meta name="twitter:title" content="3、构建login页面与数据库进行交互">
+<meta name="twitter:description" content="####项目文件结构
+
+ 先把文件结构贴出来利于后续流程说明
+
+
+
+####步骤
+
+
+首先新建一个login.jade文件，代码如下（注意缩进，间隔为2字间距，md不缩进-_-!）extends layoutblock link link(rel=&amp;#39;stylesheet&amp;#39;, href=&amp;#39;/stylesheets/1.0.0/login.css&amp;#39;)block cont">
+<meta name="twitter:image" content="http://chenjiah.github.io/./2016-03-30_204549.png">
   
     <link rel="alternative" href="/atom.xml" title="McChen - 博客" type="application/atom+xml">
   
@@ -190,9 +221,7 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
-  
-    <article id="post-3、构建login页面与数据库进行交互" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-3、构建login页面与数据库进行交互" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/04/27/3、构建login页面与数据库进行交互/" class="article-date">
@@ -208,12 +237,27 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/27/3、构建login页面与数据库进行交互/">3、构建login页面与数据库进行交互</a>
+    <h1 class="article-title" itemprop="name">
+      3、构建login页面与数据库进行交互
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/art-template/">art-template</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/express/">express</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/Node-js学习/">Node.js学习</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -313,178 +357,68 @@ getAjaxData: function (url, data, type, dataType, callback, failFn) {
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/art-template/">art-template</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/express/">express</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/Node-js学习/">Node.js学习</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/04/27/2、搭建Node-js-Express-html-Mongodb服务器/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2、搭建Node.js, Express, html, Mongodb服务器</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
 
-
-
-
-
-
-
-
-  
-    <article id="post-2、搭建Node-js-Express-html-Mongodb服务器" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/27/2、搭建Node-js-Express-html-Mongodb服务器/" class="article-date">
-  	<time datetime="2016-04-27T10:01:10.000Z" itemprop="datePublished">2016-04-27</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/27/2、搭建Node-js-Express-html-Mongodb服务器/">2、搭建Node.js, Express, html, Mongodb服务器</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>开发前准备</strong></p>
-<ul>
-<li>安装node.js</li>
-<li>安装Express（用webstorm的小伙伴们可省略此步）</li>
-<li>安装Mongodb</li>
-<li>安装Navicat for MySQL（数据库可视化工具，中文，习惯用命令行的可不用）</li>
-</ul>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/art-template/">art-template</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/express/">express</a></li></ul>
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/Node-js学习/">Node.js学习</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/27/2、搭建Node-js-Express-html-Mongodb服务器/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
 
 
 
 
 
-
-
-
-  
-    <article id="post-1、初识Nodejs及简单的实例应用" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/27/1、初识Nodejs及简单的实例应用/" class="article-date">
-  	<time datetime="2016-04-27T09:19:01.000Z" itemprop="datePublished">2016-04-27</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/27/1、初识Nodejs及简单的实例应用/">1、初识Nodejs及简单的实例应用</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>Node.js应用场景</strong></p>
-<ul>
-<li>高并发、高性能服务器</li>
-</ul>
-<p><strong>Node.js最重要特性</strong></p>
-<ul>
-<li>通过单线程实现异步处理环境</li>
-</ul>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/art-template/">art-template</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/express/">express</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/Node-js学习/">Node.js学习</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/27/1、初识Nodejs及简单的实例应用/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="3、构建login页面与数据库进行交互" data-title="3、构建login页面与数据库进行交互" data-url="http://chenjiah.github.io/2016/04/27/3、构建login页面与数据库进行交互/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
 
 
-
-
-
-
-
-  
-  
 </div>
       <footer id="footer">
   Powered by：<a href="http://hexo.io/" target="_blank">Hexo</a> 主题提供：<a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> Copyright &copy; 2016 【McChen】
@@ -500,9 +434,9 @@ getAjaxData: function (url, data, type, dataType, callback, failFn) {
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false
 	}
