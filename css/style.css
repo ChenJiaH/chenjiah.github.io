@@ -1639,7 +1639,7 @@ pre .css ~ * .id {
   font-size: 13px;
   font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
   position: absolute;
-  bottom: 30px;
+  bottom: 20px;
   width: 100%;
   word-wrap: break-word;
   text-align: center;
