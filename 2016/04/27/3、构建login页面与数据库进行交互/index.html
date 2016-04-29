@@ -18,7 +18,7 @@
 
 
 首先新建一个login.jade文件，代码如下（注意缩进，间隔为2字间距，md不缩进-_-!）extends layoutblock link link(rel=&amp;#39;stylesheet&amp;#39;, href=&amp;#39;/stylesheets/1.0.0/login.css&amp;#39;)block content">
-<meta property="og:updated_time" content="2016-04-27T10:53:29.000Z">
+<meta property="og:updated_time" content="2016-04-27T10:53:29.996Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="3、构建login页面与数据库进行交互">
 <meta name="twitter:description" content="####步骤
@@ -32,6 +32,21 @@
     <link rel="icon" href="/favicon.jpg">
   
   <link rel="stylesheet" href="/css/style.css">
+
+  
+<!-- baidu analytics-->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?2b0aba80cce5bf5627dd15f538ec6fc6";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<!-- end baidu analytics -->
+
+
 </head>
 
 <body>
@@ -420,22 +435,6 @@ getAjaxData: function (url, data, type, dataType, callback, failFn) {
 </script>
 <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 <script src="/js/main.js"></script>
-
-
-
-<!-- baidu analytics-->
-<script>
-    var _hmt = _hmt || [];
-    (function() {
-        var hm = document.createElement("script");
-        hm.src = "//hm.baidu.com/hm.js?2b0aba80cce5bf5627dd15f538ec6fc6";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-</script>
-<!-- end baidu analytics -->
-
-
 
 
 <script type="text/x-mathjax-config">
