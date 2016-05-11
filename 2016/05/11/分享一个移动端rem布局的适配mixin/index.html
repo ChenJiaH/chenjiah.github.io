@@ -13,7 +13,7 @@
 <meta property="og:url" content="http://chenjiah.github.io/2016/05/11/分享一个移动端rem布局的适配mixin/index.html">
 <meta property="og:site_name" content="McChen - 博客">
 <meta property="og:description" content="/================================================================  以下为基于ip5 宽度320做的适配，标准html{font-size:10px},即1rem = 10px  =================================================================/  @mixin q">
-<meta property="og:updated_time" content="2016-05-11T13:01:51.494Z">
+<meta property="og:updated_time" content="2016-05-11T13:03:21.114Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分享一个移动端rem布局的适配mixin">
 <meta name="twitter:description" content="/================================================================  以下为基于ip5 宽度320做的适配，标准html{font-size:10px},即1rem = 10px  =================================================================/  @mixin q">
@@ -249,10 +249,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>/<em>================================================================<br>  以下为基于ip5 宽度320做的适配，标准html{font-size:10px},即1rem = 10px<br>  =================================================================</em>/<br>  @mixin queryWidth(\$min, \$max) {<br>    @if \$min == -1 {<br>      @media screen and (max-width: \$max+px) {<br>        html {<br>          font-size: ( ($max+1) / 320 ) <em> 10px;<br>        }<br>      }<br>    } @else if \$max == -1 {<br>      @media screen and (min-width: \$min+px) {<br>        html {<br>          font-size: ( $min / 320 ) </em> 10px;<br>        }<br>      }</p>
+<p>/<em>================================================================<br>  以下为基于ip5 宽度320做的适配，标准html{font-size:10px},即1rem = 10px<br>  =================================================================</em>/<br>  @mixin queryWidth(\$min, \$max) {<br>    @if \$min == -1 {<br>      @media screen and (max-width: \$max+px) {<br>        html {<br>          font-size: ( ($max+1) / 320 ) * 10px;<br>        }<br>      }</p>
 </blockquote>
 <a id="more"></a>
-<pre><code>} @else {
+<pre><code>} @else if \$max == -1 {
+  @media screen and (min-width: \$min+px) {
+    html {
+      font-size: ( $min / 320 ) * 10px;
+    }
+  }
+} @else {
   @media screen and (min-width: $min+px) and (max-width: $max+px) {
     html {
       font-size: ( $min / 320 ) * 10px;
