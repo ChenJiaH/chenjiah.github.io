@@ -4,17 +4,57 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Tag: art-template | McChen - 博客</title>
+  <title>桌面应用开发笔记 | McChen - 博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前端 博客 Node 学习">
-<meta property="og:type" content="website">
-<meta property="og:title" content="McChen - 博客">
-<meta property="og:url" content="http://chenjiah.github.io/tags/art-template/index.html">
+  <meta name="description" content="####步骤
+
+一. 首先是安装nodejs以及npm
+
+注意配置环境变量path，安装时勾选上可自动配置。
+
+二、 使用淘宝 npm 镜像
+
+因为现在换成https，故直接用npm安装报SSL配置问题，所以采用cnpm代替npm完成electron安装
+
+
+`npm install -g cnpm --registry=https://registry.npm.taobao.org`
+
+三、 安">
+<meta property="og:type" content="article">
+<meta property="og:title" content="桌面应用开发笔记">
+<meta property="og:url" content="http://chenjiah.github.io/2016/05/11/1、electron安装/index.html">
 <meta property="og:site_name" content="McChen - 博客">
-<meta property="og:description" content="前端 博客 Node 学习">
+<meta property="og:description" content="####步骤
+
+一. 首先是安装nodejs以及npm
+
+注意配置环境变量path，安装时勾选上可自动配置。
+
+二、 使用淘宝 npm 镜像
+
+因为现在换成https，故直接用npm安装报SSL配置问题，所以采用cnpm代替npm完成electron安装
+
+
+`npm install -g cnpm --registry=https://registry.npm.taobao.org`
+
+三、 安">
+<meta property="og:updated_time" content="2016-05-11T08:31:00.389Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="McChen - 博客">
-<meta name="twitter:description" content="前端 博客 Node 学习">
+<meta name="twitter:title" content="桌面应用开发笔记">
+<meta name="twitter:description" content="####步骤
+
+一. 首先是安装nodejs以及npm
+
+注意配置环境变量path，安装时勾选上可自动配置。
+
+二、 使用淘宝 npm 镜像
+
+因为现在换成https，故直接用npm安装报SSL配置问题，所以采用cnpm代替npm完成electron安装
+
+
+`npm install -g cnpm --registry=https://registry.npm.taobao.org`
+
+三、 安">
   
     <link rel="alternative" href="/atom.xml" title="McChen - 博客" type="application/atom+xml">
   
@@ -205,13 +245,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
-  
-    <article id="post-3、构建login页面与数据库进行交互" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-1、electron安装" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/27/3、构建login页面与数据库进行交互/" class="article-date">
-  	<time datetime="2016-04-27T10:50:20.000Z" itemprop="datePublished">2016-04-27</time>
+      <a href="/2016/05/11/1、electron安装/" class="article-date">
+  	<time datetime="2016-05-11T08:10:17.000Z" itemprop="datePublished">2016-05-11</time>
 </a>
     </div>
   
@@ -223,200 +261,126 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/27/3、构建login页面与数据库进行交互/">Node.js学习笔记(三)</a>
+    <h1 class="article-title" itemprop="name">
+      桌面应用开发笔记
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/atom-shell/">atom-shell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/electron/">electron</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/桌面应用开发/">桌面应用开发</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
       
         <p>####步骤</p>
 <hr>
-<ol>
-<li>首先新建一个login.jade文件，代码如下（注意缩进，间隔为2字间距，md不缩进-_-!）<br><code>extends layout</code><br><code>block link</code><br> <code>link(rel=&#39;stylesheet&#39;, href=&#39;/stylesheets/1.0.0/login.css&#39;)</code><br><code>block content</code></li>
-</ol>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/art-template/">art-template</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/express/">express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
+<p>一. 首先是安装nodejs以及npm</p>
+<ul>
+<li>注意配置环境变量path，安装时勾选上可自动配置。</li>
+</ul>
+<p>二、 使用淘宝 npm 镜像</p>
+<ul>
+<li>因为现在换成https，故直接用npm安装报SSL配置问题，所以采用cnpm代替npm完成electron安装</li>
+</ul>
+<blockquote>
+<pre><code>`npm install -g cnpm --registry=https://registry.npm.taobao.org`
+</code></pre></blockquote>
+<p>三、 安装electron(atom-shell)</p>
+<a id="more"></a>
+<blockquote>
+<p><code>cnpm install -g electron-prebuilt</code></p>
+</blockquote>
+<p>四、 安装git</p>
+<ul>
+<li>官网下载安装，不表，主要用于拉取electron在Github源码。自行下载的话可不安装。</li>
+</ul>
+<p>五、参考Demo</p>
+<blockquote>
+<p>git clone <a href="https://github.com/atom/electron-quick-start" target="_blank" rel="external">https://github.com/atom/electron-quick-start</a><br>npm install &amp;&amp; npm start</p>
+</blockquote>
+<ul>
+<li>至此，会出现一个helloworld的桌面应用</li>
+</ul>
 
       
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/Node-js学习/">Node.js学习</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/27/3、构建login页面与数据库进行交互/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
     </div>
     
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-2、搭建Node-js-Express-html-Mongodb服务器" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2016/04/27/2、搭建Node-js-Express-html-Mongodb服务器/" class="article-date">
-  	<time datetime="2016-04-27T10:01:10.000Z" itemprop="datePublished">2016-04-27</time>
-</a>
-    </div>
+    <a href="/2016/04/27/3、构建login页面与数据库进行交互/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Node.js学习笔记(三)</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/27/2、搭建Node-js-Express-html-Mongodb服务器/">Node.js学习笔记（二）</a>
-    </h1>
-  
+</nav>
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>开发前准备</strong></p>
-<ul>
-<li>安装node.js</li>
-<li>安装Express（用webstorm的小伙伴们可省略此步）</li>
-<li>安装Mongodb</li>
-<li>安装Navicat for MySQL（数据库可视化工具，中文，习惯用命令行的可不用）</li>
-</ul>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/art-template/">art-template</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/express/">express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/Node-js学习/">Node.js学习</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/27/2、搭建Node-js-Express-html-Mongodb服务器/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
   
 </article>
 
 
-
-
-
-
-
-
-
-  
-    <article id="post-1、初识Nodejs及简单的实例应用" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/27/1、初识Nodejs及简单的实例应用/" class="article-date">
-  	<time datetime="2016-04-27T09:19:01.000Z" itemprop="datePublished">2016-04-27</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/27/1、初识Nodejs及简单的实例应用/">Node.js学习笔记（一）</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>Node.js应用场景</strong></p>
-<ul>
-<li>高并发、高性能服务器</li>
-</ul>
-<p><strong>Node.js最重要特性</strong></p>
-<ul>
-<li>通过单线程实现异步处理环境</li>
-</ul>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/art-template/">art-template</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/express/">express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/Node-js学习/">Node.js学习</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/27/1、初识Nodejs及简单的实例应用/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
 
 
 
 
 
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="1、electron安装" data-title="桌面应用开发笔记" data-url="http://chenjiah.github.io/2016/05/11/1、electron安装/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
 
-  
-  
+
 </div>
       <footer id="footer">
   Powered by：<a href="http://hexo.io/" target="_blank">Hexo</a> 主题提供：<a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> Copyright &copy; 2016 【McChen】
@@ -432,9 +396,9 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false
 	}
