@@ -7,25 +7,37 @@
   <title>Node.js学习笔记(三) | McChen - 博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="Keywords" content="McChen,博客,前端,学习,mcchen,blog,learn,javascript,nodejs,html,css">
-  <meta name="description" content="####步骤
+  <meta name="description" content="步骤
 
 
-首先新建一个login.jade文件，代码如下（注意缩进，间隔为2字间距，md不缩进-_-!）extends layoutblock link link(rel=&amp;#39;stylesheet&amp;#39;, href=&amp;#39;/stylesheets/1.0.0/login.css&amp;#39;)block content">
+
+首先新建一个login.jade文件，代码如下（注意缩进，间隔为2字间距，md不缩进-_-!）
+ extends layout block link
+`link(rel=&amp;apos;stylesheet&amp;apos;, href=&amp;apos;/stylesheets/1.0.0/login.css&amp;apos;)
+ block content">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Node.js学习笔记(三)">
 <meta property="og:url" content="http://chenjiah.github.io/2016/04/27/3、构建login页面与数据库进行交互/index.html">
 <meta property="og:site_name" content="McChen - 博客">
-<meta property="og:description" content="####步骤
+<meta property="og:description" content="步骤
 
 
-首先新建一个login.jade文件，代码如下（注意缩进，间隔为2字间距，md不缩进-_-!）extends layoutblock link link(rel=&amp;#39;stylesheet&amp;#39;, href=&amp;#39;/stylesheets/1.0.0/login.css&amp;#39;)block content">
-<meta property="og:updated_time" content="2016-05-11T08:14:12.808Z">
+
+首先新建一个login.jade文件，代码如下（注意缩进，间隔为2字间距，md不缩进-_-!）
+ extends layout block link
+`link(rel=&amp;apos;stylesheet&amp;apos;, href=&amp;apos;/stylesheets/1.0.0/login.css&amp;apos;)
+ block content">
+<meta property="og:updated_time" content="2016-05-11T11:32:41.419Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node.js学习笔记(三)">
-<meta name="twitter:description" content="####步骤
+<meta name="twitter:description" content="步骤
 
 
-首先新建一个login.jade文件，代码如下（注意缩进，间隔为2字间距，md不缩进-_-!）extends layoutblock link link(rel=&amp;#39;stylesheet&amp;#39;, href=&amp;#39;/stylesheets/1.0.0/login.css&amp;#39;)block content">
+
+首先新建一个login.jade文件，代码如下（注意缩进，间隔为2字间距，md不缩进-_-!）
+ extends layout block link
+`link(rel=&amp;apos;stylesheet&amp;apos;, href=&amp;apos;/stylesheets/1.0.0/login.css&amp;apos;)
+ block content">
   
     <link rel="alternative" href="/atom.xml" title="McChen - 博客" type="application/atom+xml">
   
@@ -98,12 +110,12 @@
 					<div class="tips-arrow"></div>
 					<ul class="tips-inner">
 						<li>Menu</li>
-						<li>Тэги</li>
+						<li>Tags</li>
 						
 						<li>Links</li>
 						
 						
-						<li>О сайте</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -140,7 +152,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/art-template/" style="font-size: 15px;">art-template</a> <a href="/tags/atom-shell/" style="font-size: 10px;">atom-shell</a> <a href="/tags/electron/" style="font-size: 10px;">electron</a> <a href="/tags/express/" style="font-size: 15px;">express</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a>
+						<a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/art-template/" style="font-size: 16.67px;">art-template</a> <a href="/tags/atom-shell/" style="font-size: 13.33px;">atom-shell</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/electron/" style="font-size: 13.33px;">electron</a> <a href="/tags/express/" style="font-size: 16.67px;">express</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/mixin/" style="font-size: 10px;">mixin</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a>
 					</div>
 				</section>
 				
@@ -257,24 +269,29 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>####步骤</p>
+        <h4>步骤</h4>
+
 <hr>
 <ol>
-<li>首先新建一个login.jade文件，代码如下（注意缩进，间隔为2字间距，md不缩进-_-!）<br><code>extends layout</code><br><code>block link</code><br> <code>link(rel=&#39;stylesheet&#39;, href=&#39;/stylesheets/1.0.0/login.css&#39;)</code><br><code>block content</code></li>
+<li><p>首先新建一个login.jade文件，代码如下（注意缩进，间隔为2字间距，md不缩进-_-!）</p>
+<p> extends layout<br> block link</p>
+<pre><code>`link(rel=&apos;stylesheet&apos;, href=&apos;/stylesheets/1.0.0/login.css&apos;)
+</code></pre><p> block content</p>
+</li>
 </ol>
 <a id="more"></a>
-<pre><code>`canvas#jm-funnyBackground`
-`div.loginBox.abs-mt`
-    `div.title`
-       `h3`
-    `div.u-name`
-        `h4 用户名：`
-       ` input.username#Name(tabindex=&apos;1&apos;, placeholder=&apos;请输入用户名&apos;,name=&apos;Name&apos;, type=&apos;text&apos;)`
-    `div.u-pwd`
-        `h4 密码：`
-        `input.password#Password(tabindex=&apos;2&apos;, placeholder=&apos;请输入密码&apos;,name=&apos;Password&apos;, type=&apos;password&apos;)`
-        `a.logon#Logon(href=&apos;javascript:;&apos;) 登录`
-</code></pre><p><code>block script</code><br>    <code>script(src=&#39;/javascripts/modules/funnyBackground/funnyBackground.js&#39;)</code><br>    <code>script(src=&#39;/javascripts/modules/login/login.js&#39;)</code></p>
+<pre><code>canvas#jm-funnyBackground
+div.loginBox.abs-mt
+    div.title
+       h3
+    div.u-name
+        h4 用户名：
+        input.username#Name(tabindex=&apos;1&apos;, placeholder=&apos;请输入用户名&apos;,name=&apos;Name&apos;, type=&apos;text&apos;)
+    div.u-pwd
+        h4 密码：
+        input.password#Password(tabindex=&apos;2&apos;, placeholder=&apos;请输入密码&apos;,name=&apos;Password&apos;, type=&apos;password&apos;)
+        a.logon#Logon(href=&apos;javascript:;&apos;) 登录
+</code></pre><p>block script<br>    script(src=’/javascripts/modules/funnyBackground/funnyBackground.js’)<br>    script(src=’/javascripts/modules/login/login.js’)</p>
 <blockquote>
 <p> extend是jade模板的一大特色，继承，另外一大特色是mixin，以后再叙。</p>
 </blockquote>
@@ -290,8 +307,11 @@
 <li>这时候可以通过mongoVUE或者cmd find 可以看到在database这数据库中已经增加了一张usercollection的表，里面有三个字段，_id，username, password</li>
 </ul>
 <ol>
-<li>接下来就是交互部分<blockquote>
-<p>login.js 截取部分交互代码<br> ` self.getAjaxData(“/login”,{username: username,password:password},”post”,”json”,self.loginCallback)  // 发ajax请求到localhost:3000/login</p>
+<li><p>接下来就是交互部分</p>
+<blockquote>
+<p>login.js 截取部分交互代码</p>
+</blockquote>
+<p> self.getAjaxData(“/login”,{username: username,password:password},”post”,”json”,self.loginCallback)  // 发ajax请求到localhost:3000/login</p>
 <pre><code>loginCallback: function (data) {  // ajax成功回调
     if(data.code == 200){
         window.location = &apos;/index&apos;;
@@ -312,40 +332,62 @@ getAjaxData: function (url, data, type, dataType, callback, failFn) {
             failFn &amp;&amp; failFn();
         }
     });
-} `
-</code></pre></blockquote>
-</li>
+}
+</code></pre></li>
 </ol>
 <ul>
 <li>首先通过ajax给localhost:3000/login发出请求</li>
-<li>然后在node中处理请求，req.body.*就是ajax传入的data<br>`router.post(‘/login’, function (req, res, next) {<br>  // 请求带过来的data在req.body里<br>  var username = req.body.username;<br>  var password = req.body.password;<br>  var collection = db.get(‘usercollection’); //获得数据库中的集合(类似关系数据库中的表)<br>  collection.find({“username”: username, “password”: password}, {}, function (e, docs) { //取得所有的集合数据, 渲染到页面上,关键字是data，第一个{}表示where，第二个{}表示显示隐藏，第三个为回调函数<pre><code>if (docs != &quot;&quot;) {
-    req.session.username = docs[0].username;
-    req.session.password = docs[0].password;
-    res.send({&quot;code&quot;: 200});    // 200 表示登录成功
-} else {
-    res.send({&quot;code&quot;: 201});    // 201 表示登录失败
-}
-</code></pre>  });<br>});`</li>
-<li>node通过res.send给ajax返回了一个json，里面只有一个状态参数code</li>
+<li><p>然后在node中处理请求，req.body.*就是ajax传入的data</p>
+<p>  router.post(‘/login’, function (req, res, next) {</p>
+<pre><code>// 请求带过来的data在req.body里
+var username = req.body.username;
+var password = req.body.password;
+var collection = db.get(&apos;usercollection&apos;); //获得数据库中的集合(类似关系数据库中的表)
+collection.find({&quot;username&quot;: username, &quot;password&quot;: password}, {}, function (e, docs) { //取得所有的集合数据, 渲染到页面上,关键字是data，第一个{}表示where，第二个{}表示显示隐藏，第三个为回调函数
+    if (docs != &quot;&quot;) {
+        req.session.username = docs[0].username;
+        req.session.password = docs[0].password;
+        res.send({&quot;code&quot;: 200});    // 200 表示登录成功
+    } else {
+        res.send({&quot;code&quot;: 201});    // 201 表示登录失败
+    }
+});
+</code></pre><p>  });</p>
+</li>
+<li><p>node通过res.send给ajax返回了一个json，里面只有一个状态参数code</p>
+</li>
 <li>login.js去判断，如果登录成功，则进行页面跳转，window.location = “/index”</li>
-<li>node拦截localhost:3000/index，并进行数据渲染，这里利用了session进行参数存储，判断登录状态亦可使用<br>`/<em>GET index page </em>/<br>router.get(‘/index’, function (req, res, next) {<br>  var docs = res.session;<br>  res.render(‘index’, {<pre><code>&quot;data&quot;: docs
-</code></pre>  });<br>});`</li>
+<li><p>node拦截localhost:3000/index，并进行数据渲染，这里利用了session进行参数存储，判断登录状态亦可使用</p>
+<p>  /<em>GET index page </em>/<br>  router.get(‘/index’, function (req, res, next) {</p>
+<pre><code>var docs = res.session;
+res.render(&apos;index&apos;, {
+    &quot;data&quot;: docs
+});
+</code></pre><p>  });</p>
+</li>
 </ul>
 <ol>
 <li>因为express4.X以上已经把session模块分离出来了，所以必须要多引入依赖模块express-session</li>
 </ol>
 <ul>
-<li>在app.js中增加<br><code>var session = require(&#39;express-session&#39;);</code><br><code>app.use(session({
-  secret: &quot;McChen&quot;,  // 必填参数，可随意取名
-  name: &quot;loginMes&quot;, // 存入cookies的参数名
-  cookie: {maxAge: 60000 * 60 * 24 * 15},  // cookie的生命周期
-  resave: false,  // 必须，否则session会报错
-  saveUninitialized: true  必须，否则session会报错
-}));</code><br>*之后便可以愉快的利用res.session进行存储了</li>
+<li><p>在app.js中增加</p>
+<p>  var session = require(‘express-session’);<br>  app.use(session({</p>
+<pre><code>secret: &quot;McChen&quot;,  // 必填参数，可随意取名
+name: &quot;loginMes&quot;, // 存入cookies的参数名
+cookie: {maxAge: 60000 * 60 * 24 * 15},  // cookie的生命周期
+resave: false,  // 必须，否则session会报错
+saveUninitialized: true  必须，否则session会报错
+</code></pre><p>  }));</p>
+</li>
 </ul>
+<p>*之后便可以愉快的利用res.session进行存储了</p>
 <blockquote>
 <p>至此，一个与数据库交互的登录页面已经基本完成</p>
 </blockquote>
+<hr>
+<h5><br>作者：McChen<br><br>如果能给您带去些许帮助，鄙人不甚欢心。如有错误，恳请交流指出，谢谢！<br><br>转载请注明出处：<a href="http://mcchen.club/" target="_blank" rel="external">http://mcchen.club/</a><br></h5>
+
+<hr>
 
       
     </div>

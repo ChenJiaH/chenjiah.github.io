@@ -88,12 +88,12 @@
 					<div class="tips-arrow"></div>
 					<ul class="tips-inner">
 						<li>Menu</li>
-						<li>Тэги</li>
+						<li>Tags</li>
 						
 						<li>Links</li>
 						
 						
-						<li>О сайте</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -130,7 +130,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/art-template/" style="font-size: 15px;">art-template</a> <a href="/tags/atom-shell/" style="font-size: 10px;">atom-shell</a> <a href="/tags/electron/" style="font-size: 10px;">electron</a> <a href="/tags/express/" style="font-size: 15px;">express</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a>
+						<a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/art-template/" style="font-size: 16.67px;">art-template</a> <a href="/tags/atom-shell/" style="font-size: 13.33px;">atom-shell</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/electron/" style="font-size: 13.33px;">electron</a> <a href="/tags/express/" style="font-size: 16.67px;">express</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/mixin/" style="font-size: 10px;">mixin</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a>
 					</div>
 				</section>
 				
@@ -208,6 +208,81 @@
 
       <div class="body-wrap">
   
+    <article id="post-分享一个移动端rem布局的适配mixin" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/11/分享一个移动端rem布局的适配mixin/" class="article-date">
+  	<time datetime="2016-05-11T11:14:06.000Z" itemprop="datePublished">2016-05-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/11/分享一个移动端rem布局的适配mixin/">分享一个移动端rem布局的适配mixin</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>/<em>================================================================<br>  以下为基于ip5 宽度320做的适配，标准html{font-size:10px},即1rem = 10px<br>  =================================================================</em>/<br>  @mixin queryWidth($min, $max) {<br>    @if $min == -1 {<br>      @media screen and (max-width: $max+px) {<br>        html {<br>          font-size: ( ($max+1) / 320 ) <em> 10px;<br>        }<br>      }<br>    } @else if $max == -1 {<br>      @media screen and (min-width: $min+px) {<br>        html {<br>          font-size: ( $min / 320 ) </em> 10px;<br>        }<br>      }<br>    } @else {<br>      @media screen and (min-width: $min+px) and (max-width: $max+px) {<br>        html {<br>          font-size: ( $min / 320 ) * 10px;<br>        }<br>      }<br>    }<br>  }</p>
+</blockquote>
+<p>  @media only screen and (orientation: landscape) {<br>    html {<br>      font-size: 10px;<br>    }<br>  }</p>
+<p>  @include queryWidth(-1, 319);    // for iphone 4<br>  @include queryWidth(320, 359);   // for iphone 5<br>  @include queryWidth(360, 374);<br>  @include queryWidth(375, 383);   // for iphone 6<br>  @include queryWidth(384, 399);<br>  @include queryWidth(400, 413);<br>  @include queryWidth(414, -1);    // for iphone 6 plus</p>
+<ul>
+<li>以上为基于320的设计稿，若要基于375，只需将mixin中320改为375即可。若要100px=1rem，只需将mixin中10改成100即可。当然，这只能实现大部分常规机型的适配，有些特殊机型还是需要自己再加上对应的适配。接下来罗列一下我用到过的适配，希望得到各位帮助逐步完善。</li>
+</ul>
+<blockquote>
+<p>@media screen and (min-width: 320px) {} //for iphone 5<br>  @media screen and (min-width: 375px) {} //for iphone 6<br>  @media screen and (min-width: 414px) {} //for iphone 6 plus<br>  @media screen and (min-aspect-ratio: 69/100) {} //for huawei荣耀6<br>  @media screen and (min-aspect-ratio: 7/10) {} //for mx3<br>  @media screen and (max-height: 480px) {} //for iphone 4<br>  @media screen and (max-height: 420px) {} //for iphone 4 微信<br>  @media only screen and (orientation: landscape) {} // for 横屏</p>
+</blockquote>
+<hr>
+<h5><br>作者：McChen<br><br>如果能给您带去些许帮助，鄙人不甚欢心。如有错误，恳请交流指出，谢谢！<br><br>转载请注明出处：<a href="http://mcchen.club/" target="_blank" rel="external">http://mcchen.club/</a><br></h5>
+
+<hr>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mixin/">mixin</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rem/">rem</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/css/">css</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-2、利用electron快速打包一个桌面应用" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -234,20 +309,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>####步骤</p>
+        <h4>步骤</h4>
+
 <hr>
 <p>一. 首先是下载electron框架</p>
 <ul>
 <li><a href="https://github.com/electron/electron/releases">https://github.com/electron/electron/releases</a> 选择对应系统的版本下载下来，得到一堆配置文件和locales以及resources文件夹，具体使用说明查看electron官网</li>
 </ul>
 <p>二、 安装asar 打包依赖组件</p>
-<blockquote>
 <pre><code>npm install -g asar
-</code></pre></blockquote>
-<p>三、 打包静态资源成 app.asar</p>
-<blockquote>
-<p>asar pack 文件夹名称 app.asar</p>
-</blockquote>
+</code></pre><p>三、 打包静态资源成 app.asar</p>
+<pre><code>asar pack 文件夹名称 app.asar
+</code></pre>
       
     </div>
     
@@ -311,7 +384,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>####步骤</p>
+        <h4>步骤</h4>
+
 <hr>
 <p>一. 首先是安装nodejs以及npm</p>
 <ul>
@@ -319,11 +393,10 @@
 </ul>
 <p>二、 使用淘宝 npm 镜像</p>
 <ul>
-<li>因为现在换成https，故直接用npm安装报SSL配置问题，所以采用cnpm代替npm完成electron安装</li>
+<li><p>因为现在换成https，故直接用npm安装报SSL配置问题，所以采用cnpm代替npm完成electron安装</p>
+<p>  npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org">https://registry.npm.taobao.org</a></p>
+</li>
 </ul>
-<blockquote>
-<pre><code>`npm install -g cnpm --registry=https://registry.npm.taobao.org`
-</code></pre></blockquote>
 <p>三、 安装electron(atom-shell)</p>
       
     </div>

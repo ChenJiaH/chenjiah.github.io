@@ -25,7 +25,7 @@ Node.js最重要特性
 Node.js最重要特性
 
 通过单线程实现异步处理环境">
-<meta property="og:updated_time" content="2016-05-11T08:14:12.792Z">
+<meta property="og:updated_time" content="2016-05-11T11:28:26.689Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node.js学习笔记（一）">
 <meta name="twitter:description" content="Node.js应用场景
@@ -107,12 +107,12 @@ Node.js最重要特性
 					<div class="tips-arrow"></div>
 					<ul class="tips-inner">
 						<li>Menu</li>
-						<li>Тэги</li>
+						<li>Tags</li>
 						
 						<li>Links</li>
 						
 						
-						<li>О сайте</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -149,7 +149,7 @@ Node.js最重要特性
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/art-template/" style="font-size: 15px;">art-template</a> <a href="/tags/atom-shell/" style="font-size: 10px;">atom-shell</a> <a href="/tags/electron/" style="font-size: 10px;">electron</a> <a href="/tags/express/" style="font-size: 15px;">express</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a>
+						<a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/art-template/" style="font-size: 16.67px;">art-template</a> <a href="/tags/atom-shell/" style="font-size: 13.33px;">atom-shell</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/electron/" style="font-size: 13.33px;">electron</a> <a href="/tags/express/" style="font-size: 16.67px;">express</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/mixin/" style="font-size: 10px;">mixin</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a>
 					</div>
 				</section>
 				
@@ -483,30 +483,15 @@ Node.js最重要特性
 </tbody>
 </table>
 <hr>
-<p>###举个栗子</p>
-<blockquote>
-<p>先在node项目中建立一个demo.js，代码如下：</p>
-</blockquote>
-<pre><code>var http = require(&apos;http&apos;);
-    http.createServer(function (req, res) {
-    res.writeHead(200, {&apos;Content-Type&apos;: &apos;text/html&apos;});
-    res.write(&apos;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;/head&gt;&apos;);
-    res.end(&quot;&lt;div style=&apos;font-size: 50px;&apos;&gt;I&apos;m McChen&lt;/div&gt;&quot;);
-}).listen(1337, &apos;127.0.0.1&apos;);
-console.log(&apos;Server running at http://127.0.0.1:1337/&apos;);
-</code></pre><blockquote>
-<p>再在命令行中执行node demo.js</p>
-</blockquote>
-<pre><code>node .\demo.js
- //Tips: 命令行中将显示 Server running at http://127.0.0.1:1337/
-</code></pre><blockquote>
-<p>在任意浏览器打开 <a href="http://127.0.0.1:1337/" target="_blank" rel="external">http://127.0.0.1:1337/</a> ，将发现页面中会显示 “I’m McChen”</p>
-</blockquote>
-<hr>
-<p>###结语</p>
+<h3>举个栗子</h3><br>&gt; 先在node项目中建立一个demo.js，代码如下：<br><br>    var http = require(‘http’);<br>        http.createServer(function (req, res) {<br>        res.writeHead(200, {‘Content-Type’: ‘text/html’});<br>        res.write(‘<head><meta charset="utf-8"></head>‘);<br>        res.end(“<div style="font-size: 50px;">I’m McChen</div>“);<br>    }).listen(1337, ‘127.0.0.1’);<br>    console.log(‘Server running at <a href="http://127.0.0.1:1337/" target="_blank" rel="external">http://127.0.0.1:1337/</a>‘);<br><br>&gt; 再在命令行中执行node demo.js<br><br>    node .\demo.js<br>     //Tips: 命令行中将显示 Server running at <a href="http://127.0.0.1:1337/" target="_blank" rel="external">http://127.0.0.1:1337/</a><br><br><br>&gt; 在任意浏览器打开 <a href="http://127.0.0.1:1337/" target="_blank" rel="external">http://127.0.0.1:1337/</a> ，将发现页面中会显示 “I’m McChen”<br><br>———–<br><br><h3>结语</h3>
+
 <blockquote>
 <p>本节主要介绍了Node.js的概况，以及一个简单的小栗子。（至于怎么安装Node，这个就不要问了吧-_-!）</p>
 </blockquote>
+<hr>
+<h5><br>作者：McChen<br><br>如果能给您带去些许帮助，鄙人不甚欢心。如有错误，恳请交流指出，谢谢！<br><br>转载请注明出处：<a href="http://mcchen.club/" target="_blank" rel="external">http://mcchen.club/</a><br></h5>
+
+<hr>
 
       
     </div>

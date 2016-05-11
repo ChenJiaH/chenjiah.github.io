@@ -88,12 +88,12 @@
 					<div class="tips-arrow"></div>
 					<ul class="tips-inner">
 						<li>Menu</li>
-						<li>Тэги</li>
+						<li>Tags</li>
 						
 						<li>Links</li>
 						
 						
-						<li>О сайте</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -130,7 +130,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/art-template/" style="font-size: 15px;">art-template</a> <a href="/tags/atom-shell/" style="font-size: 10px;">atom-shell</a> <a href="/tags/electron/" style="font-size: 10px;">electron</a> <a href="/tags/express/" style="font-size: 15px;">express</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a>
+						<a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/art-template/" style="font-size: 16.67px;">art-template</a> <a href="/tags/atom-shell/" style="font-size: 13.33px;">atom-shell</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/electron/" style="font-size: 13.33px;">electron</a> <a href="/tags/express/" style="font-size: 16.67px;">express</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/mixin/" style="font-size: 10px;">mixin</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a>
 					</div>
 				</section>
 				
@@ -234,20 +234,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>####步骤</p>
+        <h4>步骤</h4>
+
 <hr>
 <p>一. 首先是下载electron框架</p>
 <ul>
 <li><a href="https://github.com/electron/electron/releases">https://github.com/electron/electron/releases</a> 选择对应系统的版本下载下来，得到一堆配置文件和locales以及resources文件夹，具体使用说明查看electron官网</li>
 </ul>
 <p>二、 安装asar 打包依赖组件</p>
-<blockquote>
 <pre><code>npm install -g asar
-</code></pre></blockquote>
-<p>三、 打包静态资源成 app.asar</p>
-<blockquote>
-<p>asar pack 文件夹名称 app.asar</p>
-</blockquote>
+</code></pre><p>三、 打包静态资源成 app.asar</p>
+<pre><code>asar pack 文件夹名称 app.asar
+</code></pre>
       
     </div>
     
@@ -311,7 +309,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>####步骤</p>
+        <h4>步骤</h4>
+
 <hr>
 <p>一. 首先是安装nodejs以及npm</p>
 <ul>
@@ -319,11 +318,10 @@
 </ul>
 <p>二、 使用淘宝 npm 镜像</p>
 <ul>
-<li>因为现在换成https，故直接用npm安装报SSL配置问题，所以采用cnpm代替npm完成electron安装</li>
+<li><p>因为现在换成https，故直接用npm安装报SSL配置问题，所以采用cnpm代替npm完成electron安装</p>
+<p>  npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org">https://registry.npm.taobao.org</a></p>
+</li>
 </ul>
-<blockquote>
-<pre><code>`npm install -g cnpm --registry=https://registry.npm.taobao.org`
-</code></pre></blockquote>
 <p>三、 安装electron(atom-shell)</p>
       
     </div>
