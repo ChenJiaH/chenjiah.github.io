@@ -13,7 +13,7 @@
 <meta property="og:url" content="http://chenjiah.github.io/2016/05/11/分享一个移动端rem布局的适配mixin/index.html">
 <meta property="og:site_name" content="McChen - 博客">
 <meta property="og:description" content="/================================================================  以下为基于ip5 宽度320做的适配，标准html{font-size:10px},即1rem = 10px  =================================================================/  @mixin q">
-<meta property="og:updated_time" content="2016-05-11T11:34:42.038Z">
+<meta property="og:updated_time" content="2016-05-11T12:13:24.134Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分享一个移动端rem布局的适配mixin">
 <meta name="twitter:description" content="/================================================================  以下为基于ip5 宽度320做的适配，标准html{font-size:10px},即1rem = 10px  =================================================================/  @mixin q">
@@ -249,7 +249,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>/<em>================================================================<br>  以下为基于ip5 宽度320做的适配，标准html{font-size:10px},即1rem = 10px<br>  =================================================================</em>/<br>  @mixin queryWidth($min, $max) {<br>    @if $min == -1 {<br>      @media screen and (max-width: $max+px) {<br>        html {<br>          font-size: ( ($max+1) / 320 ) <em> 10px;<br>        }<br>      }<br>    } @else if $max == -1 {<br>      @media screen and (min-width: $min+px) {<br>        html {<br>          font-size: ( $min / 320 ) </em> 10px;<br>        }<br>      }</p>
+<p>/<em>================================================================<br>  以下为基于ip5 宽度320做的适配，标准html{font-size:10px},即1rem = 10px<br>  =================================================================</em>/<br>  @mixin queryWidth($min, $max) {<br>    @if \$min == -1 {<br>      @media screen and (max-width: \$max+px) {<br>        html {<br>          font-size: ( ($max+1) / 320 ) <em> 10px;<br>        }<br>      }<br>    } @else if \$max == -1 {<br>      @media screen and (min-width: \$min+px) {<br>        html {<br>          font-size: ( $min / 320 ) </em> 10px;<br>        }<br>      }</p>
 </blockquote>
 <a id="more"></a>
 <pre><code>} @else {
@@ -271,8 +271,6 @@
 <hr>
 <h5><br>作者：McChen<br><br>如果能给您带去些许帮助，鄙人不甚欢心。如有错误，恳请交流指出，谢谢！<br><br>转载请注明出处：<a href="http://mcchen.club/" target="_blank" rel="external">http://mcchen.club/</a><br></h5>
 
-<hr>
-
       
     </div>
     
@@ -283,7 +281,7 @@
   
   
     <a href="/2016/05/11/2、利用electron快速打包一个桌面应用/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">桌面应用开发笔记</div>
+      <div class="article-nav-title">桌面应用开发笔记(二)</div>
       <strong class="article-nav-caption">></strong>
     </a>
   

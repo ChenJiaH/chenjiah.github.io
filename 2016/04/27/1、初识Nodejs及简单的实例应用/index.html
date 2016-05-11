@@ -25,7 +25,7 @@ Node.js最重要特性
 Node.js最重要特性
 
 通过单线程实现异步处理环境">
-<meta property="og:updated_time" content="2016-05-11T11:28:26.689Z">
+<meta property="og:updated_time" content="2016-05-11T12:10:33.745Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node.js学习笔记（一）">
 <meta name="twitter:description" content="Node.js应用场景
@@ -483,15 +483,13 @@ Node.js最重要特性
 </tbody>
 </table>
 <hr>
-<h3>举个栗子</h3><br>&gt; 先在node项目中建立一个demo.js，代码如下：<br><br>    var http = require(‘http’);<br>        http.createServer(function (req, res) {<br>        res.writeHead(200, {‘Content-Type’: ‘text/html’});<br>        res.write(‘<head><meta charset="utf-8"></head>‘);<br>        res.end(“<div style="font-size: 50px;">I’m McChen</div>“);<br>    }).listen(1337, ‘127.0.0.1’);<br>    console.log(‘Server running at <a href="http://127.0.0.1:1337/" target="_blank" rel="external">http://127.0.0.1:1337/</a>‘);<br><br>&gt; 再在命令行中执行node demo.js<br><br>    node .\demo.js<br>     //Tips: 命令行中将显示 Server running at <a href="http://127.0.0.1:1337/" target="_blank" rel="external">http://127.0.0.1:1337/</a><br><br><br>&gt; 在任意浏览器打开 <a href="http://127.0.0.1:1337/" target="_blank" rel="external">http://127.0.0.1:1337/</a> ，将发现页面中会显示 “I’m McChen”<br><br>———–<br><br><h3>结语</h3>
+<h3>举个栗子</h3><br>&gt; 先在node项目中建立一个demo.js，代码如下：<br><br>    var http = require(‘http’);<br>        http.createServer(function (req, res) {<br>        res.writeHead(200, {‘Content-Type’: ‘text/html’});<br>        res.write(‘<head><meta charset="utf-8"></head>‘);<br>        res.end(“I’m McChen”);<br>    }).listen(1337, ‘127.0.0.1’);<br>    console.log(‘Server running at <a href="http://127.0.0.1:1337/" target="_blank" rel="external">http://127.0.0.1:1337/</a>‘);<br><br>&gt; 再在命令行中执行node demo.js<br><br>    node .\demo.js<br>     //Tips: 命令行中将显示 Server running at <a href="http://127.0.0.1:1337/" target="_blank" rel="external">http://127.0.0.1:1337/</a><br><br><br>&gt; 在任意浏览器打开 <a href="http://127.0.0.1:1337/" target="_blank" rel="external">http://127.0.0.1:1337/</a> ，将发现页面中会显示 “I’m McChen”<br><br>———–<br><br><h3>结语</h3>
 
 <blockquote>
 <p>本节主要介绍了Node.js的概况，以及一个简单的小栗子。（至于怎么安装Node，这个就不要问了吧-_-!）</p>
 </blockquote>
 <hr>
 <h5><br>作者：McChen<br><br>如果能给您带去些许帮助，鄙人不甚欢心。如有错误，恳请交流指出，谢谢！<br><br>转载请注明出处：<a href="http://mcchen.club/" target="_blank" rel="external">http://mcchen.club/</a><br></h5>
-
-<hr>
 
       
     </div>

@@ -235,7 +235,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>/<em>================================================================<br>  以下为基于ip5 宽度320做的适配，标准html{font-size:10px},即1rem = 10px<br>  =================================================================</em>/<br>  @mixin queryWidth($min, $max) {<br>    @if $min == -1 {<br>      @media screen and (max-width: $max+px) {<br>        html {<br>          font-size: ( ($max+1) / 320 ) <em> 10px;<br>        }<br>      }<br>    } @else if $max == -1 {<br>      @media screen and (min-width: $min+px) {<br>        html {<br>          font-size: ( $min / 320 ) </em> 10px;<br>        }<br>      }</p>
+<p>/<em>================================================================<br>  以下为基于ip5 宽度320做的适配，标准html{font-size:10px},即1rem = 10px<br>  =================================================================</em>/<br>  @mixin queryWidth($min, $max) {<br>    @if \$min == -1 {<br>      @media screen and (max-width: \$max+px) {<br>        html {<br>          font-size: ( ($max+1) / 320 ) <em> 10px;<br>        }<br>      }<br>    } @else if \$max == -1 {<br>      @media screen and (min-width: \$min+px) {<br>        html {<br>          font-size: ( $min / 320 ) </em> 10px;<br>        }<br>      }</p>
 </blockquote>
       
     </div>
@@ -291,7 +291,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/11/2、利用electron快速打包一个桌面应用/">桌面应用开发笔记</a>
+      <a class="article-title" href="/2016/05/11/2、利用electron快速打包一个桌面应用/">桌面应用开发笔记(二)</a>
     </h1>
   
 
@@ -366,7 +366,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/11/1、electron安装/">桌面应用开发笔记</a>
+      <a class="article-title" href="/2016/05/11/1、electron安装/">桌面应用开发笔记(一)</a>
     </h1>
   
 
