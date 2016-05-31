@@ -130,7 +130,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/art-template/" style="font-size: 16.67px;">art-template</a> <a href="/tags/atom-shell/" style="font-size: 13.33px;">atom-shell</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/electron/" style="font-size: 13.33px;">electron</a> <a href="/tags/express/" style="font-size: 16.67px;">express</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/mixin/" style="font-size: 10px;">mixin</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a>
+						<a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/art-template/" style="font-size: 16.67px;">art-template</a> <a href="/tags/atom-shell/" style="font-size: 13.33px;">atom-shell</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/electron/" style="font-size: 13.33px;">electron</a> <a href="/tags/express/" style="font-size: 16.67px;">express</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/javscript/" style="font-size: 10px;">javscript</a> <a href="/tags/mixin/" style="font-size: 10px;">mixin</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/模块化，加载/" style="font-size: 10px;">模块化，加载</a>
 					</div>
 				</section>
 				
@@ -207,6 +207,83 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-现代模块加载机制解析" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/31/现代模块加载机制解析/" class="article-date">
+  	<time datetime="2016-05-31T07:54:57.000Z" itemprop="datePublished">2016-05-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/31/现代模块加载机制解析/">现代模块加载机制解析</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>============================</p>
+<p>#####随着近几年模块化被越来越多的前端人士所念叨，我也义无反顾的涌入了这股大潮，本文将浅析个人的模块加载理解。</p>
+<p>============================</p>
+<p>本文不对具体的库进行分析，只从宏观上介绍一些核心的概念。</p>
+<pre><code>var McChenModules = (function Manager() {
+    var modules = {};
+
+    function define(name, deps, impl) {
+        for (var i = 0; i &lt; deps.length; i++) {
+            deps[i] = modules[deps[i]];
+        }
+        modules[name] = impl.apply(impl, deps);
+    }
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javscript/">javscript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模块化，加载/">模块化，加载</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/javascript/">javascript</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/05/31/现代模块加载机制解析/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-分享一个移动端rem布局的适配mixin" class="article article-type-post" itemscope itemprop="blogPost">
   
