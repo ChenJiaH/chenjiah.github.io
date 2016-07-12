@@ -236,38 +236,12 @@
       
         <h4>由于Nodejs的API只提供创建一级目录，所以如果需要创建多级目录的话，那需要一级一级去创建，为了代码的渐变，采用递归的写法。</h4>
 
-<p>下面附上代码：</p>
-<pre><code>var fs = require(&apos;fs&apos;);
-var path = require(&apos;path&apos;);
-
-var mkdirs = {
-    // 异步创建，无法保证先后执行回调的顺序
-    async: function (dirname, callback) {
-        fs.exists(dirname, function (exists){
-            if(exists){
-                callback();
-            }else{
-                mkdirs.async(path.dirname(dirname), function (){
-                    fs.mkdir(dirname, callback);
-                });
-            }
-        });
-    },
-    // 同步创建，可保证顺序
-    sync: function (dirname) {
-        if(fs.existsSync(dirname)){
-            return true;
-        }else{
-            if(mkdirs.sync(path.dirname(dirname))){
-                fs.mkdirSync(dirname);
-                return true;
-            }
-        }
-    }
-};
-
-module.exports = mkdirs;
-</code></pre>
+<ul>
+<li><p>同步优点：<br>  保证执行的先后顺序，如果有后续的操作的话建议采用，博主的需求是把指定文件夹列表中图片抓取过来后按同样的层级创建文件夹，并保存对应文件夹下图片进去。如果采用异步的方式的话，文件夹创建跟图片不对应。</p>
+</li>
+<li><p>异步优点：<br>  不会阻塞后续代码的运行，但是不能保证顺序，一定程度上节省了时间。</p>
+</li>
+</ul>
       
     </div>
     
@@ -284,6 +258,10 @@ module.exports = mkdirs;
 	</div>
 
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/12/Nodejs创建多级目录/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
