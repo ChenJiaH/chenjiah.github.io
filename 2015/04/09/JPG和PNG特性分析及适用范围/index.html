@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>JPG和PNG特性分析及适用范围 | McChen - 博客</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="Css,Image," />
+  
+
+  <meta name="description" content="JPG和PNG特性分析及适用范围">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JPG和PNG特性分析及适用范围">
+<meta property="og:url" content="http://mcchen.club/2015/04/09/JPG和PNG特性分析及适用范围/index.html">
+<meta property="og:site_name" content="McChen - 博客">
+<meta property="og:description" content="JPG和PNG特性分析及适用范围">
+<meta property="og:updated_time" content="2016-12-20T10:34:56.778Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JPG和PNG特性分析及适用范围">
+<meta name="twitter:description" content="JPG和PNG特性分析及适用范围">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=d671a41f" rel="stylesheet">
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?2b0aba80cce5bf5627dd15f538ec6fc6";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#背景"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特性分析"><span class="toc-text">特性分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JPG的特性"><span class="toc-text">JPG的特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PNG的特性"><span class="toc-text">PNG的特性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#各自适用情况总结"><span class="toc-text">各自适用情况总结</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-JPG和PNG特性分析及适用范围" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">JPG和PNG特性分析及适用范围</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2015.04.09</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>McChen</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/Image/">Image</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://mcchen.club//2015/04/09/JPG和PNG特性分析及适用范围/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>由于做移动端开发，必须要考虑到图片尺寸问题，所以就JPG和PNG做简单的分析。</p>
+<h2 id="特性分析"><a href="#特性分析" class="headerlink" title="特性分析"></a>特性分析</h2><h3 id="JPG的特性"><a href="#JPG的特性" class="headerlink" title="JPG的特性"></a>JPG的特性</h3><p>有损压缩</p>
+<ul>
+<li><p>支持摄影图像或写实图像的高级压缩，并且可利用压缩比例控制图像文件大小</p>
+</li>
+<li><p>有损压缩会使图像数据质量下降，并且在编辑和重新保存JPG格式图像时，这种下降损失会累积</p>
+</li>
+<li><p>JPG不适用于所含颜色很少、具有大块颜色相近的区域或亮度差异十分明显的较简单的图片</p>
+</li>
+</ul>
+<blockquote>
+<p>童鞋可以自行调整jpg质量或者采用工具压缩jpg进行对比，体积减小明显</p>
+</blockquote>
+<h3 id="PNG的特性"><a href="#PNG的特性" class="headerlink" title="PNG的特性"></a>PNG的特性</h3><p>无损压缩</p>
+<ul>
+<li><p>能在保证最不失真的情况下尽可能压缩图像文件的大小</p>
+</li>
+<li><p>PNG用来存储灰度图像时，灰度图像的深度可多到16位，存储彩色图像时，彩色图像的深度可多到48位，并且还可存储多到16位的α通道数据</p>
+</li>
+<li><p>对于需要高保真的较复杂的图像，PNG虽然能无损压缩，但图片文件较大，不适合应用在Web页面上</p>
+</li>
+</ul>
+<blockquote>
+<p>PNG8最多只能索引256种颜色，所以对于颜色较多的图像不能真实还原；PNG24则可以保存1600多万种颜色，基本能够真实还原我们人类肉眼所可以分别的所有颜色；PNG格式最多可以保存48位颜色通道。</p>
+</blockquote>
+<h2 id="各自适用情况总结"><a href="#各自适用情况总结" class="headerlink" title="各自适用情况总结"></a>各自适用情况总结</h2><p>在存储图像时采用JPG还是PNG主要依据图像上的色彩层次和颜色数量进行选择。</p>
+<ul>
+<li><p>一般层次丰富颜色较多的图像采用JPG存储，而颜色简单对比强烈的则需要采用PNG。但也会有一些特殊情况，例如有些图像尽管色彩层次丰富，但由于图片尺寸较小，上面包含的颜色数量有限时，也可以尝试用PNG进行存储。</p>
+</li>
+<li><p>有些矢量工具绘制的图像由于采用较多的滤镜特效也会形成丰富的色彩层次，这个时候就需要采用JPG进行存储了</p>
+</li>
+<li><p>用于页面结构的基本视觉元素，如容器的背景、按钮、导航的背景等应该尽量用PNG格式进行存储，这样才能更好的保证设计品质</p>
+</li>
+<li><p>一些内容元素，如广告Banner、商品图片等对质量要求不是特别苛刻的，则可以用JPG去进行存储从而降低文件大小</p>
+</li>
+</ul>
+<hr>
+<p>如果能给您带去些许帮助，鄙人不甚欢心。如有错误，恳请交流指出，谢谢！<br>转载请注明出处：<a href="http://mcchen.club/">http://mcchen.club/</a></p>
+<hr>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持McChen</div>
+        <ul class="theme.donation.items.length">
+        
+          <li class="item">
+            <img src="/images/qr-wechat.png" alt="">
+          </li>
+        
+          <li class="item">
+            <img src="/images/qr-alipay.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'mcchen';
+    
+    var disqus_url = 'http://mcchen.club/2015/04/09/JPG和PNG特性分析及适用范围/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//mcchen.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

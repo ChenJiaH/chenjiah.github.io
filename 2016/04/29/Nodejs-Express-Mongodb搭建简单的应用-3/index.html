@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>Nodejs+Express+Mongodb搭建简单的应用(3) | McChen - 博客</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="Nodejs,Express,Javascript," />
+  
+
+  <meta name="description" content="Nodejs+Express+Mongodb搭建简单的应用(3)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nodejs+Express+Mongodb搭建简单的应用(3)">
+<meta property="og:url" content="http://mcchen.club/2016/04/29/Nodejs-Express-Mongodb搭建简单的应用-3/index.html">
+<meta property="og:site_name" content="McChen - 博客">
+<meta property="og:description" content="Nodejs+Express+Mongodb搭建简单的应用(3)">
+<meta property="og:image" content="http://mcchen.club/images/2016-03-30_204400.png">
+<meta property="og:image" content="http://mcchen.club/images/2016-03-30_204549.png">
+<meta property="og:image" content="http://mcchen.club/images/2016-03-30_210056.png">
+<meta property="og:updated_time" content="2016-12-20T08:34:26.107Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Nodejs+Express+Mongodb搭建简单的应用(3)">
+<meta name="twitter:description" content="Nodejs+Express+Mongodb搭建简单的应用(3)">
+<meta name="twitter:image" content="http://mcchen.club/images/2016-03-30_204400.png">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=d671a41f" rel="stylesheet">
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?2b0aba80cce5bf5627dd15f538ec6fc6";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#最终效果"><span class="toc-text">最终效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目文件结构"><span class="toc-text">项目文件结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#步骤"><span class="toc-text">步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#首先新建一个login-jade文件，代码如下（注意缩进，间隔为2字间距，md不缩进-）"><span class="toc-text">首先新建一个login.jade文件，代码如下（注意缩进，间隔为2字间距，md不缩进-_-!）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编写对应scss和js并引入"><span class="toc-text">编写对应scss和js并引入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#根据上一篇文章，开两个cmd，一个mongod-–dbpath-D-database，另外一个mongo。"><span class="toc-text">根据上一篇文章，开两个cmd，一个mongod –dbpath D:\database，另外一个mongo。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#交互部分"><span class="toc-text">交互部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#因为express4-X以上已经把session模块分离出来了，所以必须要多引入依赖模块express-session"><span class="toc-text">因为express4.X以上已经把session模块分离出来了，所以必须要多引入依赖模块express-session</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结束"><span class="toc-text">结束</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-Nodejs-Express-Mongodb搭建简单的应用-3" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">Nodejs+Express+Mongodb搭建简单的应用(3)</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2016.04.29</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>McChen</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/Nodejs/">Nodejs</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://mcchen.club//2016/04/29/Nodejs-Express-Mongodb搭建简单的应用-3/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h2 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h2><p><img src="/images/2016-03-30_204400.png" alt="Alt text"></p>
+<h2 id="项目文件结构"><a href="#项目文件结构" class="headerlink" title="项目文件结构"></a>项目文件结构</h2><p>先把文件结构贴出来利于后续流程说明</p>
+<p><img src="/images/2016-03-30_204549.png" alt="Alt text"></p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="首先新建一个login-jade文件，代码如下（注意缩进，间隔为2字间距，md不缩进-）"><a href="#首先新建一个login-jade文件，代码如下（注意缩进，间隔为2字间距，md不缩进-）" class="headerlink" title="首先新建一个login.jade文件，代码如下（注意缩进，间隔为2字间距，md不缩进-_-!）"></a>首先新建一个login.jade文件，代码如下（注意缩进，间隔为2字间距，md不缩进-_-!）</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">extends layout</div><div class="line">block link</div><div class="line">    link(rel='stylesheet', href='/stylesheets/1.0.0/login.css')</div><div class="line">block content</div><div class="line">    canvas#jm-funnyBackground</div><div class="line">    div.loginBox.abs-mt</div><div class="line">        div.title</div><div class="line">           h3</div><div class="line">        div.u-name</div><div class="line">            h4 用户名：</div><div class="line">            input.username#Name(tabindex='1', placeholder='请输入用户名',name='Name', type='text')</div><div class="line">        div.u-pwd</div><div class="line">            h4 密码：</div><div class="line">            input.password#Password(tabindex='2', placeholder='请输入密码',name='Password', type='password')</div><div class="line">            a.logon#Logon(href='javascript:;') 登录</div><div class="line">block script</div><div class="line">    script(src='/javascripts/modules/funnyBackground/funnyBackground.js')</div><div class="line">    script(src='/javascripts/modules/login/login.js')</div></pre></td></tr></table></figure>
+<blockquote>
+<p> extend是jade模板的一大特色，继承，另外一大特色是mixin，以后再叙(实际项目我已经更换为artTemplate了)。</p>
+</blockquote>
+<h3 id="编写对应scss和js并引入"><a href="#编写对应scss和js并引入" class="headerlink" title="编写对应scss和js并引入"></a>编写对应scss和js并引入</h3><h3 id="根据上一篇文章，开两个cmd，一个mongod-–dbpath-D-database，另外一个mongo。"><a href="#根据上一篇文章，开两个cmd，一个mongod-–dbpath-D-database，另外一个mongo。" class="headerlink" title="根据上一篇文章，开两个cmd，一个mongod –dbpath D:\database，另外一个mongo。"></a>根据上一篇文章，开两个cmd，一个mongod –dbpath D:\database，另外一个mongo。</h3><ul>
+<li><p>use database，建立database数据库</p>
+</li>
+<li><p>接下来为数据库里添加用户表，存放登录用户名和密码，db.usercollection.insert({“username”:”admin”, “password”:”123456”})</p>
+</li>
+<li><p>这时候可以通过mongoVUE或者cmd find 可以看到在database这数据库中已经增加了一张usercollection的表，里面有三个字段，_id，username, password，如下图：</p>
+</li>
+</ul>
+<p><img src="/images/2016-03-30_210056.png" alt="Alt text"></p>
+<h3 id="交互部分"><a href="#交互部分" class="headerlink" title="交互部分"></a>交互部分</h3><p>login.js 截取部分交互代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">self.getAjaxData(<span class="string">"/login"</span>,&#123;<span class="attr">username</span>: username,<span class="attr">password</span>:password&#125;,<span class="string">"post"</span>,<span class="string">"json"</span>,self.loginCallback)  <span class="comment">// 发ajax请求到localhost:3000/login</span></div><div class="line">   loginCallback: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;  <span class="comment">// ajax成功回调</span></div><div class="line">       <span class="keyword">if</span>(data.code == <span class="number">200</span>)&#123;</div><div class="line">           <span class="built_in">window</span>.location = <span class="string">'/index'</span>;</div><div class="line">       &#125; <span class="keyword">else</span> <span class="keyword">if</span>(data.code == <span class="number">201</span>) &#123;</div><div class="line">           alert(<span class="string">"您输入的用户名或密码不正确"</span>);</div><div class="line">       &#125;</div><div class="line">   &#125;,</div><div class="line">   <span class="attr">getAjaxData</span>: <span class="function"><span class="keyword">function</span> (<span class="params">url, data, type, dataType, callback, failFn</span>) </span>&#123;</div><div class="line">       $.ajax(&#123;</div><div class="line">           <span class="attr">url</span>: url,</div><div class="line">           <span class="attr">data</span>: data,</div><div class="line">           <span class="attr">type</span>: type,</div><div class="line">           <span class="attr">dataType</span>: dataType,</div><div class="line">           <span class="attr">success</span>: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">               callback &amp;&amp; callback(data);</div><div class="line">           &#125;,</div><div class="line">           <span class="attr">error</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">               failFn &amp;&amp; failFn();</div><div class="line">           &#125;</div><div class="line">       &#125;);</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>首先通过ajax给localhost:3000/login发出请求</p>
+</li>
+<li><p>然后在node中处理请求，req.body.*就是ajax传入的data</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">router.post(<span class="string">'/login'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">    <span class="comment">// 请求带过来的data在req.body里</span></div><div class="line">    <span class="keyword">var</span> username = req.body.username;</div><div class="line">    <span class="keyword">var</span> password = req.body.password;</div><div class="line">    <span class="keyword">var</span> collection = db.get(<span class="string">'usercollection'</span>); <span class="comment">//获得数据库中的集合(类似关系数据库中的表)</span></div><div class="line">    collection.find(&#123;<span class="string">"username"</span>: username, <span class="string">"password"</span>: password&#125;, &#123;&#125;, <span class="function"><span class="keyword">function</span> (<span class="params">e, docs</span>) </span>&#123; <span class="comment">//取得所有的集合数据, 渲染到页面上,关键字是data，第一个&#123;&#125;表示where，第二个&#123;&#125;表示显示隐藏，第三个为回调函数</span></div><div class="line">        <span class="keyword">if</span> (docs != <span class="string">""</span>) &#123;</div><div class="line">            req.session.username = docs[<span class="number">0</span>].username;</div><div class="line">            req.session.password = docs[<span class="number">0</span>].password;</div><div class="line">            res.send(&#123;<span class="string">"code"</span>: <span class="number">200</span>&#125;);    <span class="comment">// 200 表示登录成功</span></div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            res.send(&#123;<span class="string">"code"</span>: <span class="number">201</span>&#125;);    <span class="comment">// 201 表示登录失败</span></div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ul>
+<li><p>node通过res.send给ajax返回了一个json，里面只有一个状态参数code</p>
+</li>
+<li><p>login.js去判断，如果登录成功，则进行页面跳转，window.location = “/index”</p>
+</li>
+<li><p>node拦截localhost:3000/index，并进行数据渲染，这里利用了session进行参数存储，判断登录状态亦可使用</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*GET index page */</span></div><div class="line">router.get(<span class="string">'/index'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> docs = res.session;</div><div class="line">    res.render(<span class="string">'index'</span>, &#123;</div><div class="line">        <span class="string">"data"</span>: docs</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="因为express4-X以上已经把session模块分离出来了，所以必须要多引入依赖模块express-session"><a href="#因为express4-X以上已经把session模块分离出来了，所以必须要多引入依赖模块express-session" class="headerlink" title="因为express4.X以上已经把session模块分离出来了，所以必须要多引入依赖模块express-session"></a>因为express4.X以上已经把session模块分离出来了，所以必须要多引入依赖模块express-session</h3><ul>
+<li>在app.js中增加</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> session = <span class="built_in">require</span>(<span class="string">'express-session'</span>);</div><div class="line">app.use(session(&#123;</div><div class="line">    <span class="attr">secret</span>: <span class="string">"McChen"</span>,  <span class="comment">// 必填参数，可随意取名</span></div><div class="line">    name: <span class="string">"loginMes"</span>, <span class="comment">// 存入cookies的参数名</span></div><div class="line">    cookie: &#123;<span class="attr">maxAge</span>: <span class="number">60000</span> * <span class="number">60</span> * <span class="number">24</span> * <span class="number">15</span>&#125;,  <span class="comment">// cookie的生命周期</span></div><div class="line">    resave: <span class="literal">false</span>,  <span class="comment">// 必须，否则session会报错</span></div><div class="line">    saveUninitialized: <span class="literal">true</span>  必须，否则session会报错</div><div class="line">&#125;));</div></pre></td></tr></table></figure>
+<ul>
+<li>之后便可以愉快的利用res.session进行存储了</li>
+</ul>
+<h2 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h2><p>至此，一个与数据库交互的登录页面已经基本完成</p>
+<hr>
+<p>如果能给您带去些许帮助，鄙人不甚欢心。如有错误，恳请交流指出，谢谢！<br>转载请注明出处：<a href="http://mcchen.club/">http://mcchen.club/</a></p>
+<hr>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持McChen</div>
+        <ul class="theme.donation.items.length">
+        
+          <li class="item">
+            <img src="/images/qr-wechat.png" alt="">
+          </li>
+        
+          <li class="item">
+            <img src="/images/qr-alipay.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'mcchen';
+    
+    var disqus_url = 'http://mcchen.club/2016/04/29/Nodejs-Express-Mongodb搭建简单的应用-3/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//mcchen.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

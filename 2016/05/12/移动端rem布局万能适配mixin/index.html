@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>移动端rem布局万能适配mixin | McChen - 博客</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="Css,Rem," />
+  
+
+  <meta name="description" content="移动端rem布局万能适配mixin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端rem布局万能适配mixin">
+<meta property="og:url" content="http://mcchen.club/2016/05/12/移动端rem布局万能适配mixin/index.html">
+<meta property="og:site_name" content="McChen - 博客">
+<meta property="og:description" content="移动端rem布局万能适配mixin">
+<meta property="og:updated_time" content="2016-12-20T09:09:34.944Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动端rem布局万能适配mixin">
+<meta name="twitter:description" content="移动端rem布局万能适配mixin">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=d671a41f" rel="stylesheet">
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?2b0aba80cce5bf5627dd15f538ec6fc6";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基于640宽的设计稿"><span class="toc-text">基于640宽的设计稿</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基于750宽的设计稿"><span class="toc-text">基于750宽的设计稿</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-移动端rem布局万能适配mixin" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">移动端rem布局万能适配mixin</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2016.05.12</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>McChen</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/Css/">Css</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://mcchen.club//2016/05/12/移动端rem布局万能适配mixin/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h2 id="基于640宽的设计稿"><a href="#基于640宽的设计稿" class="headerlink" title="基于640宽的设计稿"></a>基于640宽的设计稿</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">/================================================================</div><div class="line">以下为基于ip5 宽度320做的适配，标准html&#123;font-size:10px&#125;,即1rem = 10px</div><div class="line">=================================================================/</div><div class="line">@mixin queryWidth($min, $max) &#123;</div><div class="line">    @if $min == -1 &#123;</div><div class="line">      @media screen and (max-width: $max+px) &#123;</div><div class="line">        html &#123;</div><div class="line">          font-size: ( ($max+1) / 320 ) * 10px;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125; @else if $max == -1 &#123;</div><div class="line">      @media screen and (min-width: \$min+px) &#123;</div><div class="line">        html &#123;</div><div class="line">          font-size: ( $min / 320 ) * 10px;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125; @else &#123;</div><div class="line">      @media screen and (min-width: $min+px) and (max-width: $max+px) &#123;</div><div class="line">        html &#123;</div><div class="line">          font-size: ( $min / 320 ) * 10px;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">@media only screen and (orientation: landscape) &#123;</div><div class="line">  html &#123;</div><div class="line">    font-size: 10px;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">@include queryWidth(-1, 319); // for iphone 4</div><div class="line">@include queryWidth(320, 359); // for iphone 5</div><div class="line">@include queryWidth(360, 374);</div><div class="line">@include queryWidth(375, 383); // for iphone 6</div><div class="line">@include queryWidth(384, 399);</div><div class="line">@include queryWidth(400, 413);</div><div class="line">@include queryWidth(414, -1); // for iphone 6 plus</div></pre></td></tr></table></figure>
+<h2 id="基于750宽的设计稿"><a href="#基于750宽的设计稿" class="headerlink" title="基于750宽的设计稿"></a>基于750宽的设计稿</h2><ul>
+<li>只需将mixin中320改为375即可。若要100px=1rem，只需将mixin中10改成100即可。</li>
+</ul>
+<blockquote>
+<p>当然，这只能实现大部分常规机型的适配，有些特殊机型还是需要自己再加上对应的适配。接下来罗列一下我用到过的适配，希望得到各位帮助逐步完善。</p>
+</blockquote>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">media</span> screen and (min-width: 320px) &#123;&#125; <span class="comment">//for iphone 5</span></div><div class="line">@<span class="keyword">media</span> screen and (min-width: 375px) &#123;&#125; <span class="comment">//for iphone 6</span></div><div class="line">@<span class="keyword">media</span> screen and (min-width: 414px) &#123;&#125; <span class="comment">//for iphone 6 plus</span></div><div class="line">@<span class="keyword">media</span> screen and (min-aspect-ratio: 69/<span class="number">100</span>) &#123;&#125; <span class="comment">//for huawei荣耀6</span></div><div class="line">@<span class="keyword">media</span> screen and (min-aspect-ratio: 7/<span class="number">10</span>) &#123;&#125; <span class="comment">//for mx3</span></div><div class="line">@<span class="keyword">media</span> screen and (max-height: 480px) &#123;&#125; <span class="comment">//for iphone 4</span></div><div class="line">@<span class="keyword">media</span> screen and (max-height: 420px) &#123;&#125; <span class="comment">//for iphone 4 微信</span></div><div class="line">@<span class="keyword">media</span> only screen and (orientation: landscape) &#123;&#125; <span class="comment">// for 横屏</span></div></pre></td></tr></table></figure>
+<hr>
+<p>如果能给您带去些许帮助，鄙人不甚欢心。如有错误，恳请交流指出，谢谢！<br>转载请注明出处：<a href="http://mcchen.club/">http://mcchen.club/</a></p>
+<hr>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持McChen</div>
+        <ul class="theme.donation.items.length">
+        
+          <li class="item">
+            <img src="/images/qr-wechat.png" alt="">
+          </li>
+        
+          <li class="item">
+            <img src="/images/qr-alipay.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'mcchen';
+    
+    var disqus_url = 'http://mcchen.club/2016/05/12/移动端rem布局万能适配mixin/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//mcchen.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
