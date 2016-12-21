@@ -1,0 +1,5 @@
+@import "../common/_css3lib",
+"../common/_variable";
+
+.jm-music { width: 40px; height: 40px; background: url(../img/jm-music-pause.png) no-repeat center center; background-size: contain; position: absolute; z-index: $z-index-music; }
+.jm-music-pause { background-image: url(../img/jm-music.png);}

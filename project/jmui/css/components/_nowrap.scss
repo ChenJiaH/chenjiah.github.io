@@ -1,0 +1,12 @@
+@charset "UTF-8";
+@import "../common/_css3lib",
+"../common/_variable";
+
+/* 文字截断 */
+
+.jm-nowrap { @include nowrap;}
+
+.jm-nowrap-flex { overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical;/*其内子元素的排列方式 vertical horizontal*/ -webkit-line-clamp:1;/* webkit私有设定行数 */ -webkit-box-flex: 1; /* 可伸缩元素 */height: inherit;}
+
+.jm-nowrap-multi { overflow: hidden; text-overflow:ellipsis; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: $nowrap-line;}
+

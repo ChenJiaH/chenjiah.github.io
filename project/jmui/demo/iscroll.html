@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-cn">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta http-equiv="pragma" content="no-cache">
+    <meta charset="utf-8">
+    <meta id="page_main" data-main="iscroll">
+    <title>jm Demo - iscroll</title>
+    <link rel="stylesheet" href="../css/1.0.0/jm.css"/>
+    <link rel="icon" href="../images/favicon.ico" mce_href="../images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<div id="wrapper">
+    <ul>
+        <li>..1111.</li>
+        <li>..222.</li>
+        <li>..333.</li>
+        <li>...444</li>
+        <li>...555</li>
+        <li>...666</li>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+        <li>.111..</li>
+        <li>..222.</li>
+        <li>..333.</li>
+        <li>444</li>
+        <li>..555.</li>
+        <li>..666.</li>
+    </ul>
+</div>
+
+<script src="http://static.360buyimg.com/finance/mobile/base/1.0.0/js/lib/??zepto-1.1.4.js,fastclick.js"></script>
+<script type="text/javascript" src="../js/lib/sea/sea.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
+<!--<script type="text/javascript">-->
+        <!--var myScroll = new IScroll("#wrapper",{-->
+<!--//  Understanding the core  核心属性-->
+            <!--useTransform: true,     // {boolean} 默认true,开启硬件加速-->
+            <!--useTransition: true,    // {boolean} 默认true,使用transition动画，false表示使用requestAnimationFrame 在旧设备上有较好表现-->
+            <!--HWCompositing: true,    // {boolean} 默认true,通过添加translateZ(0)来增加移动端的性能-->
+<!--//-->
+<!--//  Basic features  基本特征-->
+            <!--bounce: true,           // {boolean} 默认true,开启边界小幅反弹-->
+            <!--click: false,           // {boolean} 默认false,抑制浏览器的点击行为-->
+            <!--disableMouse: false,    // {boolean} 默认false,禁止鼠标事件-->
+            <!--disablePointer: false,  // {boolean} 默认false,禁止手指事件-->
+            <!--eventPassthrough: true, //  默认true,参数："horizontal"/true,保留原生垂直滚动，只添加水平滚动-->
+            <!--freeScroll: false,      // {boolean} 默认false,禁止自由滚动-->
+            <!--keyBindings: false,     // {boolean} 默认false，不激活键盘遥控-->
+            <!--invertWheelDirection: false,    // {boolean} 默认false,不开始反滚滚轮-->
+            <!--momentum: true,         // {boolean} 默认true,当快速笔触的时候打开动量动画-->
+            <!--mouseWheel: false,      // {boolean} 默认false,不监听滚轮事件-->
+            <!--preventDefault: true,   // {boolean} 默认true,禁止浏览器执行与事件关联的默认动作-->
+            <!--scrollbars: false,      // 默认false,不显示滚动条-->
+            <!--scrollX: false,         // {boolean} 默认关闭X方向滚动-->
+            <!--scrollY: true,          // {boolean} 默认开启Y方向滚动-->
+            <!--startX: 0,               // 默认0,即left-->
+            <!--startY: 0,               // 默认0,即top-->
+            <!--tap: false,             // {boolean} 默认false,不开启滚动区域tap事件-->
+<!--//-->
+<!--// Scrollbars  滚动条-->
+            <!--scrollbars: false,      // {boolean} 默认false,不出现滚动条-->
+            <!--fadeScrollbars: false,  // {boolean} 默认false,滚动条不渐隐-->
+            <!--interactiveScrollbars: false,   // {boolean} 默认false,滚动条不可拖拽-->
+            <!--resizeScrollbars: true, // {boolean} 默认true,根据窗口大小变化大小-->
+            <!--shrinkScrollbars: false,    // 默认false,参数："scale"/"clip"-->
+<!--//-->
+<!--//  Styling the scrollbar  滚动条样式-->
+            <!--scrollbars: "custom",   // 自定义滚动条样式-->
+<!--//-->
+<!--//  Indicators  指标-->
+            <!--indicators:{-->
+                <!--el:"[element|element selector]",     // 操作元素-->
+                <!--ignoreBoundaries: false,            // 默认false,无视容器带来的边界-->
+                <!--listenX: true,                      // 默认true,监听X-->
+                <!--listenY: true,                      // 默认true,监听Y-->
+                <!--speedRatioX: 0,                     // 默认0,X方向滚动速度-->
+                <!--speedRatioY: 0,                     // 默认0,Y方向滚动速度-->
+                <!--fade: false,                        // 默认false,不渐隐-->
+                <!--interactive: false,                 // 默认false,禁止拖拽交互-->
+                <!--resize: true,                       // 默认true,自适应滚动条大小-->
+                <!--shrink: false                       // 默认false,参数："scale"/"clip"-->
+            <!--},-->
+<!--//  Parallax scrolling  视差滚动-->
+<!--//    通过配置Indicators speedRatioX/Y-->
+<!--//-->
+<!--//  Snap  快照-->
+            <!--snap: true,     // 默认true,快照-->
+<!--//-->
+<!--//  Zoom  缩放  需要iscroll-zoom.js-->
+            <!--zoom: false,    // 默认false,禁止缩放-->
+            <!--zoomMax: 4,     // 最大缩放倍数-->
+            <!--zoomMin: 1,     // 最小缩放倍数-->
+            <!--zoomStart: 1,   // 缩放起始大小-->
+            <!--wheelAction: undefined, // 滚轮行为-->
+<!--//-->
+<!--//  Advanced options  高级选项-->
+            <!--bindToWrapper: false,   // 绑定容器-->
+            <!--bounceEasing: "circular",   // 动画执行方式,参数："quadratic"/"circular"/"back"/"bounce"/"elastic"-->
+            <!--bounceTime: 600,            // 动画周期-->
+            <!--deceleration: 0.0006,       // 改变动画周期/速度-->
+            <!--mouseWheelSpeed: 20,        // 鼠标滚轮速度-->
+            <!--preventDefaultException: { tagName: /^(INPUT|TEXTAREA|BUTTON|SELECT)$/ },   // 禁止默认的行为-->
+            <!--resizePolling: 60,          // 轮询时间60毫秒-->
+<!--//-->
+<!--//  onScroll event  滚动中事件-->
+            <!--probeType: 3,   //  参数：1/2/3-->
+<!--//-->
+<!--//  Key bindings  键绑定-->
+            <!--keyBindings:{-->
+                <!--pageUp: 33,-->
+                <!--pageDown: 34,-->
+                <!--end: 35,-->
+                <!--home: 36,-->
+                <!--left: 37,-->
+                <!--up: 38,-->
+                <!--right: 39,-->
+                <!--down: 40-->
+            <!--}-->
+        <!--});-->
+<!--//-->
+<!--//  Scrolling programmatically  滚动编程-->
+        <!--myScroll.scrollTo(0, -100, 1000, IScroll.utils.ease.elastic);  //    可配置选项：quadratic circular back bounce elastic-->
+        <!--myScroll.scrollBy(0, -10);      // x, y, time, easing-->
+        <!--myScroll.goToPage(10, 0, 1000);     // x, y, time, easing-->
+<!--//-->
+<!--//  Mastering the refresh method  控制刷新模式-->
+        <!--myScroll.refresh();-->
+<!--//-->
+<!--//  Custom events  自定义事件-->
+        <!--myScroll.on('scrollEnd', doSomething);  // beforeScrollStart scrollCancel scrollCancel scroll scrollEnd flick zoomStart zoomEnd-->
+<!--//-->
+<!--//  Useful scroller info 有用的滚动信息-->
+        <!--myScroll.x;-->
+        <!--myScroll.y;-->
+        <!--myScroll.directionX;-->
+        <!--myScroll.directionY;-->
+        <!--myScroll.currentPage;-->
+<!--//-->
+<!--//  Destroy  销毁-->
+        <!--myScroll.destroy();-->
+        <!--myScroll = null;-->
+<!--</script>-->
+</body>
+</html>

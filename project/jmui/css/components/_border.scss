@@ -1,0 +1,36 @@
+@import "../common/_css3lib",
+"../common/_variable";
+
+/* 1px hack */
+
+.jm-border-t {
+  @include jm-border-t();
+}
+
+.jm-border-b {
+  @include jm-border-b();
+}
+
+.jm-border-tb {
+  @include jm-border-tb(1px,#e6e6e6);
+}
+
+.jm-border-l {
+  @include jm-border-l();
+}
+
+.jm-border-r {
+  @include jm-border-r();
+}
+
+.jm-border-lr {
+  @include jm-border-lr(1px,#e6e6e6);
+}
+
+.jm-border {
+  @include jm-border();
+}
+
+.jm-border-radius {
+  @include jm-border-radius;
+}

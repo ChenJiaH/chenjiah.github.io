@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JM</title>
+    <link rel="stylesheet" type="text/css" href="static/css/main.css">
+</head>
+<body>
+<div class="nav">
+    <div class="logo">
+        
+            JM
+        
+    </div>
+<ul><li><a href="index.html">modules</a></li><li><a href="index.html">css</a></li><li><a href="index.html">js</a></li></ul></div>
+
+
+<div class="warpper">
+
+    <div class="page-toc">
+        <ul><li><a href="#t0jm">jm</a><ul><li><a href="#t1jm">jm</a></li><li><a href="#t2jmForZepto">jmForZepto</a></li><li><a href="#t3addrPicker">addrPicker</a></li><li><a href="#t4base64">base64</a></li><li><a href="#t5checkbox">checkbox</a></li><li><a href="#t6countDown">countDown</a></li><li><a href="#t7Dialog">Dialog</a></li><li><a href="#t8dropElement">dropElement</a></li><li><a href="#t9FunnyBackground">FunnyBackground</a></li><li><a href="#t10iscroll">iscroll</a></li><li><a href="#t11Jigsaw">Jigsaw</a></li><li><a href="#t12md5">md5</a></li><li><a href="#t13Music">Music</a></li><li><a href="#t14preLoad">preLoad</a></li><li><a href="#t15PullToRefresh">PullToRefresh</a></li><li><a href="#t16qrcode">qrcode</a></li><li><a href="#t17share">share</a></li><li><a href="#t18analogKeyboard">analogKeyboard</a></li><li><a href="#t19numKeyboard">numKeyboard</a></li><li><a href="#t20PageSlider">PageSlider</a></li><li><a href="#t21SwipeSlide">SwipeSlide</a></li></ul></li></ul>
+    </div>
+    
+    <div class="content markdown-body">
+        <h2 id="t0jm">jm <a href="#t0jm"> # </a></h2>
+<p>CORE &amp; API</p>
+<hr>
+<h4 id="t1jm">jm <a href="#t1jm"> # </a></h4>
+<p>js&#x6A21;&#x5757;&#xFF0C;jm&#x57FA;&#x7840;&#x5DE5;&#x5177;&#x51FD;&#x6570;&#x96C6;&#x5408;</p>
+<blockquote>
+<p>&#x8BED;&#x6CD5;&#xFF1A;<code>jm.&#x65B9;&#x6CD5;&#x540D;</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;&#x540D;&#x79F0;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">vision</td>
+<td style="text-align:center">String</td>
+<td style="text-align:left">&#x7248;&#x672C;&#x53F7;</td>
+</tr>
+<tr>
+<td style="text-align:left">timestamp</td>
+<td style="text-align:center">Long</td>
+<td style="text-align:left">&#x65F6;&#x95F4;&#x6233;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x65B9;&#x6CD5;&#x540D;</th>
+<th style="text-align:left">&#x4F7F;&#x7528;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">lazyLoad</td>
+<td style="text-align:left">&#x56FE;&#x7247;&#x61D2;&#x52A0;&#x8F7D;&#xFF0C;&#x8FD4;&#x56DE;<code>Boolean</code>&#x3002;<code>true</code>&#x8868;&#x793A;&#x5168;&#x90E8;&#x52A0;&#x8F7D;&#x5B8C;&#x6210;,<code>false</code>&#x8868;&#x793A;&#x6CA1;&#x6709;&#x5168;&#x90E8;&#x52A0;&#x8F7D;&#x5B8C;&#x6210;<br>Demo&#x5B9E;&#x4F8B;&#xFF1A;<a href="http://jr.jd.com">&#x8BF7;&#x72E0;&#x72E0;&#x6233;&#x6211;</a></td>
+</tr>
+<tr>
+<td style="text-align:left">requestAnimationFrame</td>
+<td style="text-align:left">&#x5BF9;&#x4E8E;&#x73B0;&#x4EE3;&#x6D4F;&#x89C8;&#x5668;&#x4F7F;&#x7528;<code>requestAnimationFrame</code>&#x4EE3;&#x66FF;<code>setTimeOut</code><br>Demo&#x5B9E;&#x4F8B;&#xFF1A;<a href="http://jr.jd.com">&#x8BF7;&#x72E0;&#x72E0;&#x6233;&#x6211;</a></td>
+</tr>
+<tr>
+<td style="text-align:left">tween</td>
+<td style="text-align:left">&#x5C06;&#x7F13;&#x52A8;&#x66F2;&#x7EBF;&#x96C6;&#x5408;&#x6DFB;&#x52A0;&#x81F3;<code>Math.Tween</code>&#x7C7B;<br>Demo&#x5B9E;&#x4F8B;&#xFF1A;<a href="http://jr.jd.com">&#x8BF7;&#x72E0;&#x72E0;&#x6233;&#x6211;</a></td>
+</tr>
+<tr>
+<td style="text-align:left">pageLock</td>
+<td style="text-align:left">&#x9501;&#x5B9A;&#x9875;&#x9762;</td>
+</tr>
+<tr>
+<td style="text-align:left">pageUnlock</td>
+<td style="text-align:left">&#x89E3;&#x9501;&#x9875;&#x9762;</td>
+</tr>
+<tr>
+<td style="text-align:left">getUrlString</td>
+<td style="text-align:left">&#x83B7;&#x53D6;Url&#x53C2;&#x6570;&#x503C;<br>&#x8BED;&#x6CD5;&#xFF1A;<code>jm.getUrlString(name)</code><br>&#x53C2;&#x6570;&#x7C7B;&#x578B;&#xFF1A;<code>{String}</code></td>
+</tr>
+<tr>
+<td style="text-align:left">setCookie</td>
+<td style="text-align:left">&#x5C06;&#x503C;&#x5B58;&#x5165;cookie<br>&#x8BED;&#x6CD5;&#xFF1A;<code>jm.setCookie(c_name,value,expiredays)</code><br>&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;<code>&#x540D;&#x79F0;&#xFF0C;&#x952E;&#x503C;&#xFF0C;&#x5B58;&#x5728;&#x5468;&#x671F;&#xFF08;&#x53EF;&#x9009;&#xFF09;</code><br>&#x53C2;&#x6570;&#x7C7B;&#x578B;&#xFF1A;<code>{String}</code></td>
+</tr>
+<tr>
+<td style="text-align:left">getCookie</td>
+<td style="text-align:left">&#x4ECE;cookie&#x4E2D;&#x53D6;&#x503C;<br>&#x8BED;&#x6CD5;&#xFF1A;<code>jm.getCookie(c_name)</code><br>&#x53C2;&#x6570;&#x7C7B;&#x578B;&#xFF1A;<code>{String}</code></td>
+</tr>
+<tr>
+<td style="text-align:left">getBrowserInfo</td>
+<td style="text-align:left">&#x83B7;&#x53D6;&#x6D4F;&#x89C8;&#x5668;UA &#x5224;&#x65AD;&#x73AF;&#x5883;&#xFF0C;&#x8FD4;&#x56DE;<code>object&#xFF0C;{object}.in&#x73AF;&#x5883;={boolean}</code><br>&#x53C2;&#x6570;&#xFF1A;<code>inIos&#x3001;inWx&#x3001;inApp&#x3001;inJdApp&#x3001;inJrApp&#x3001;inWyApp</code></td>
+</tr>
+<tr>
+<td style="text-align:left">addJrBanner</td>
+<td style="text-align:left">&#x6DFB;&#x52A0;&#x91D1;&#x878D;Banner&#xFF0C;&#x53EF;&#x8FDB;&#x884C;&#x91D1;&#x878D;APP&#x4E0B;&#x8F7D;<br>&#x8BED;&#x6CD5;&#xFF1A;<code>jm.addJrBanner(imgSrc,id,saveDays)</code><br>&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;<code>bannerUrl&#xFF0C;&#x4E0B;&#x8F7D;id&#xFF08;&#x9ED8;&#x8BA4;70&#xFF09;&#xFF0C;&#x5B58;&#x5728;&#x5468;&#x671F;&#xFF08;&#x9ED8;&#x8BA4;1&#x5929;&#xFF09;</code><br>&#x53C2;&#x6570;&#x7C7B;&#x578B;&#xFF1A;<code>{String}&#x3001;{Int}&#x3001;{Int}</code></td>
+</tr>
+<tr>
+<td style="text-align:left">formatTime</td>
+<td style="text-align:left">&#x65F6;&#x95F4;&#x683C;&#x5F0F;&#x5316;<br>&#x8BED;&#x6CD5;&#xFF1A;<code>jm.formatTime(time,&apos;yyyy-MM-dd HH:mm:ss&apos;)</code><br>&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;<code>&#x65F6;&#x95F4;&#x6233;&#xFF0C;&#x8F93;&#x5165;&#x683C;&#x5F0F;</code><br>&#x53C2;&#x6570;&#x7C7B;&#x578B;&#xFF1A;<code>{Long}&#x3001;{String}</code><br>&#x6CE8;&#xFF1A;<code>yyyy</code>&#x8868;&#x793A;&#x5E74;&#xFF0C;<code>MM</code>&#x8868;&#x793A;&#x6708;&#xFF0C;<code>dd</code>&#x8868;&#x793A;&#x65E5;&#xFF0C;<code>HH</code>&#x8868;&#x793A;&#x5C0F;&#x65F6;&#xFF0C;<code>mm</code>&#x8868;&#x793A;&#x5206;&#xFF0C;<code>ss</code>&#x8868;&#x793A;&#x79D2;&#xFF08;&#x53C2;&#x6570;&#x540D;&#x4E0D;&#x5141;&#x8BB8;&#x66F4;&#x6539;&#xFF0C;&#x683C;&#x5F0F;&#x53EF;&#x81EA;&#x5B9A;&#x4E49;&#xFF09;</td>
+</tr>
+<tr>
+<td style="text-align:left">createDiv</td>
+<td style="text-align:left">&#x521B;&#x5EFA;DIV&#xFF0C;&#x8FD4;&#x56DE;<code>Object</code>&#x3002;<br>&#x8BED;&#x6CD5;&#xFF1A;<code>jm.createDiv(className,innerHTML)</code><br>&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;<code>&#x6807;&#x7B7E;class&#x540D;&#xFF0C;html&#x5185;&#x5BB9;</code><br>&#x53C2;&#x6570;&#x7C7B;&#x578B;&#xFF1A;<code>{String}</code></td>
+</tr>
+<tr>
+<td style="text-align:left">fixTips</td>
+<td style="text-align:left">&#x56FA;&#x5B9A;&#x63D0;&#x793A;&#xFF0C;&#x8FD4;&#x56DE;<code>Object</code>&#x3002;<br>&#x8BED;&#x6CD5;&#xFF1A;<code>jm.fixTips({text:&quot;&#x56FA;&#x5B9A;&#x63D0;&#x793A;&#x6846;&quot;,pos:&quot;top&quot;,autoClose:false})</code><br>&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;<code>html&#x5185;&#x5BB9;&#xFF0C;&#x4F4D;&#x7F6E;&#xFF0C;&#x81EA;&#x52A8;&#x9690;&#x85CF;</code><br>&#x53C2;&#x6570;&#x7C7B;&#x578B;&#xFF1A;<code>{String}&#x3001;{top/mid}&#x3001;{Boolean}</code></td>
+</tr>
+<tr>
+<td style="text-align:left">validate</td>
+<td style="text-align:left">&#x9A8C;&#x8BC1;&#x5668;&#x96C6;&#x5408;&#xFF0C;&#x8FD4;&#x56DE;<code>Boolean</code>&#x3002;<br>&#x8BED;&#x6CD5;&#xFF1A;<code>jm.validate.&#x65B9;&#x6CD5;&#x540D;&#xFF08;&#x503C;&#xFF09;</code><br>&#x65B9;&#x6CD5;&#xFF1A;<br><code>checkTel(value)</code> &#x9A8C;&#x8BC1;&#x624B;&#x673A;&#x53F7;<br><code>checkEmail(value)</code> &#x9A8C;&#x8BC1;&#x90AE;&#x7BB1;&#x5730;&#x5740;<br><code>checkPicture(value)</code> &#x9A8C;&#x8BC1;&#x56FE;&#x7247;&#x683C;&#x5F0F;<br><code>checkRar(value)</code> &#x9A8C;&#x8BC1;&#x538B;&#x7F29;&#x683C;&#x5F0F;<br><code>checkIDCard(value)</code> &#x9A8C;&#x8BC1;&#x8EAB;&#x4EFD;&#x8BC1;<br><code>checkQQ(value)</code> &#x9A8C;&#x8BC1;QQ&#x53F7;<br><code>checkPassWord(value)</code> &#x9A8C;&#x8BC1;&#x5BC6;&#x7801; &#x5B57;&#x6BCD;&#x5F00;&#x5934;&#xFF0C;&#x957F;&#x5EA6;&#x5728;6~20&#x4E4B;&#x95F4;&#xFF0C;&#x53EA;&#x80FD;&#x5305;&#x542B;&#x5B57;&#x6BCD;&#x3001;&#x6570;&#x5B57;&#x548C;&#x4E0B;&#x5212;&#x7EBF;<br><code>checkCreditCard(value)</code> &#x9A8C;&#x8BC1;&#x4FE1;&#x7528;&#x5361;<br><code>checkBankCard(value)</code> &#x9A8C;&#x8BC1;&#x94F6;&#x8054;&#x5361;<br><code>checkVisaCard(value)</code> &#x9A8C;&#x8BC1;Visa&#x5361;<br><code>checkMasterCard(value)</code> &#x9A8C;&#x8BC1;&#x4E07;&#x4E8B;&#x8FBE;&#x5361;<br><code>checkLoginName(value)</code> &#x9A8C;&#x8BC1;&#x767B;&#x5F55;&#x540D;<br><code>checkTrueName(value)</code> &#x9A8C;&#x8BC1;&#x771F;&#x5B9E;&#x59D3;&#x540D; &#x8003;&#x8651;&#x5230;&#x5916;&#x56FD;&#x4EBA;&#x540D; xx&#xB7;XXX<br><code>checkChinese(value)</code> &#x9A8C;&#x8BC1;&#x4E2D;&#x6587;</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h4 id="t2jmForZepto">jmForZepto <a href="#t2jmForZepto"> # </a></h4>
+<p>jmForZepto&#x62D3;&#x5C55;zepto</p>
+<blockquote>
+<p>&#x8BED;&#x6CD5;&#xFF1A;<code>$(&quot;&#x9009;&#x62E9;&#x5668;&quot;).&#x65B9;&#x6CD5;&#x540D;</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x65B9;&#x6CD5;&#x540D;</th>
+<th style="text-align:left">&#x4F7F;&#x7528;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">createAppDownload</td>
+<td style="text-align:left">&#x5C06;&#x4E00;&#x4E2A;&#x6807;&#x7B7E;&#x6309;&#x94AE;&#x8F6C;&#x5316;&#x4E3A;&#x53EF;&#x68C0;&#x6D4B;&#x5B89;&#x88C5;&#x4E0E;&#x5426;&#x7684;&#x4E0B;&#x8F7D;&#x94FE;&#x63A5;<br>&#x8BED;&#x6CD5;&#xFF1A;<code>$(&quot;&#x9009;&#x62E9;&#x5668;&quot;).addJrBanner(id,appSrc)</code><br>&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;<code>&#x4E0B;&#x8F7D;id&#xFF08;&#x9ED8;&#x8BA4;70&#xFF09;&#xFF0C;app&#x94FE;&#x63A5;&#xFF08;&#x9ED8;&#x8BA4;&apos;jdmobild://&apos;&#xFF09;</code><br>&#x53C2;&#x6570;&#x7C7B;&#x578B;&#xFF1A;<code>{Int}&#x3001;{String}</code></td>
+</tr>
+<tr>
+<td style="text-align:left">createBackTop</td>
+<td style="text-align:left">&#x5C06;&#x5143;&#x7D20;&#x53D8;&#x4E3A;&#x56DE;&#x5230;&#x9876;&#x90E8;&#x6309;&#x94AE;<br>&#x8BED;&#x6CD5;&#xFF1A;<code>$(&quot;&#x9009;&#x62E9;&#x5668;&quot;).createBackTop(type)</code><br>&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;<code>scroll&#x5E73;&#x6ED1;&#x6EDA;&#x52A8;&#x3001;static&#x77AC;&#x95F4;&#x5236;&#x5B9A;</code><br>&#x53C2;&#x6570;&#x7C7B;&#x578B;&#xFF1A;<code>{String}</code></td>
+</tr>
+<tr>
+<td style="text-align:left">useNineKeyboard</td>
+<td style="text-align:left">input&#x8C03;&#x7528;&#x4E5D;&#x5BAB;&#x952E;&#x76D8; &#x517C;&#x5BB9;Android IOS<br>&#x8BED;&#x6CD5;&#xFF1A;<code>$(&quot;&#x9009;&#x62E9;&#x5668;&quot;).useNineKeyboard()</code></td>
+</tr>
+<tr>
+<td style="text-align:left">setOnlyRead</td>
+<td style="text-align:left">input&#x8BBE;&#x7F6E;&#x4E3A;&#x5DF2;&#x8BFB;<br>&#x8BED;&#x6CD5;&#xFF1A;<code>$(&quot;&#x9009;&#x62E9;&#x5668;&quot;).setOnlyRead()</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h4 id="t3addrPicker">addrPicker <a href="#t3addrPicker"> # </a></h4>
+<p>js&#x6A21;&#x5757;&#xFF0C;&#x5730;&#x5740;&#x9009;&#x62E9;&#x5668;</p>
+<blockquote>
+<p>&#x8BED;&#x6CD5;&#xFF1A;<code>new AddrPicker({config});</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;&#x540D;&#x79F0;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">selecteBtn</td>
+<td style="text-align:center">Object</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x89E6;&#x53D1;&#x9009;&#x62E9;&#x6309;&#x94AE;</td>
+</tr>
+<tr>
+<td style="text-align:left">addrPickerBox</td>
+<td style="text-align:center">Object</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x5730;&#x5740;&#x9009;&#x62E9;&#x7684;&#x5BB9;&#x5668;</td>
+</tr>
+<tr>
+<td style="text-align:left">moveBox</td>
+<td style="text-align:center">Object</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x53EF;&#x6ED1;&#x52A8;&#x533A;&#x57DF;&#x5BB9;&#x5668;</td>
+</tr>
+<tr>
+<td style="text-align:left">moveObj</td>
+<td style="text-align:center">Object</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x53EF;&#x6ED1;&#x52A8;&#x7684;&#x5BF9;&#x8C61;</td>
+</tr>
+<tr>
+<td style="text-align:left">addrInput</td>
+<td style="text-align:center">Object</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x8F93;&#x5165;&#x5185;&#x5BB9;&#x533A;&#x57DF;</td>
+</tr>
+<tr>
+<td style="text-align:left">lineHeight</td>
+<td style="text-align:center">Int</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x6BCF;&#x4E2A;&#x6EDA;&#x52A8;&#x9879;&#x9AD8;&#x5EA6;</td>
+</tr>
+<tr>
+<td style="text-align:left">btnSure</td>
+<td style="text-align:center">Object</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x786E;&#x5B9A;&#x6309;&#x94AE;</td>
+</tr>
+<tr>
+<td style="text-align:left">btnCancel</td>
+<td style="text-align:center">Object</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x53D6;&#x6D88;&#x6309;&#x94AE;</td>
+</tr>
+<tr>
+<td style="text-align:left">sureFn</td>
+<td style="text-align:center">Function</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x786E;&#x5B9A;&#x56DE;&#x8C03;&#x51FD;&#x6570;</td>
+</tr>
+<tr>
+<td style="text-align:left">cancelFn</td>
+<td style="text-align:center">Function</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x53D6;&#x6D88;&#x56DE;&#x8C03;&#x51FD;&#x6570;</td>
+</tr>
+<tr>
+<td style="text-align:left">ajaxUrl</td>
+<td style="text-align:center">String</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x6570;&#x636E;Url</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-javascript"><span class="hljs-keyword">new</span> addrPicker({
+    selecteBtn: $(<span class="hljs-string">&quot;#btnChooseAddr&quot;</span>),
+    addrPickerBox: $(<span class="hljs-string">&quot;#addrPicker&quot;</span>),
+    moveBox: $(<span class="hljs-string">&quot;.picker-item&quot;</span>),
+    moveObj: $(<span class="hljs-string">&quot;.picker-ul&quot;</span>),
+    btnSure: $(<span class="hljs-string">&quot;#pickerSure&quot;</span>),
+    btnCancel: $(<span class="hljs-string">&quot;#pickerCancel&quot;</span>),
+    addrInput: $(<span class="hljs-string">&quot;#addrInput&quot;</span>),
+    lineHeight: <span class="hljs-number">40</span>,
+    ajaxUrl: {<span class="hljs-string">&quot;province&quot;</span>: <span class="hljs-string">&quot;../data/provinces.json&quot;</span>, <span class="hljs-string">&quot;city&quot;</span>: <span class="hljs-string">&quot;../data/citys.json&quot;</span>, <span class="hljs-string">&quot;area&quot;</span>: <span class="hljs-string">&quot;../data/areas.json&quot;</span>},
+    sureFn: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">id,text</span>) </span>{
+        $(<span class="hljs-string">&quot;#addrProvince&quot;</span>).val(id[<span class="hljs-number">0</span>] + <span class="hljs-string">&quot;,&quot;</span> + text[<span class="hljs-number">0</span>])
+        $(<span class="hljs-string">&quot;#addrCity&quot;</span>).val(id[<span class="hljs-number">1</span>] + <span class="hljs-string">&quot;,&quot;</span> + text[<span class="hljs-number">1</span>])
+        $(<span class="hljs-string">&quot;#addrArea&quot;</span>).val(id[<span class="hljs-number">2</span>] + <span class="hljs-string">&quot;,&quot;</span> + text[<span class="hljs-number">2</span>])
+    }
+});
+</code></pre>
+<p>Demo&#x5B9E;&#x4F8B;&#xFF1A;<a href="http://jr.jd.com">&#x8BF7;&#x72E0;&#x72E0;&#x6233;&#x6211;</a></p>
+<hr>
+<h4 id="t4base64">base64 <a href="#t4base64"> # </a></h4>
+<p>&#x65B9;&#x6CD5;&#xFF0C;&#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x5316;&#x4E3A;base64&#x7F16;&#x7801;</p>
+<blockquote>
+<p>&#x8BED;&#x6CD5;&#xFF1A; <code>$.base64.encode(str)</code> || <code>$.base64.decode(str)</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x65B9;&#x6CD5;&#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x53C2;&#x6570;&#x540D;&#x79F0;</th>
+<th style="text-align:right">&#x53C2;&#x6570;&#x7C7B;&#x578B;</th>
+<th>&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">encode</td>
+<td style="text-align:left"><code>str</code></td>
+<td style="text-align:right">String</td>
+<td>&#x53EF;&#x9009;&#xFF0C;&#x5206;&#x4EAB;&#x6807;&#x9898;</td>
+</tr>
+<tr>
+<td style="text-align:left">decode</td>
+<td style="text-align:left"><code>str</code></td>
+<td style="text-align:right">String</td>
+<td>&#x53EF;&#x9009;&#xFF0C;&#x5206;&#x4EAB;&#x6807;&#x9898;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-javascript">  <span class="hljs-keyword">var</span> newStr = $.base64.decode(<span class="hljs-string">&quot;UDC&quot;</span>);
+  <span class="hljs-built_in">console</span>.log(newStr);
+  <span class="hljs-comment">//&#x8F93;&#x51FA;&quot;P0&quot;</span>
+  <span class="hljs-keyword">var</span> newStr = $.base64.encode(<span class="hljs-string">&quot;UDC&quot;</span>);
+  <span class="hljs-built_in">console</span>.log(newStr);
+  <span class="hljs-comment">//&#x8F93;&#x51FA;&quot;VURD&quot;</span>
+</code></pre>
+<hr>
+<h4 id="t5checkbox">checkbox <a href="#t5checkbox"> # </a></h4>
+<p>&#x5C06;&#x4EFB;&#x4E00;zepto&#x5143;&#x7D20;&#x53D8;&#x6210;checkbox</p>
+<blockquote>
+<p>&#x8BED;&#x6CD5;&#xFF1A;<code>new CheckBox({config})</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;&#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x53C2;&#x6570;&#x7C7B;&#x578B;</th>
+<th style="text-align:right">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>obj</code></td>
+<td style="text-align:left">$obj</td>
+<td style="text-align:right">&#x5FC5;&#x9009;&#xFF0C;checkbox&#x5BF9;&#x8C61;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>checkedclass</code></td>
+<td style="text-align:left">String</td>
+<td style="text-align:right">&#x5FC5;&#x9009;&#xFF0C;&#x9009;&#x4E2D;&#x7684;class</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>initChecked</code></td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:right">&#x53EF;&#x9009;&#xFF0C;&#x521D;&#x59CB;&#x662F;&#x5426;&#x9009;&#x4E2D;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>checkcb</code></td>
+<td style="text-align:left">function</td>
+<td style="text-align:right">&#x53EF;&#x9009;&#xFF0C;&#x9009;&#x4E2D;&#x56DE;&#x8C03;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>uncheckcb</code></td>
+<td style="text-align:left">function</td>
+<td style="text-align:right">&#x53EF;&#x9009;&#xFF0C;&#x53D6;&#x6D88;&#x9009;&#x4E2D;&#x56DE;&#x8C03;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-javascript"><span class="hljs-keyword">new</span> CheckBox({
+    obj:$(<span class="hljs-string">&quot;zepto&#x5BF9;&#x8C61;&quot;</span>),
+    checkedClass:<span class="hljs-string">&quot;&#x9009;&#x4E2D;&#x7684;&#x6837;&#x5F0F;class&quot;</span>,
+    initChecked:<span class="hljs-string">&quot;&#x521D;&#x59CB;&#x662F;&#x5426;&#x9009;&#x4E2D;&quot;</span>,
+    checkcb:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{&#x9009;&#x4E2D;&#x540E;&#x56DE;&#x8C03;},
+    uncheckcb:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{&#x53D6;&#x6D88;&#x9009;&#x4E2D;&#x540E;&#x56DE;&#x8C03;}
+})
+</code></pre>
+<p>Demo&#x5B9E;&#x4F8B;&#xFF1A;<a href="http://jr.jd.com">&#x8BF7;&#x72E0;&#x72E0;&#x6233;&#x6211;</a></p>
+<hr>
+<h4 id="t6countDown">countDown <a href="#t6countDown"> # </a></h4>
+<p>js&#x6A21;&#x5757;&#xFF0C;&#x5012;&#x8BA1;&#x65F6;&#x63D2;&#x4EF6;</p>
+<blockquote>
+<p>&#x8BED;&#x6CD5;&#xFF1A;<code>new CountDown({config});</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;&#x540D;&#x79F0;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$day</td>
+<td style="text-align:center">Object</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x663E;&#x793A;&#x5929;&#x7684;&#x5BF9;&#x8C61;</td>
+</tr>
+<tr>
+<td style="text-align:left">$hour</td>
+<td style="text-align:center">Object</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x663E;&#x793A;&#x5C0F;&#x65F6;&#x7684;&#x5BF9;&#x8C61;</td>
+</tr>
+<tr>
+<td style="text-align:left">$min</td>
+<td style="text-align:center">Object</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x663E;&#x793A;&#x5206;&#x7684;&#x5BF9;&#x8C61;</td>
+</tr>
+<tr>
+<td style="text-align:left">$second</td>
+<td style="text-align:center">Object</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x663E;&#x793A;&#x79D2;&#x7684;&#x5BF9;&#x8C61;</td>
+</tr>
+<tr>
+<td style="text-align:left">totalSecond</td>
+<td style="text-align:center">Int</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x5012;&#x8BA1;&#x65F6;&#x603B;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td style="text-align:left">timeCent</td>
+<td style="text-align:center">Int</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x5012;&#x8BA1;&#x65F6;&#x5355;&#x4F4D;</td>
+</tr>
+<tr>
+<td style="text-align:left">endFn</td>
+<td style="text-align:center">Function</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x7ED3;&#x675F;&#x56DE;&#x8C03;&#x51FD;&#x6570;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-javascript"><span class="hljs-keyword">new</span> CountDown({
+                $day: $(<span class="hljs-string">&quot;.day&quot;</span>),
+                $hour: $(<span class="hljs-string">&quot;.hour&quot;</span>),
+                $min: $(<span class="hljs-string">&quot;.min&quot;</span>),
+                $second: $(<span class="hljs-string">&quot;.second&quot;</span>),
+                totalSecond: <span class="hljs-number">10</span>,
+                endFn: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+                    alert(<span class="hljs-string">&quot;&#x7EC8;&#x4E8E;&#x7B49;&#x5230;&#x4F60;&#xFF0C;&#x8FD8;&#x597D;&#x6211;&#x6CA1;&#x653E;&#x5F03;---------&#x7136;&#x5E76;&#x5375;&quot;</span>);
+                }
+            });
+</code></pre>
+<p>Demo&#x5B9E;&#x4F8B;&#xFF1A;<a href="http://jr.jd.com">&#x8BF7;&#x72E0;&#x72E0;&#x6233;&#x6211;</a></p>
+<hr>
+<h4 id="t7Dialog">Dialog <a href="#t7Dialog"> # </a></h4>
+<p>js&#x5F39;&#x6846;&#x7EC4;&#x4EF6;</p>
+<blockquote>
+<p>&#x8BED;&#x6CD5;&#xFF1A;<code>new Dialog({config})</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;&#x540D;&#x79F0;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">title</td>
+<td style="text-align:center">String</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x5F39;&#x6846;&#x7684;&#x6807;&#x9898;&#x3002;&#x9ED8;&#x8BA4;&#x4E3A;&#x7A7A;&#xFF0C;&#x4E3A;&#x7A7A;&#x65F6;&#xFF0C;&#x5F39;&#x6846;&#x6CA1;&#x6709;&#x6807;&#x9898;</td>
+</tr>
+<tr>
+<td style="text-align:left">content</td>
+<td style="text-align:center">String</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x5F39;&#x6846;&#x7684;&#x5185;&#x5BB9;</td>
+</tr>
+<tr>
+<td style="text-align:left">sureUrl</td>
+<td style="text-align:center">String</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x70B9;&#x51FB;&#x786E;&#x5B9A;&#x4E4B;&#x540E;&#x7684;&#x8DF3;&#x8F6C;&#x94FE;&#x63A5;</td>
+</tr>
+<tr>
+<td style="text-align:left">sureFn</td>
+<td style="text-align:center">Function</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x70B9;&#x51FB;&#x786E;&#x5B9A;&#x4E4B;&#x540E;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;</td>
+</tr>
+<tr>
+<td style="text-align:left">cancelFn</td>
+<td style="text-align:center">Function</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x70B9;&#x51FB;&#x53D6;&#x6D88;&#x4E4B;&#x540E;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;</td>
+</tr>
+<tr>
+<td style="text-align:left">singleBtn</td>
+<td style="text-align:center">Boolean</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x9ED8;&#x8BA4;false&#x3002;&#x5F53;&#x4E3A;true&#x7684;&#x65F6;&#x5019;&#x53EA;&#x663E;&#x793A;&#x786E;&#x5B9A;&#x6309;&#x94AE;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-javascript">  <span class="hljs-keyword">new</span> Dialog({
+          title: <span class="hljs-string">&quot;&#x6211;&#x662F;&#x6807;&#x9898;&quot;</span>,
+          content: <span class="hljs-string">&quot;singleBtn&#x82E5;&#x8BBE;&#x7F6E;&#x4E3A;true,&#x5219;&#x53EA;&#x663E;&#x793A;&#x786E;&#x5B9A;&#x6309;&#x94AE;&quot;</span>,
+          sureUrl: <span class="hljs-string">&quot;http://www.jd.com&quot;</span>,
+          singleBtn: <span class="hljs-literal">false</span>,
+          sureFn: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+              <span class="hljs-keyword">new</span> Dialog({content: <span class="hljs-string">&quot;&#x4F60;&#x70B9;&#x51FB;&#x4E86;&#x786E;&#x5B9A;&quot;</span>});
+          },
+          cancelFn: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+              <span class="hljs-keyword">new</span> Dialog({content: <span class="hljs-string">&quot;&#x4F60;&#x70B9;&#x51FB;&#x4E86;&#x53D6;&#x6D88;&quot;</span>});
+          }
+      });
+</code></pre>
+<p>Demo&#x5B9E;&#x4F8B;&#xFF1A;<a href="http://jr.jd.com">&#x8BF7;&#x72E0;&#x72E0;&#x6233;&#x6211;</a></p>
+<hr>
+<h4 id="t8dropElement">dropElement <a href="#t8dropElement"> # </a></h4>
+<p>js&#x6A21;&#x5757;&#xFF0C;&#x5143;&#x7D20;&#x98D8;&#x843D;&#x63D2;&#x4EF6;</p>
+<blockquote>
+<p>&#x8BED;&#x6CD5;&#xFF1A;<code>new DropElement({config});</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;&#x540D;&#x79F0;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">sizeArr</td>
+<td style="text-align:center">Array</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x6389;&#x843D;&#x5143;&#x7D20;&#x7684;&#x5C3A;&#x5BF8;&#x6570;&#x7EC4;&#xFF08;&#x4E8C;&#x7EF4;&#xFF09;</td>
+</tr>
+<tr>
+<td style="text-align:left">count</td>
+<td style="text-align:center">Int</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x540C;&#x65F6;&#x51FA;&#x73B0;&#x7684;&#x6700;&#x5927;&#x6570;&#x91CF;</td>
+</tr>
+<tr>
+<td style="text-align:left">during</td>
+<td style="text-align:center">Int</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x5B8C;&#x6210;&#x4E00;&#x6B21;&#x6389;&#x843D;&#x7684;&#x5468;&#x671F;</td>
+</tr>
+<tr>
+<td style="text-align:left">splitTime</td>
+<td style="text-align:center">Int</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x51FA;&#x73B0;&#x7684;&#x65F6;&#x95F4;&#x95F4;&#x9694;</td>
+</tr>
+<tr>
+<td style="text-align:left">width</td>
+<td style="text-align:center">Int</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x53EF;&#x6389;&#x843D;&#x7684;&#x533A;&#x57DF;&#x5BBD;&#x5EA6;</td>
+</tr>
+<tr>
+<td style="text-align:left">loop</td>
+<td style="text-align:center">Boolean</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x662F;&#x5426;&#x5FAA;&#x73AF;&#x6389;&#x843D;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-javascript"><span class="hljs-keyword">new</span> DropElement({
+                sizeArr: [[<span class="hljs-number">10</span>, <span class="hljs-number">24</span>], [<span class="hljs-number">13</span>, <span class="hljs-number">15</span>], [<span class="hljs-number">16</span>, <span class="hljs-number">19</span>], [<span class="hljs-number">12</span>, <span class="hljs-number">14</span>], [<span class="hljs-number">10</span>, <span class="hljs-number">15</span>]],
+                count: <span class="hljs-number">15</span>,
+                during: <span class="hljs-number">3000</span>,
+                splitTime: <span class="hljs-number">300</span>,
+                loop: <span class="hljs-literal">true</span>
+            });
+</code></pre>
+<p>Demo&#x5B9E;&#x4F8B;&#xFF1A;<a href="http://jr.jd.com">&#x8BF7;&#x72E0;&#x72E0;&#x6233;&#x6211;</a></p>
+<hr>
+<h4 id="t9FunnyBackground">FunnyBackground <a href="#t9FunnyBackground"> # </a></h4>
+<p>canvas&#x80CC;&#x666F;&#x7EC4;&#x4EF6;</p>
+<blockquote>
+<p>&#x8BED;&#x6CD5;&#xFF1A;<code>new FunnyBackground({config})</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;&#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x53C2;&#x6570;&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">canvas</td>
+<td style="text-align:left">object</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x753B;&#x5E03;&#x7684;&#x5BB9;&#x5668;</td>
+</tr>
+<tr>
+<td style="text-align:left">sedIn</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x5E94;&#x7528;&#x573A;&#x666F;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-javascript">    <span class="hljs-keyword">new</span> FunnyBackground({
+            canvas : <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;jm-funnyBackground&quot;</span>),
+            usedIn : <span class="hljs-string">&quot;pc&quot;</span>
+        });
+</code></pre>
+<p>Demo&#x5B9E;&#x4F8B;&#xFF1A;<a href="http://jr.jd.com">&#x8BF7;&#x72E0;&#x72E0;&#x6233;&#x6211;</a></p>
+<hr>
+<h4 id="t10iscroll">iscroll <a href="#t10iscroll"> # </a></h4>
+<p>js&#x6A21;&#x5757;&#xFF0C;web&#x6700;&#x6D41;&#x7545;&#x7684;&#x6EDA;&#x52A8;&#x63D2;&#x4EF6;</p>
+<blockquote>
+<p>&#x8BED;&#x6CD5;&#xFF1A;<code>new IScroll(&quot;#wrapper&quot;, {config});</code></p>
+</blockquote>
+<p>&#x53C2;&#x6570;&#x8BF7;&#x70B9;&#x8FD9;&#x91CC;&#xFF1A;<a href="https://github.com/cubiq/iscroll/">https://github.com/cubiq/iscroll/</a></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">new</span> IScroll(<span class="hljs-string">&quot;#wrapper&quot;</span>, {mouseWheel: <span class="hljs-literal">true</span>, probeType: <span class="hljs-number">3</span>});
+</code></pre>
+<p>Demo&#x5B9E;&#x4F8B;&#xFF1A;<a href="http://jr.jd.com">&#x8BF7;&#x72E0;&#x72E0;&#x6233;&#x6211;</a></p>
+<hr>
+<h4 id="t11Jigsaw">Jigsaw <a href="#t11Jigsaw"> # </a></h4>
+<p>js&#x62FC;&#x56FE;&#x5C0F;&#x6E38;&#x620F;&#x7EC4;&#x4EF6;</p>
+<blockquote>
+<p>&#x8BED;&#x6CD5;&#xFF1A;<code>new Jigsaw({config})</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;&#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x53C2;&#x6570;&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">totalTime</td>
+<td style="text-align:left">Int</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x6E38;&#x620F;&#x603B;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td style="text-align:left">begin</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x5F00;&#x59CB;&#x6309;&#x94AE;</td>
+</tr>
+<tr>
+<td style="text-align:left">again</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x518D;&#x73A9;&#x4E00;&#x6B21;&#x6309;&#x94AE;</td>
+</tr>
+<tr>
+<td style="text-align:left">successFn</td>
+<td style="text-align:left">Function</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x6210;&#x529F;&#x4E4B;&#x540E;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;</td>
+</tr>
+<tr>
+<td style="text-align:left">failFn</td>
+<td style="text-align:left">Function</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x5931;&#x8D25;&#x4E4B;&#x540E;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-javascript">   <span class="hljs-keyword">new</span> Jigsaw({
+       totalTime: <span class="hljs-number">10</span>,
+       begin: $(<span class="hljs-string">&quot;.jm-begin&quot;</span>),
+       again: $(<span class="hljs-string">&quot;.jm-again&quot;</span>),
+       successFn: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+           <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;&#x4F60;&#x6210;&#x529F;&#x4E86;~Yeah!&quot;</span>);
+       },
+       failFn: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+           <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;&#x4F60;&#x5931;&#x8D25;&#x4E86;~wuwu~&quot;</span>);
+       }
+   });
+</code></pre>
+<p>Demo&#x5B9E;&#x4F8B;&#xFF1A;<a href="http://jr.jd.com">&#x8BF7;&#x72E0;&#x72E0;&#x6233;&#x6211;</a></p>
+<hr>
+<h4 id="t12md5">md5 <a href="#t12md5"> # </a></h4>
+<p>js&#x6A21;&#x5757;&#xFF0C;MD5&#x8F6C;&#x6362;&#x63D2;&#x4EF6;</p>
+<blockquote>
+<p>&#x8BED;&#x6CD5;&#xFF1A;<code>new MD5({config});</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;&#x540D;&#x79F0;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$btn</td>
+<td style="text-align:center">Object</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x8F6C;&#x6362;&#x89E6;&#x53D1;&#x6309;&#x94AE;</td>
+</tr>
+<tr>
+<td style="text-align:left">str</td>
+<td style="text-align:center">String</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x9700;&#x8981;&#x8F6C;&#x6362;&#x7684;&#x5B57;&#x7B26;&#x4E32;</td>
+</tr>
+<tr>
+<td style="text-align:left">endFn</td>
+<td style="text-align:center">Function</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x8F6C;&#x6362;&#x5B8C;&#x6210;&#x56DE;&#x8C03;&#x51FD;&#x6570;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-javascript"><span class="hljs-keyword">new</span> MD5({
+                $btn:$(<span class="hljs-string">&quot;.jm-md5-btnTransform&quot;</span>),
+                str:$(<span class="hljs-string">&quot;.jm-md5-str&quot;</span>).text(),
+                endFn: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">str</span>) </span>{
+                    $(<span class="hljs-string">&quot;.jm-md5-str&quot;</span>).text(str);
+                }
+            })
+</code></pre>
+<p>Demo&#x5B9E;&#x4F8B;&#xFF1A;<a href="http://jr.jd.com">&#x8BF7;&#x72E0;&#x72E0;&#x6233;&#x6211;</a></p>
+<hr>
+<h4 id="t13Music">Music <a href="#t13Music"> # </a></h4>
+<p>js&#x97F3;&#x4E50;&#x64AD;&#x653E;&#x7EC4;&#x4EF6;</p>
+<blockquote>
+<p>&#x8BED;&#x6CD5;&#xFF1A;<code>new Music({config})</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;&#x540D;&#x79F0;</th>
+<th style="text-align:right">&#x53C2;&#x6570;&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">controls</td>
+<td style="text-align:right">Boolean</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x9ED8;&#x8BA4;false&#x3002;&#x662F;&#x5426;&#x663E;&#x793A;&#x539F;&#x751F;&#x63A7;&#x5236;&#x6846;</td>
+</tr>
+<tr>
+<td style="text-align:left">autoplay</td>
+<td style="text-align:right">Boolean</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x9ED8;&#x8BA4;true&#x3002;&#x662F;&#x5426;&#x81EA;&#x52A8;&#x64AD;&#x653E;</td>
+</tr>
+<tr>
+<td style="text-align:left">loop</td>
+<td style="text-align:right">Boolean</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x9ED8;&#x8BA4;true&#x3002;&#x662F;&#x5426;&#x5FAA;&#x73AF;</td>
+</tr>
+<tr>
+<td style="text-align:left">muted</td>
+<td style="text-align:right">Boolean</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x9ED8;&#x8BA4;false&#x3002;&#x89C4;&#x5B9A;&#x89C6;&#x9891;&#x8F93;&#x51FA;&#x65F6;&#x5E94;&#x8BE5;&#x9759;&#x97F3;</td>
+</tr>
+<tr>
+<td style="text-align:left">src</td>
+<td style="text-align:right">String</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x97F3;&#x4E50;&#x8DEF;&#x5F84;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-javascript"> <span class="hljs-keyword">new</span> Music({
+      controls : <span class="hljs-literal">false</span>,
+      autoplay : <span class="hljs-literal">true</span>,
+      loop : <span class="hljs-literal">true</span>,
+      muted: <span class="hljs-literal">false</span>,
+      src : <span class="hljs-string">&apos;http://static.360buyimg.com/finance/mobile/activity/2015/crowdReBuy/song/song.mp3&apos;</span>
+  });
+</code></pre>
+<p>Demo&#x5B9E;&#x4F8B;&#xFF1A;<a href="http://jr.jd.com">&#x8BF7;&#x72E0;&#x72E0;&#x6233;&#x6211;</a></p>
+<hr>
+<h4 id="t14preLoad">preLoad <a href="#t14preLoad"> # </a></h4>
+<p>js&#x6A21;&#x5757;&#xFF0C;&#x9884;&#x52A0;&#x8F7D;&#x63D2;&#x4EF6;</p>
+<blockquote>
+<p>&#x8BED;&#x6CD5;&#xFF1A;<code>new PreLoad({config});</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;&#x540D;&#x79F0;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">tasks</td>
+<td style="text-align:center">Array</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x5B58;&#x653E;&#x9884;&#x52A0;&#x8F7D;&#x8D44;&#x6E90;Url&#x7684;&#x6570;&#x7EC4;</td>
+</tr>
+<tr>
+<td style="text-align:left">finishedFn</td>
+<td style="text-align:center">Function</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x5B8C;&#x6210;&#x52A0;&#x8F7D;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;</td>
+</tr>
+<tr>
+<td style="text-align:left">prefix</td>
+<td style="text-align:center">String</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x8F93;&#x51FA;&#x7684;&#x524D;&#x7F00;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-javascript"><span class="hljs-keyword">new</span> PreLoad({
+                tasks:[
+                    <span class="hljs-string">&quot;1.png&quot;</span>,
+                    <span class="hljs-string">&quot;2.png&quot;</span>,
+                    <span class="hljs-string">&quot;3.png&quot;</span>
+                ],
+                finishedFn:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">total</span>)</span>{
+                    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;&#x5DF2;&#x7ECF;&#x52A0;&#x8F7D;&#x5B8C;&#x6210;&#x4E86;&#xFF0C;&#x5171;&#x52A0;&#x8F7D;&quot;</span>+total+<span class="hljs-string">&quot;&#x4E2A;&#x8D44;&#x6E90;&quot;</span>);
+                }
+            });
+</code></pre>
+<p>Demo&#x5B9E;&#x4F8B;&#xFF1A;<a href="http://jr.jd.com">&#x8BF7;&#x72E0;&#x72E0;&#x6233;&#x6211;</a></p>
+<hr>
+<h4 id="t15PullToRefresh">PullToRefresh <a href="#t15PullToRefresh"> # </a></h4>
+<p>js&#x4E0B;&#x62C9;&#x5237;&#x65B0;&#x7EC4;&#x4EF6;</p>
+<blockquote>
+<p>&#x8BED;&#x6CD5;&#xFF1A;<code>new PullToRefresh({config})</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;&#x540D;&#x79F0;</th>
+<th style="text-align:right">&#x53C2;&#x6570;&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">maxMove</td>
+<td style="text-align:right">Int</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x9ED8;&#x8BA4;44&#x3002;&#x89E6;&#x53D1;&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x7684;&#x6700;&#x5C0F;&#x79FB;&#x52A8;&#x8DDD;&#x79BB;</td>
+</tr>
+<tr>
+<td style="text-align:left">moveBox</td>
+<td style="text-align:right">Object</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x9ED8;&#x8BA4;<code>$(&quot;body&quot;)</code>&#x3002;&#x76D1;&#x542C;&#x62C9;&#x52A8;&#x4E8B;&#x4EF6;&#x7684;&#x5143;&#x7D20;</td>
+</tr>
+<tr>
+<td style="text-align:left">moveEle</td>
+<td style="text-align:right">Object</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x9ED8;&#x8BA4;<code>$(&apos;.main-wrap&apos;)</code>&#x3002;&#x62C9;&#x52A8;&#x7684;&#x5143;&#x7D20;</td>
+</tr>
+<tr>
+<td style="text-align:left">loadingTop</td>
+<td style="text-align:right">Boolean</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x9ED8;&#x8BA4;0&#x3002;loading&#x56FE;&#x6807;&#x8DDD;&#x9876;&#x90E8;&#x8DDD;&#x79BB;</td>
+</tr>
+<tr>
+<td style="text-align:left">callback</td>
+<td style="text-align:right">Function</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x5237;&#x65B0;&#x4E4B;&#x540E;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-javascript"> <span class="hljs-keyword">new</span> PullToRefresh({
+     moveEle: $(<span class="hljs-string">&quot;.mainBox&quot;</span>),
+     loadingTop: <span class="hljs-number">0</span>,
+     maxMove: <span class="hljs-number">30</span>,
+     callback: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+         <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;&#x5237;&#x65B0;&#x6210;&#x529F;&quot;</span>;
+     }
+   })
+</code></pre>
+<p>Demo&#x5B9E;&#x4F8B;&#xFF1A;<a href="http://jr.jd.com">&#x8BF7;&#x72E0;&#x72E0;&#x6233;&#x6211;</a></p>
+<hr>
+<h4 id="t16qrcode">qrcode <a href="#t16qrcode"> # </a></h4>
+<p>js&#x6A21;&#x5757;&#xFF0C;&#x4E8C;&#x7EF4;&#x7801;&#x63D2;&#x4EF6;</p>
+<blockquote>
+<p>&#x8BED;&#x6CD5;&#xFF1A;<code>new QRCode(object,{config});</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;&#x540D;&#x79F0;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">object</td>
+<td style="text-align:center">Object</td>
+<td style="text-align:left">&#x5FC5;&#x586B;&#xFF0C;&#x4E8C;&#x7EF4;&#x7801;&#x7684;&#x5BB9;&#x5668;</td>
+</tr>
+<tr>
+<td style="text-align:left">text</td>
+<td style="text-align:center">*</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x4E8C;&#x7EF4;&#x7801;&#x5185;&#x5BB9;&#xFF08;&#x652F;&#x6301; url &#x6587;&#x672C; &#x7535;&#x5B50;&#x90AE;&#x4EF6; &#x77ED;&#x6D88;&#x606F; &#x7535;&#x8BDD; vCard &#x5730;&#x7406;&#x4F4D;&#x7F6E; &#x4E8C;&#x7EA7;&#x5236;&#x538B;&#x7F29;&#x6587;&#x4EF6;&#xFF09;</td>
+</tr>
+<tr>
+<td style="text-align:left">width</td>
+<td style="text-align:center">Int</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x4E8C;&#x7EF4;&#x7801;&#x5BBD;&#x5EA6;</td>
+</tr>
+<tr>
+<td style="text-align:left">height</td>
+<td style="text-align:center">Int</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x4E8C;&#x7EF4;&#x7801;&#x9AD8;&#x5EA6;</td>
+</tr>
+<tr>
+<td style="text-align:left">colorDark</td>
+<td style="text-align:center">String</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x4E8C;&#x7EF4;&#x7801;&#x989C;&#x8272;</td>
+</tr>
+<tr>
+<td style="text-align:left">colorLight</td>
+<td style="text-align:center">Int</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x4E8C;&#x7EF4;&#x7801;&#x5E95;&#x8272;</td>
+</tr>
+<tr>
+<td style="text-align:left">correctLevel</td>
+<td style="text-align:center">&#xFF1F;</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x4E8C;&#x7EF4;&#x7801;&#x5BB9;&#x9519;&#x7B49;&#x7EA7;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x53C2;&#x6570;&#x8BF7;&#x70B9;&#x8FD9;&#x91CC;&#xFF1A;<a href="https://github.com/davidshimjs/qrcodejs">https://github.com/davidshimjs/qrcodejs</a></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">new</span> QRCode(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;qrcode&quot;</span>), {
+                text: <span class="hljs-string">&quot;http://jr.jd.com?&quot;</span> + <span class="hljs-built_in">Math</span>.random(), 
+                width: <span class="hljs-number">61</span>,                                      
+                height: <span class="hljs-number">61</span>,                                      
+                colorDark: <span class="hljs-string">&quot;#000000&quot;</span>,                          
+                colorLight: <span class="hljs-string">&quot;#ffffff&quot;</span>                          
+            })&#xFF1B;
+</code></pre>
+<p>Demo&#x5B9E;&#x4F8B;&#xFF1A;<a href="http://jr.jd.com">&#x8BF7;&#x72E0;&#x72E0;&#x6233;&#x6211;</a></p>
+<hr>
+<h4 id="t17share">share <a href="#t17share"> # </a></h4>
+<p>js&#x5FAE;&#x4FE1;&#x5206;&#x4EAB;&#x6587;&#x6848;&#x7EC4;&#x4EF6;</p>
+<blockquote>
+<p>&#x8BED;&#x6CD5;&#xFF1A;<code>share.refreshWxshareInfo({config})</code> ||  <code>share.refreshAppShareInfo({config})</code> || <code>share.refreshWalletShareInfo({config})</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;&#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x53C2;&#x6570;&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">title</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x5206;&#x4EAB;&#x6807;&#x9898;</td>
+</tr>
+<tr>
+<td style="text-align:left">content</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x5206;&#x4EAB;&#x63CF;&#x8FF0;</td>
+</tr>
+<tr>
+<td style="text-align:left">link</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x5206;&#x4EAB;&#x94FE;&#x63A5;</td>
+</tr>
+<tr>
+<td style="text-align:left">imgUrl</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x5206;&#x4EAB;&#x56FE;&#x7247;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-javascript"> share.refreshWxshareInfo({
+        <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;&#x3010;&#x518D;&#x6B21;&#x66F4;&#x65B0;&#x3011;&#x5206;&#x4EAB;&#x6587;&#x6848;&#x6570;&#x636E;&#x5DF2;&#x7ECF;&#x66F4;&#x65B0;&#x4E86;&#x5462;~~&quot;</span>,
+        <span class="hljs-string">&quot;content&quot;</span>: <span class="hljs-string">&quot;&#x5206;&#x4EAB;&#x5185;&#x5BB9;&#x5728;&#x6B64;&#xFF0C;&#x4F60;&#x8981;&#x4F5C;&#x751A;&quot;</span>,
+        <span class="hljs-string">&quot;imgUrl&quot;</span>: <span class="hljs-string">&quot;http://demo.jr.jd.com/finance/mobile/base/jm/images/UDC-logo.png&quot;</span>,
+        <span class="hljs-string">&quot;link&quot;</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">return</span> (<span class="hljs-built_in">window</span>.location.origin + <span class="hljs-built_in">window</span>.location.pathname);
+        }
+     })
+</code></pre>
+<p>Demo&#x5B9E;&#x4F8B;&#xFF1A;<a href="http://jr.jd.com">&#x8BF7;&#x72E0;&#x72E0;&#x6233;&#x6211;</a></p>
+<hr>
+<h4 id="t18analogKeyboard">analogKeyboard <a href="#t18analogKeyboard"> # </a></h4>
+<p>js&#x6A21;&#x5757;&#xFF0C;&#x6A21;&#x62DF;&#x5B57;&#x6BCD;&#x952E;&#x76D8;&#x63D2;&#x4EF6;</p>
+<blockquote>
+<p>&#x8BED;&#x6CD5;&#xFF1A;<code>new AnalogKeyboard({config})</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;&#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x53C2;&#x6570;&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>$board</code></td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x9ED8;&#x8BA4;<code>$(&quot;.jm-analogKeyboard&quot;)</code>&#x3002;&#x6A21;&#x62DF;&#x952E;&#x76D8;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$key</code></td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x9ED8;&#x8BA4;<code>$board.find(&quot;li[data-key]&quot;)</code>&#x3002;&#x6A21;&#x62DF;&#x6309;&#x952E;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$input</code></td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x9ED8;&#x8BA4;<code>$(&quot;.jm-analogKeyboard-input&quot;)</code>&#x3002;&#x6A21;&#x62DF;input</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>maxLength</code></td>
+<td style="text-align:left">Int</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x9ED8;&#x8BA4;20&#x3002;input&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x6700;&#x5927;&#x957F;&#x5EA6;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>completeFn</code></td>
+<td style="text-align:left">Function</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x70B9;&#x51FB;&#x5B8C;&#x6210;&#x7684;&#x56DE;&#x8C03;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>codeType</code></td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x9ED8;&#x8BA4;<code>hidden</code>&#x3002;&#x8F93;&#x5165;&#x7ED3;&#x679C;&#x663E;&#x793A;&#x5F62;&#x5F0F;&#xFF08;&#x9ED8;&#x8BA4;&#x4E3A;&#x5BC6;&#x6587;&#xFF09;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-javascript">  <span class="hljs-keyword">new</span> AnalogKeyboard({
+       $board: $(<span class="hljs-string">&quot;.jm-analogKeyboard&quot;</span>),
+       $key: $(<span class="hljs-string">&quot;.jm-analogKeyboard&quot;</span>).find(<span class="hljs-string">&quot;li[data-key]&quot;</span>),
+       $input: $(<span class="hljs-string">&quot;.jm-analogKeyboard-input&quot;</span>),
+       maxLength: <span class="hljs-number">15</span>,
+       completeFn: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">result</span>) </span>{
+           alert(<span class="hljs-string">&quot;&#x60A8;&#x8F93;&#x5165;&#x7684;&#x5BC6;&#x7801;&#x4E3A;&#xFF1A;&quot;</span>+ result)
+       },
+       codeType: <span class="hljs-string">&quot;hidden&quot;</span>
+   });
+</code></pre>
+<p>Demo&#x5B9E;&#x4F8B;&#xFF1A;<a href="http://jr.jd.com">&#x8BF7;&#x72E0;&#x72E0;&#x6233;&#x6211;</a></p>
+<hr>
+<h4 id="t19numKeyboard">numKeyboard <a href="#t19numKeyboard"> # </a></h4>
+<p>js&#x6A21;&#x5757;&#xFF0C;&#x6A21;&#x62DF;&#x6570;&#x5B57;&#x952E;&#x76D8;&#x63D2;&#x4EF6;</p>
+<blockquote>
+<p>&#x8BED;&#x6CD5;&#xFF1A;<code>new NumKeyBoard({config})</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;&#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x53C2;&#x6570;&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>$board</code></td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x6A21;&#x62DF;&#x952E;&#x76D8;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$targetInput</code></td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x6A21;&#x62DF;input</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>checkFn</code></td>
+<td style="text-align:left">Function</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x8F93;&#x5165;&#x957F;&#x5EA6;&#x8FBE;6&#x4F4D;&#x65F6;&#x8C03;&#x7528;&#x7684;&#x6821;&#x9A8C;&#x51FD;&#x6570;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>codeType</code></td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x9ED8;&#x8BA4;<code>hidden</code>&#x3002;&#x8F93;&#x5165;&#x7ED3;&#x679C;&#x663E;&#x793A;&#x5F62;&#x5F0F;&#xFF08;&#x9ED8;&#x8BA4;&#x4E3A;&#x5BC6;&#x6587;&#xFF09;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-javascript">  <span class="hljs-keyword">new</span> NumKeyboard({
+      $board: $(<span class="hljs-string">&quot;#jm-keyBoard&quot;</span>).find(<span class="hljs-string">&quot;li&quot;</span>),       <span class="hljs-comment">//&#x7EC4;&#x4EF6;&#x952E;&#x76D8;</span>
+      $targetInput: $(<span class="hljs-string">&quot;#jm-targetInput&quot;</span>).find(<span class="hljs-string">&quot;li&quot;</span>),  <span class="hljs-comment">//&#x7EC4;&#x4EF6;input</span>
+      codeType: <span class="hljs-string">&quot;num&quot;</span>,                        <span class="hljs-comment">//&#x7EC4;&#x4EF6;&#x663E;&#x793A;&#x65B9;&#x5F0F;</span>
+      ajaxUrl:<span class="hljs-string">&quot;../../data/password.json&quot;</span>,
+      checkFn: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">pwd,callback</span>)</span>{
+          <span class="hljs-keyword">this</span>.getAjaxData(<span class="hljs-keyword">this</span>.ajaxUrl,pwd,returnData);
+          <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">returnData</span>(<span class="hljs-params">data</span>)</span>{
+              <span class="hljs-keyword">var</span> flag = (pwd == data.password);
+              callback &amp;&amp; callback(flag);
+          }
+      }
+  });
+</code></pre>
+<p>Demo&#x5B9E;&#x4F8B;&#xFF1A;<a href="http://jr.jd.com">&#x8BF7;&#x72E0;&#x72E0;&#x6233;&#x6211;</a></p>
+<hr>
+<h4 id="t20PageSlider">PageSlider <a href="#t20PageSlider"> # </a></h4>
+<p>js&#x6A21;&#x5757;&#xFF0C;&#x79FB;&#x52A8;&#x7AEF;&#x5168;&#x5C4F;&#x7FFB;&#x9875;&#x63D2;&#x4EF6;</p>
+<blockquote>
+<p>&#x8BED;&#x6CD5;&#xFF1A;<code>new PageSlider({config})</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x65B9;&#x6CD5;&#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x53C2;&#x6570;&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x65B9;&#x6CD5;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>slideTo</code></td>
+<td style="text-align:left">Int</td>
+<td style="text-align:left">&#x6307;&#x5B9A;&#x7FFB;&#x5230;&#x7B2C;&#x51E0;&#x5C4F;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;&#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x53C2;&#x6570;&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>$page</code></td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x9ED8;&#x8BA4;<code>$(&quot;.page&quot;)</code>&#x3002;&#x9875;&#x9762;&#x5BB9;&#x5668;&#x5BF9;&#x8C61;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>beginIndex</code></td>
+<td style="text-align:left">Int</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x9ED8;&#x8BA4;0&#x3002;&#x5F00;&#x59CB;&#x9875;&#x9762;&#x4E0B;&#x6807;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>activeClass</code></td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x9ED8;&#x8BA4;<code>page-active</code>&#x3002;&#x5F53;&#x524D;&#x9875;&#x9762;class&#x6807;&#x8BC6;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>type</code></td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x9ED8;&#x8BA4;<code>ease-out</code>&#x3002;&#x7FFB;&#x9875;&#x52A8;&#x753B;&#x901F;&#x5EA6;&#x66F2;&#x7EBF;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>scaleEffect</code></td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x9ED8;&#x8BA4;false&#x3002;&#x662F;&#x5426;&#x5F00;&#x542F;&#x9875;&#x9762;&#x62C9;&#x4F38;&#x6548;&#x679C;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-javascript">  <span class="hljs-keyword">var</span> pageSlider = <span class="hljs-keyword">new</span> PageSlider({
+      page: $(<span class="hljs-string">&quot;.page&quot;</span>),
+      beginIndex: <span class="hljs-number">0</span>,
+      activeClass: <span class="hljs-string">&quot;page-active&quot;</span>,
+      type: <span class="hljs-string">&quot;ease-out&quot;</span>,
+      scaleEffect: <span class="hljs-literal">false</span>
+  });
+  pageSlider.slideTo(<span class="hljs-number">2</span>); <span class="hljs-comment">//&#x6307;&#x5B9A;&#x8C03;&#x5230;&#x7B2C;&#x4E09;&#x9875;</span>
+</code></pre>
+<p>Demo&#x5B9E;&#x4F8B;&#xFF1A;<a href="http://jr.jd.com">&#x8BF7;&#x72E0;&#x72E0;&#x6233;&#x6211;</a></p>
+<hr>
+<h4 id="t21SwipeSlide">SwipeSlide <a href="#t21SwipeSlide"> # </a></h4>
+<p>js&#x6A21;&#x5757;&#xFF0C;&#x79FB;&#x52A8;&#x7AEF;&#x7FFB;&#x9875;&#x63D2;&#x4EF6;</p>
+<blockquote>
+<p>&#x8BED;&#x6CD5;&#xFF1A;<code>$viewPort.swipeSlide({config})</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x65B9;&#x6CD5;&#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x53C2;&#x6570;&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x65B9;&#x6CD5;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>goTo</code></td>
+<td style="text-align:left">Int</td>
+<td style="text-align:left">&#x6307;&#x5B9A;&#x8DF3;&#x8F6C;&#x5230;&#x54EA;&#x4E00;&#x9875;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;&#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x53C2;&#x6570;&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>container</code></td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x6EDA;&#x52A8;&#x7684;&#x5BB9;&#x5668;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>speed</code></td>
+<td style="text-align:left">Int</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x9ED8;&#x8BA4;4000&#x3002;&#x6EDA;&#x52A8;&#x7684;&#x65F6;&#x95F4;&#x95F4;&#x9694;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>dots</code></td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">&#x5FC5;&#x9009;&#xFF0C;&#x548C;&#x6EDA;&#x52A8;&#x9879;&#x76EE;&#x5BF9;&#x5E94;&#x7684;&#x70B9; dot</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>dotActiveClass</code></td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x9ED8;&#x8BA4;<code>active</code>&#x3002;&#x70B9;&#x6FC0;&#x6D3B;&#x72B6;&#x6001;&#x7684;class</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>autoScroll</code></td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x9ED8;&#x8BA4;false&#x3002;&#x662F;&#x5426;&#x8FDE;&#x7EED;&#x6EDA;&#x52A8;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>continuousScroll</code></td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">&#x53EF;&#x9009;,&#x9ED8;&#x8BA4;false,&#x662F;&#x5426;&#x8FDE;&#x7EED;&#x6EDA;&#x52A8;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>dir</code></td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x9ED8;&#x8BA4;x-&#x6C34;&#x5E73;&#x6EDA;&#x52A8;&#xFF0C;y-&#x7AD6;&#x76F4;&#x6EDA;&#x52A8;&#x3002;&#x8FD0;&#x52A8;&#x7684;&#x65B9;&#x5411;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>transitionType</code></td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x9ED8;&#x8BA4;<code>ease</code>&#x3002;&#x8FD0;&#x52A8;&#x65B9;&#x5F0F;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>callback</code></td>
+<td style="text-align:left">Function</td>
+<td style="text-align:left">&#x53EF;&#x9009;&#xFF0C;&#x6BCF;&#x9879;&#x6EDA;&#x52A8;&#x5B8C;&#x540E;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-javascript"> <span class="hljs-keyword">var</span> sliderObj = $viewPort.swipeSlide({
+     container: $tabContainer,
+     speed : <span class="hljs-number">2000</span>,
+     dots : $dots,
+     dotActiveClass: <span class="hljs-string">&quot;active&quot;</span>,
+     autoScroll : <span class="hljs-literal">false</span>,
+     continuousScroll: <span class="hljs-literal">true</span>,
+     dir: <span class="hljs-string">&quot;y&quot;</span>,
+     transitionType: <span class="hljs-string">&quot;ease&quot;</span>,
+     callback: fn
+ });
+
+ sliderObj.goTo(<span class="hljs-number">2</span>); <span class="hljs-comment">//&#x6307;&#x5B9A;&#x8C03;&#x5230;&#x7B2C;&#x4E09;&#x9875;</span>
+</code></pre>
+<p>Demo&#x5B9E;&#x4F8B;&#xFF1A;<a href="http://jr.jd.com">&#x8BF7;&#x72E0;&#x72E0;&#x6233;&#x6211;</a></p>
+<hr>
+
+        <div class="copyright">Powered by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a>. Dependence <a href="https://nodejs.org">Node.js</a> run.</div>
+    </div>
+    
+</div>
+
+
+</body>
+</html>

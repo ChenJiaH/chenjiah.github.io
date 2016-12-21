@@ -1,0 +1,66 @@
+@charset "UTF-8";
+@import "../common/_css3lib",
+"../common/_variable";
+/*
+ * Created By McChen
+ *
+ * 2016/2/23
+ *
+ * chenjiahao@jd.com
+ *
+ * version V1.0.0
+ *
+ */
+
+// 模拟输入框区域样式
+.jm-analogKeyboard-input { position: relative; line-height: 1; border: solid 2px #cccccc; font-size: 2rem; height: 2rem; -webkit-border-radius: 0.5rem; border-radius: 0.5rem; padding: 1rem; color: #323232; background-color: #e3e6ed; overflow: hidden; white-space: nowrap;
+  .jm-analogKeyboard-point { width: 6px;height: 6px; border-radius: 6px; overflow: hidden; background-color: #323232; float: left; margin-top: 0.7rem; margin-right: 0.2rem;}
+}
+
+// 模拟键盘区域样式
+.jm-analogKeyboard { width: 100%; height: auto; background-color: #e3e6ed; position: fixed; bottom: 0; text-align: center;}
+.jm-analogKeyboard ul { width: 100%; padding-bottom: 0.5rem; font-size: 2rem; position: relative; display: none;
+  li { list-style: none; float: left; width: 3rem; height: 4rem; background-color: $default-bg;  -webkit-border-radius: 0.5rem; border-radius: 0.5rem; margin: 1.5rem 0.35rem 0; @include mm();}
+  li:active { color: #ffffff; background-color: #359df5;}
+  li:nth-child(1),li:nth-child(20),li:nth-child(29) { margin-left: 0.6rem; }
+  li:nth-child(11) { margin-left: 2.45rem; }
+  li:nth-child(20),li:nth-child(28),li:nth-child(29) { background-color: #cccccc; width: 4.85rem; &:active { background-color: #359df5;}}
+  li:nth-child(31) { width: 14.1rem;}
+  li:nth-child(33) { color: #ffffff; background-color: #359df5; width: 8.55rem; &:active { background-color: #52b0ff;}}
+  li.backspace {
+    .icon-backspace { color: #ffffff;}
+  }
+  li.backspace:active {
+    .icon-backspace { color: #000000;}
+  }
+}
+.jm-analogKeyboard ul.status-abc {
+  li.uppercase {
+    .icon-uppercase { color: #ffffff;}
+  }
+  li.uppercase:active {
+    .icon-uppercase { color: #000000;}
+  }
+}
+.jm-analogKeyboard ul.status-ABC {
+  li.lowercase {
+    .icon-uppercase { color: #000000;}
+  }
+  li.lowercase:active {
+    .icon-uppercase { color: #ffffff;}
+  }
+}
+
+.jm-analogKeyboard.abc ul.status-abc {
+  display: block;
+}
+.jm-analogKeyboard.ABC ul.status-ABC {
+  display: block;
+}
+.jm-analogKeyboard.number ul.status-number {
+  display: block;
+}
+.jm-analogKeyboard.NUMBER ul.status-NUMBER {
+  display: block;
+}
+

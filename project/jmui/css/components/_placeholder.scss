@@ -1,0 +1,18 @@
+@charset "UTF-8";
+@import "../common/_css3lib",
+"../common/_variable";
+
+/* 网页无响应时占位文字或图片 */
+
+.jm-placeholder { @include placeholder;}
+
+.jm-placeholder-img {
+  @include placeholder-img;
+//  background-image: url("../../css/img/jm-placeholder-img.png");
+  img {  width: 100%; height: 100%;  }
+}
+
+
+
+
+

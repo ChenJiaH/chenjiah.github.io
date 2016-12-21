@@ -1,0 +1,23 @@
+{
+    "name": "JM",
+    "version": "1.0.0",
+    "description": "test",
+    "keywords": [
+        "jm"
+    ],
+    "homepage": "http://JSLite.io",
+    "author": "jr-udcm@jd.com",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "licenses": "MIT",
+    "idoc": {
+        "theme": "handbook",
+        "md": [
+            "modules.md",
+            "css.md",
+            "js.md"
+        ]
+    }
+}

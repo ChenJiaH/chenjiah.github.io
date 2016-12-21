@@ -1,0 +1,9 @@
+@import "../common/_css3lib",
+"../common/_variable";
+
+.jm-dropElement { @include animation(jm-dropElement 3s linear forwards);}
+.dropElement0 { background-color: black;}
+.dropElement1 { background-color: red;}
+.dropElement2 { background-color: yellow;}
+.dropElement3 { background-color: blue;}
+.dropElement4 { background-color: green;}

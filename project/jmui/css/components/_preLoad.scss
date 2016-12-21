@@ -1,0 +1,18 @@
+@import "../common/_css3lib",
+"../common/_variable";
+
+.jm-loader * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box }
+.jm-loader { margin: 0; min-height: 100%; color: $default-bg; background-color: #2e3132; font: 400 12px/1.5 "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Arial, "Hiragino Sans GB", STHeiti, 'Microsoft Yahei', sans-serif; cursor: default; outline: 0; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; -webkit-tap-highlight-color: transparent; -webkit-text-size-adjust: none !important; position: absolute; z-index: 200; overflow: hidden; left: 0; top: 0; right: 0; bottom: 0; width: 100%; height: 100%; color: $default-bg; background-color: #2e3132; }
+.jm-loader-graph, .jm-loader-progress { overflow: hidden; position: absolute; left: 50%; bottom: 50%; width: 64px; height: 64px; margin: -16px 0 0 -32px }
+.jm-loader-graph { color: transparent; text-align: center; border-top: 5px solid rgba(255, 255, 255, .2); border-right: 5px solid rgba(255, 255, 255, .2); border-bottom: 5px solid rgba(255, 255, 255, .2); border-left: 5px solid #fff; border-radius: 32px; -webkit-animation: rotate .72s linear infinite; -o-animation: rotate .72s linear infinite; animation: rotate .72s linear infinite }
+.jm-loader-text { position: absolute; left: 0; right: 0; width: 100%; line-height: 24px; font-size: 16px; top: 50%; text-align: center; margin-top: 1em }
+.jm-loader-progress { font-size: 14px; text-align: center; padding: 20px 0; line-height: 24px }
+.jm-scaleOut { opacity: 0; -webkit-transform: scale(1.25); -webkit-transition: all .8s; transform: scale(1.25); transition: all .8s }
+@-webkit-keyframes rotate {
+  0% { -webkit-transform: rotate(360deg) }
+  100% { -webkit-transform: rotate(0deg) }
+}
+@keyframes rotate {
+  0% { -webkit-transform: rotate(360deg); transform: rotate(360deg) }
+  100% { -webkit-transform: rotate(0deg); transform: rotate(0deg) }
+}

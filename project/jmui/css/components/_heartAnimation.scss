@@ -1,0 +1,362 @@
+@import "../common/_css3lib",
+"../common/_variable";
+
+// Config
+$size: 10em;
+$animDuration: 0.8s;
+$animTiming: ease-in;
+$animIteration: 1;
+$animIteration2: sin(80deg);
+$animStep: 100% / 27;
+
+// Layers & Colors
+$heartColors: #AAB8C2, #E2264D;
+$ringColors: #E2264D, #CC8EF5;
+$circles: (
+        (
+                first:   ( start: #8CE8C3, end:#A068CE),
+                second:  ( start: #8BE7C2, end:#B752E1)
+        ),
+        (
+                first:   ( start: #90D2FA, end:#99E9C8),
+                second:  ( start: #91D1F9, end:#BAE3D7)
+        ),
+        (
+                first:   ( start: #CC8EF5, end:#D3F491),
+                second:  ( start: #CB8DF4, end:#DCE483)
+        ),
+        (
+                first:   ( start: #8CE8C3, end:#59C392),
+                second:  ( start: #8CE8C3, end:#67CD9F)
+        ),
+        (
+                first:   ( start: #F58EA7, end:#CAADC7),
+                second:  ( start: #F48DA6, end:#959FF3)
+        ),
+        (
+                first:   ( start: #91D2FA, end:#CA5ED8),
+                second:  ( start: #91D2FA, end:#A975D1)
+        ),
+        (
+                first:   ( start: #92D3FC, end:#C35DD1),
+                second:  ( start: #CB8DF4, end:#90E0BE)
+        )
+);
+
+// Computations
+$circlesLength: length($circles);
+$angleBetweenCircles: 360deg / $circlesLength;
+$circleSize: $size / 6;
+$shiftAngleBeginning: -135deg;
+
+// Functions
+@function setStep($n) { @return ($n - 1) * $animStep }
+
+// Animations
+@keyframes heart {
+  #{setStep(1)},
+  #{setStep(6)} {
+    height: 0;
+    width: 0;
+    top: 50%;
+    margin-top: 0;
+    margin-left: 0;
+  }
+  #{setStep(13)} {
+    height: $size * 1.25;
+    width: $size * 1.25;
+    top: 54%;
+    margin-top: -$size * 1.25 / 2;
+    margin-left: -$size * 1.25 / 2;
+  }
+  #{setStep(18)}{
+    height: $size;
+    width: $size;
+    top: 54%;
+    margin-top: -$size / 2;
+    margin-left: -$size / 2;
+  }
+  #{setStep(23)} {
+    height: $size * 1.025;
+    width: $size * 1.025;
+    top: 54%;
+    margin-top: -$size * 1.025 / 2;
+    margin-left: -$size * 1.025 / 2;
+  }
+  #{setStep(28)}{
+    height: $size;
+    width: $size;
+    top: 54%;
+    margin-top: -$size / 2;
+    margin-left: -$size / 2;
+  }
+}
+
+@keyframes ring {
+  #{setStep(1)} {
+    height: 0;
+    width: 0;
+    border-width: 0;
+    margin-top: 0;
+    margin-left: 0;
+  }
+  #{setStep(2)} {
+    height: 0;
+    width: 0;
+    border-width: $size * 0.1;
+    margin-top: -$size * 0.1;
+    margin-left: -$size * 0.1;
+    border-color: nth($ringColors, 1);
+  }
+  #{setStep(3)} {
+    height: 0;
+    width: 0;
+    border-width: $size * 0.7;
+    margin-top: -$size * 0.7;
+    margin-left: -$size * 0.7;
+  }
+  #{setStep(4)} {
+    height: 0;
+    width: 0;
+    border-width: $size * 0.8;
+    margin-top: -$size * 0.8;
+    margin-left: -$size * 0.8;
+  }
+  #{setStep(5)} {
+    height: 0;
+    width: 0;
+    border-width: $size * 0.85;
+    margin-top: -$size * 0.85;
+    margin-left: -$size * 0.85;
+  }
+  #{setStep(6)} {
+    width: $size * 1.2;
+    height: $size * 1.2;
+    border-width: $size * 0.25;
+    border-color: nth($ringColors, 2);
+  }
+  #{setStep(7)} {
+    width: $size * 1.6;
+    height: $size * 1.6;
+    border-width: $size * 0.05;
+  }
+  #{setStep(8)},
+  #{setStep(28)} {
+    width: $size * 1.7;
+    height: $size * 1.7;
+    border-width: 0;
+    margin-top: -$size * 0.85;
+    margin-left: -$size * 0.85;
+  }
+}
+
+
+
+
+//
+
+@-webkit-keyframes circles {
+  0%,
+  18.51852% {
+    box-shadow: -5.3033em -5.3033em 0 -0.83333em #8ce8c3, -5.74533em -4.82091em 0 -0.83333em #8be7c2, 0.83973em -7.45284em 0 -0.83333em #90d2fa, 0.18698em -7.49767em 0 -0.83333em #91d1f9, 6.35043em -3.99024em 0 -0.83333em #cc8ef5, 5.97849em -4.52853em 0 -0.83333em #cb8df4, 7.07912em 2.47709em 0 -0.83333em #8ce8c3, 7.26808em 1.85068em 0 -0.83333em #8ce8c3, 2.47709em 7.07912em 0 -0.83333em #f58ea7, 3.08465em 6.83629em 0 -0.83333em #f48da6, -3.99024em 6.35043em 0 -0.83333em #91d2fa, -3.42158em 6.67404em 0 -0.83333em #91d2fa, -7.45284em 0.83973em 0 -0.83333em #92d3fc, -7.35129em 1.4861em 0 -0.83333em #cb8df4;
+  }
+  22.22222% {
+    box-shadow: -5.65685em -5.65685em 0 -0.33333em #8ce8c3, -6.51138em -5.46369em 0 -0.33333em #8be7c2, 0.89572em -7.9497em 0 -0.33333em #90d2fa, 0.21191em -8.49736em 0 -0.33333em #91d1f9, 6.77379em -4.25626em 0 -0.33333em #cc8ef5, 6.77563em -5.13234em 0 -0.33333em #cb8df4, 7.55107em 2.64223em 0 -0.33333em #8ce8c3, 8.23716em 2.09744em 0 -0.33333em #8ce8c3, 2.64223em 7.55107em 0 -0.33333em #f58ea7, 3.49594em 7.7478em 0 -0.33333em #f48da6, -4.25626em 6.77379em 0 -0.33333em #91d2fa, -3.87779em 7.56391em 0 -0.33333em #91d2fa, -7.9497em 0.89572em 0 -0.33333em #92d3fc, -8.33147em 1.68424em 0 -0.33333em #cb8df4;
+  }
+  51.85185% {
+    box-shadow: -8.48528em -8.48528em 0 -0.16667em #9b88cb, -8.38671em -5.44639em 0 -0.58333em #ac77d9, 1.34357em -11.92455em 0 -0.16667em #97e3d5, -0.97087em -9.95276em 0 -0.58333em #b0dfe0, 10.16069em -6.38438em 0 -0.16667em #d1dbaa, 7.17606em -6.9645em 0 -0.58333em #d8ce9f, 11.3266em 3.96335em 0 -0.16667em #66cc9e, 9.91926em 1.26817em 0 -0.58333em #70d4a8, 3.96335em 11.3266em 0 -0.16667em #d5a5bf, 5.19306em 8.54588em 0 -0.58333em #ad9be0, -6.38438em 10.16069em 0 -0.16667em #bc7be1, -3.44362em 9.38837em 0 -0.58333em #a38cdb, -11.92455em 1.34357em 0 -0.16667em #b77bdc, -9.48718em 3.16122em 0 -0.58333em #9fcbcc;
+  }
+  81.48148%,
+  100% {
+    box-shadow: -8.48528em -8.48528em 0 -0.83333em #a068ce, -8.38671em -5.44639em 0 -0.83333em #b752e1, 1.34357em -11.92455em 0 -0.83333em #99e9c8, -0.97087em -9.95276em 0 -0.83333em #bae3d7, 10.16069em -6.38438em 0 -0.83333em #d3f491, 7.17606em -6.9645em 0 -0.83333em #dce483, 11.3266em 3.96335em 0 -0.83333em #59c392, 9.91926em 1.26817em 0 -0.83333em #67cd9f, 3.96335em 11.3266em 0 -0.83333em #caadc7, 5.19306em 8.54588em 0 -0.83333em #959ff3, -6.38438em 10.16069em 0 -0.83333em #ca5ed8, -3.44362em 9.38837em 0 -0.83333em #a975d1, -11.92455em 1.34357em 0 -0.83333em #c35dd1, -9.48718em 3.16122em 0 -0.83333em #90e0be;
+  }
+}
+@keyframes circles {
+  0%,
+  18.51852% {
+    box-shadow: -5.3033em -5.3033em 0 -0.83333em #8ce8c3, -5.74533em -4.82091em 0 -0.83333em #8be7c2, 0.83973em -7.45284em 0 -0.83333em #90d2fa, 0.18698em -7.49767em 0 -0.83333em #91d1f9, 6.35043em -3.99024em 0 -0.83333em #cc8ef5, 5.97849em -4.52853em 0 -0.83333em #cb8df4, 7.07912em 2.47709em 0 -0.83333em #8ce8c3, 7.26808em 1.85068em 0 -0.83333em #8ce8c3, 2.47709em 7.07912em 0 -0.83333em #f58ea7, 3.08465em 6.83629em 0 -0.83333em #f48da6, -3.99024em 6.35043em 0 -0.83333em #91d2fa, -3.42158em 6.67404em 0 -0.83333em #91d2fa, -7.45284em 0.83973em 0 -0.83333em #92d3fc, -7.35129em 1.4861em 0 -0.83333em #cb8df4;
+  }
+  22.22222% {
+    box-shadow: -5.65685em -5.65685em 0 -0.33333em #8ce8c3, -6.51138em -5.46369em 0 -0.33333em #8be7c2, 0.89572em -7.9497em 0 -0.33333em #90d2fa, 0.21191em -8.49736em 0 -0.33333em #91d1f9, 6.77379em -4.25626em 0 -0.33333em #cc8ef5, 6.77563em -5.13234em 0 -0.33333em #cb8df4, 7.55107em 2.64223em 0 -0.33333em #8ce8c3, 8.23716em 2.09744em 0 -0.33333em #8ce8c3, 2.64223em 7.55107em 0 -0.33333em #f58ea7, 3.49594em 7.7478em 0 -0.33333em #f48da6, -4.25626em 6.77379em 0 -0.33333em #91d2fa, -3.87779em 7.56391em 0 -0.33333em #91d2fa, -7.9497em 0.89572em 0 -0.33333em #92d3fc, -8.33147em 1.68424em 0 -0.33333em #cb8df4;
+  }
+  51.85185% {
+    box-shadow: -8.48528em -8.48528em 0 -0.16667em #9b88cb, -8.38671em -5.44639em 0 -0.58333em #ac77d9, 1.34357em -11.92455em 0 -0.16667em #97e3d5, -0.97087em -9.95276em 0 -0.58333em #b0dfe0, 10.16069em -6.38438em 0 -0.16667em #d1dbaa, 7.17606em -6.9645em 0 -0.58333em #d8ce9f, 11.3266em 3.96335em 0 -0.16667em #66cc9e, 9.91926em 1.26817em 0 -0.58333em #70d4a8, 3.96335em 11.3266em 0 -0.16667em #d5a5bf, 5.19306em 8.54588em 0 -0.58333em #ad9be0, -6.38438em 10.16069em 0 -0.16667em #bc7be1, -3.44362em 9.38837em 0 -0.58333em #a38cdb, -11.92455em 1.34357em 0 -0.16667em #b77bdc, -9.48718em 3.16122em 0 -0.58333em #9fcbcc;
+  }
+  81.48148%,
+  100% {
+    box-shadow: -8.48528em -8.48528em 0 -0.83333em #a068ce, -8.38671em -5.44639em 0 -0.83333em #b752e1, 1.34357em -11.92455em 0 -0.83333em #99e9c8, -0.97087em -9.95276em 0 -0.83333em #bae3d7, 10.16069em -6.38438em 0 -0.83333em #d3f491, 7.17606em -6.9645em 0 -0.83333em #dce483, 11.3266em 3.96335em 0 -0.83333em #59c392, 9.91926em 1.26817em 0 -0.83333em #67cd9f, 3.96335em 11.3266em 0 -0.83333em #caadc7, 5.19306em 8.54588em 0 -0.83333em #959ff3, -6.38438em 10.16069em 0 -0.83333em #ca5ed8, -3.44362em 9.38837em 0 -0.83333em #a975d1, -11.92455em 1.34357em 0 -0.83333em #c35dd1, -9.48718em 3.16122em 0 -0.83333em #90e0be;
+  }
+}
+
+
+
+
+// Styles
+.jm-heartWrapper{
+  height: $size * 3;
+  width: $size * 3;
+
+  // Layer 1 : Heart
+  .heart{
+    display: block;
+    height: $size;
+    width: $size;
+    top: 54%;
+    margin-top: -$size / 2;
+    margin-left: -$size / 2;
+    left: 50%;
+    position: absolute;
+    z-index: 0;
+
+    > * {
+      overflow: hidden;
+      position: absolute;
+      &:after{
+        display: block;
+        content: '';
+        position: absolute;
+        background: nth($heartColors, 1);
+      }
+    }
+
+    // Top Left Part
+    .tl{
+      height: 25%;
+      width: 50.25%;
+      top: 0;
+      left: 0;
+      &:after{
+        top: 0;
+        left: 0;
+        height: 200%;
+        width: 104%;
+        border-top-left-radius: 70% 80%;
+        border-top-right-radius: 80% 80%;
+        border-bottom-right-radius: 50% 50%;
+        border-bottom-left-radius: 50% 50%;
+      }
+    }
+
+    // Top Right Part
+    .tr{
+      height: 25%;
+      width: 50.25%;
+      top: 0;
+      right: 0;
+      &:after{
+        top: 0;
+        right: 0;
+        height: 200%;
+        width: 104%;
+        border-top-left-radius: 80% 80%;
+        border-top-right-radius: 70% 80%;
+        border-bottom-right-radius: 50% 50%;
+        border-bottom-left-radius: 50% 50%;
+      }
+    }
+
+    // Bottom Left Part
+    .bl{
+      height: 75.5%;
+      width: 50.25%;
+      bottom: 0;
+      left: 0;
+      &:after{
+        top: 0;
+        left: 0;
+        height: 95%;
+        width: 160%;
+        border-top-left-radius: 0 0;
+        border-top-right-radius: 0 0;
+        border-bottom-right-radius: 0 0;
+        border-bottom-left-radius: 100% 100%;
+      }
+    }
+
+    // Bottom Right Part
+    .br{
+      height: 75.5%;
+      width: 50.25%;
+      bottom: 0;
+      right: 0;
+      &:after{
+        top: 0;
+        right: 0;
+        height: 95%;
+        width: 160%;
+        border-top-left-radius: 0 0;
+        border-top-right-radius: 0 0;
+        border-bottom-right-radius: 100% 100%;
+        border-bottom-left-radius: 0 0;
+      }
+    }
+  }
+
+  // Layer 2 : Ring
+  .ring{
+    display: block;
+    position: absolute;
+    border-width: 0;
+    border-style: solid;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  // Layer 3 : Circles
+  .circles{
+    display: block;
+    position: absolute;
+    height: $circleSize;
+    width: $circleSize;
+    top: 50%;
+    left: 50%;
+    margin-top: -$circleSize / 2;
+    margin-left: -$circleSize / 2;
+    z-index: 2;
+    border-radius: 50%;
+  }
+
+  // Hover Styles
+  &:hover .heart{
+    .tl,.tr,.bl,.br{
+      &:after{
+        background: nth($heartColors, 2);
+      }
+    }
+  }
+
+  // Active Styles
+  &.active{
+
+    // Layer 1 : Animation
+    .heart{
+      animation-name: heart;
+      animation-duration: $animDuration;
+      animation-timing-function: $animTiming;
+      animation-iteration-count: $animIteration;
+      .tl,.tr,.bl,.br{
+        &:after{
+          background: nth($heartColors, 2);
+        }
+      }
+    }
+
+    // Layer 2 : Animation
+    .ring{
+      animation-name: ring;
+      animation-duration: $animDuration;
+      animation-timing-function: $animTiming;
+      animation-iteration-count: $animIteration;
+    }
+
+    // Layer 3 : Animation
+    .circles{
+      animation-name: circles;
+      animation-duration: $animDuration;
+      animation-timing-function: $animTiming;
+      animation-iteration-count: $animIteration;
+    }
+  }
+}

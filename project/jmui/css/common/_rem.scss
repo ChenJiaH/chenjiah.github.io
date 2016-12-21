@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+/*=====================
+以下是基于ip6 375宽度做的适配
+标准html{font-size:10px}
+=======================*/
+@mixin queryWidth($min, $max) {
+  @if $min == -1 {
+    @media screen and (max-width: $max+px) {
+      html {
+        font-size: ( ($max+1) / 375 ) * 10px;
+      }
+    }
+  } @else if $max == -1 {
+    @media screen and (min-width: $min+px) {
+      html {
+        font-size: ( $min / 375 ) * 10px;
+      }
+    }
+  } @else {
+    @media screen and (min-width: $min+px) and (max-width: $max+px) {
+      html {
+        font-size: ( $min / 375 ) * 10px;
+      }
+    }
+  }
+}
+
+/*================================================================
+以下为基于ip5 宽度320做的适配，标准html{font-size:10px},即1rem = 10px
+=================================================================*/
+//@mixin queryWidth($min, $max) {
+//  @if $min == -1 {
+//    @media screen and (max-width: $max+px) {
+//      html {
+//        font-size: ( ($max+1) / 320 ) * 10px;
+//      }
+//    }
+//  } @else if $max == -1 {
+//    @media screen and (min-width: $min+px) {
+//      html {
+//        font-size: ( $min / 320 ) * 10px;
+//      }
+//    }
+//  } @else {
+//    @media screen and (min-width: $min+px) and (max-width: $max+px) {
+//      html {
+//        font-size: ( $min / 320 ) * 10px;
+//      }
+//    }
+//  }
+//}
+
+
+@include queryWidth(-1, 319);    // for iphone 4
+@include queryWidth(320, 359);   // for iphone 5
+@include queryWidth(360, 374);
+@include queryWidth(375, 383);   // for iphone 6
+@include queryWidth(384, 399);
+@include queryWidth(400, 413);
+@include queryWidth(414, -1);    // for iphone 6 plus
+
+/*=================================================================
+以上只是rem初始化  具体模块还需要具体调，以下为相关适配
+@media screen and (min-width: 320px) {} //for iphone 5
+@media screen and (min-width: 375px) {} //for iphone 6
+@media screen and (min-width: 414px) {} //for iphone 6 plus
+@media screen and (min-aspect-ratio: 69/100) {} //for huawei荣耀6
+@media screen and (min-aspect-ratio: 7/10) {} //for mx3
+@media screen and (max-height: 480px) {} //for iphone 4
+@media screen and (max-height: 420px) {} //for iphone 4 微信
+@media only screen and (orientation: landscape) {} // for 横屏
+==============================================================*/

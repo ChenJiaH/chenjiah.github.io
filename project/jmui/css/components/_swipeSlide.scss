@@ -1,0 +1,17 @@
+@charset "UTF-8";
+@import "../common/_css3lib",
+"../common/_variable";
+
+
+#swipeSlide {
+  .slider-wrapper { width: 100%; overflow: hidden; height: 20rem; position: relative; background-color: #cccccc;;
+    .slider_touch { width: 600%; height: 20rem; @include flexBox();
+      .item { height: 100%; @include flexItem(1);}
+    }
+  }
+  .dot-box { width: 100%; height: 40px;}
+  .dot-box li{ float: left; margin-top: -50px;
+    background-color: rgba(0, 0, 0, 0.4); width: 4rem; height: 4rem; -webkit-border-radius: 50%; border-radius: 50%; color: #ffffff;
+  }
+  .dot-box li.active { background-color: black; color: #ffffff;}
+}

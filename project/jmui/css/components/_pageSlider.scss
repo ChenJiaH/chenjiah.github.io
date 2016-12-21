@@ -1,0 +1,9 @@
+@charset "UTF-8";
+@import "../common/_css3lib",
+"../common/_variable";
+
+.main-wrap { width: 100%; height: 100%; margin: 0 auto; max-width: 750px; position: relative; }
+.page { top: 0; left: 0; @include transform(translateY(100%)); @include transform-origin(50% 50%); overflow: hidden; position: absolute;}
+.page > div { display: none;  opacity: 1; }
+.page-active { @include transform(translateY(0));}
+.page-active > div { display: block; }

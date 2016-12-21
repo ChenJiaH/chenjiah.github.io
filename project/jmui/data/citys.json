@@ -1,0 +1,11 @@
+
+	{
+		"areaList":[
+			{"id":101,"name":"朝阳区","isCod":true},
+			{"id":102,"name":"海淀区","isCod":true},
+			{"id":103,"name":"昌平区","isCod":true},
+			{"id":104,"name":"东城区","isCod":true},
+			{"id":105,"name":"西城区","isCod":true},
+			{"id":106,"name":"大兴区","isCod":true}
+		]
+	}

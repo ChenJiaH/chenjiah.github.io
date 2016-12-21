@@ -1,0 +1,27 @@
+{
+	"areaList":[
+		{"id":1,"name":"北京市","isCod":true},
+		{"id":2,"name":"上海市","isCod":true},
+		{"id":3,"name":"天津市","isCod":true},
+		{"id":4,"name":"重庆市","isCod":true},
+		{"id":5,"name":"河北省","isCod":true},
+		{"id":6,"name":"山西省","isCod":true},
+		{"id":7,"name":"河南省","isCod":true},
+		{"id":8,"name":"辽宁省","isCod":true},
+		{"id":9,"name":"吉林省","isCod":true},
+		{"id":10,"name":"黑龙江省","isCod":true},
+		{"id":11,"name":"内蒙古省","isCod":true},
+		{"id":12,"name":"江苏省","isCod":true},
+		{"id":13,"name":"山东省","isCod":true},
+		{"id":14,"name":"安徽省","isCod":true},
+		{"id":15,"name":"浙江省","isCod":true},
+		{"id":16,"name":"福建省","isCod":true},
+		{"id":17,"name":"湖北省","isCod":true},
+		{"id":18,"name":"湖南省","isCod":true},
+		{"id":19,"name":"广东省","isCod":true},
+		{"id":20,"name":"广西省","isCod":true},
+		{"id":21,"name":"江西省","isCod":true},
+		{"id":22,"name":"四川省","isCod":true}
+	]
+
+}

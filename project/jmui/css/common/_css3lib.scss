@@ -1,0 +1,558 @@
+@charset "utf-8";
+
+/**
+ * css3lib\
+ *
+ * thanks: 
+ * http://bourbon.io/
+ * https://github.com/thomas-mcdonald/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/_mixins.scss
+ * https://github.com/marvin1023/sassCore/blob/master/core/_css3.scss
+ */
+
+// css3 global prefix setting
+$prefix-for-webkit: true !default;
+$prefix-for-mozilla: true !default;
+$prefix-for-microsoft: true !default;
+$prefix-for-opera: true !default;
+$prefix-for-spec: true !default;
+
+@mixin disable-prefix-for-all() {
+  $prefix-for-webkit: false;
+  $prefix-for-mozilla: false;
+  $prefix-for-microsoft: false;
+  $prefix-for-opera: false;
+  $prefix-for-spec: false;
+}
+
+@mixin prefixer($property, $value, $prefixes) {
+  @each $prefix in $prefixes {
+
+    @if $prefix == webkit and $prefix-for-webkit == true {
+      -webkit-#{$property}: $value;
+    } @else if $prefix == moz and $prefix-for-mozilla == true {
+      -moz-#{$property}: $value;
+    } @else if $prefix == ms and $prefix-for-microsoft == true {
+      -ms-#{$property}: $value;
+    } @else if $prefix == o and $prefix-for-opera == true {
+      -o-#{$property}: $value;
+    } @else if $prefix == spec and $prefix-for-spec == true {
+      #{$property}: $value;
+    } @else {
+      // @warn "Unrecognized prefix: #{$prefix}";
+    }
+  }
+}
+
+// Adds keyframes blocks for supported prefixes, removing redundant prefixes in the block's content
+// 
+// prefix:
+// webkit moz ms spec
+// 
+// example:
+// @include keyframes(pulse, webkit moz ms spec){
+//     0% {
+//         opacity: 1;   
+//         @include transform(scale(1));
+//     }
+//     50% {
+//         opacity: 0.7;   
+//         @include transform(scale(0.9));
+//     }
+//     100% {
+//         opacity: 1;   
+//         @include transform(scale(1));
+//     }
+// };
+@mixin keyframes($name, $prefixes) {
+  $original-prefix-for-webkit: $prefix-for-webkit;
+  $original-prefix-for-mozilla: $prefix-for-mozilla;
+  $original-prefix-for-microsoft: $prefix-for-microsoft;
+  $original-prefix-for-opera: $prefix-for-opera;
+  $original-prefix-for-spec: $prefix-for-spec;
+
+  @each $prefix in $prefixes {
+    @if $prefix == webkit and $original-prefix-for-webkit == true {
+      @include disable-prefix-for-all();
+      $prefix-for-webkit: true;
+      @-webkit-keyframes #{$name} {
+        @content;
+      }
+    }
+    @if $prefix == moz and $original-prefix-for-mozilla == true {
+      @include disable-prefix-for-all();
+      $prefix-for-mozilla: true;
+      @-moz-keyframes #{$name} {
+        @content;
+      }
+    }
+    @if $prefix == ms and $original-prefix-for-microsoft == true {
+      @include disable-prefix-for-all();
+      $prefix-for-microsoft: true;
+      @-ms-keyframes #{$name} {
+        @content;
+      }
+    }
+    @if $prefix == o and $original-prefix-for-opera == true {
+      @include disable-prefix-for-all();
+      $prefix-for-opera: true;
+      @-o-keyframes #{$name} {
+        @content;
+      }
+    }
+    @if $prefix == spec {
+      @include disable-prefix-for-all();
+      $prefix-for-spec: true;
+      @keyframes #{$name} {
+        @content;
+      }
+    }
+  }
+
+  $prefix-for-webkit: $original-prefix-for-webkit;
+  $prefix-for-mozilla: $original-prefix-for-mozilla;
+  $prefix-for-microsoft: $original-prefix-for-microsoft;
+  $prefix-for-opera: $original-prefix-for-opera;
+  $prefix-for-spec: $original-prefix-for-spec;
+}
+
+// transform
+// 
+// example:
+// @include transform(rotate(-4deg));
+// @include transform(rotate(-4deg) translate(6px, 18px) scale(1));
+@mixin transform($property: none) {
+  //  none | <transform-function>
+  @include prefixer(transform, $property, webkit moz ms spec);
+}
+
+// transform-origin
+// 
+// example:
+// @include transform-origin(center bottom 0);
+// @include transform-origin(505, 50%);
+@mixin transform-origin($axes: 50%) {
+  // x-axis - left | center | right  | length | %
+  // y-axis - top  | center | bottom | length | %
+  // z-axis -                          length
+  @include prefixer(transform-origin, $axes, webkit moz ms spec);
+}
+
+@mixin transform-style($style: flat) {
+  @include prefixer(transform-style, $style, webkit moz ms spec);
+}
+
+// animation
+// 
+// example:
+// @include animation(pop_move_1 6s infinite);
+@mixin animation($animations...) {
+  @include prefixer(animation, $animations, webkit moz ms spec);
+}
+
+// animation-delay
+// 
+// example:
+// @include animation-delay(0.2s);
+@mixin animation-duration($times...) {
+  @include prefixer(animation-duration, $times, webkit moz ms spec);
+}
+
+@mixin animation-delay($times...) {
+  @include prefixer(animation-delay, $times, webkit moz ms spec);
+}
+
+@mixin animation-timing-function($value...) {
+  @include prefixer(animation-timing-function, $value, webkit moz ms spec);
+}
+
+@mixin animation-fill-mode($value...) {
+  @include prefixer(animation-fill-mode, $value, webkit moz ms spec);
+}
+
+@mixin animation-name($name...) {
+  @include prefixer(animation-name, $name, webkit moz ms spec);
+}
+
+// transition
+// 
+// example:
+// @include transition(all 0.2s ease-in-out, opacity 1s);
+@mixin transition($properties...) {
+  @if length($properties) >= 1 {
+    @include prefixer(transition, $properties, webkit moz ms spec);
+  } @else {
+    $properties: all 0.15s ease-out;
+    @include prefixer(transition, $properties, webkit moz ms spec);
+  }
+}
+
+@mixin transition-duration($times...) {
+  @include prefixer(transition-duration, $times, webkit moz ms spec);
+}
+
+@mixin transition-timing-function($motions...) {
+  // timing-function
+  // https://developer.mozilla.org/en-US/docs/Web/CSS/timing-function
+  @include prefixer(transition-timing-function, $motions, webkit moz ms spec);
+}
+
+@mixin transition-delay($times...) {
+  @include prefixer(transition-delay, $times, webkit moz ms spec);
+}
+
+// gradient
+// 
+// example:
+// @include gradient(#875D64, #81575E);
+// 
+// @mixin gradient($from, $to) {
+//     background: $from;
+//     background: -moz-linear-gradient(top,$from,$to);
+//     background: -webkit-gradient(linear,0 0,0 100%,from($from),to($to));
+//     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="$from", endColorstr="$to");
+//     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr="$from", endColorstr="$to")";
+// }
+@mixin gradient($from, $to) {
+  background-color: $from;
+  background-repeat: repeat-x;
+  background-image: -moz-linear-gradient(top, $from, $to);
+  background-image: -webkit-linear-gradient(top, $from, $to);
+  background-image: -o-linear-gradient(top, $from, $to);
+  background-image: linear-gradient(top, $from, $to);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}', GradientType=0);
+}
+
+// max-screen
+// 
+// example:
+// @include max-screen(480, root480) {
+// 
+// your css
+//     .test { color: red }
+//     #testDiv{
+//         text-align: center;
+//         font-size: 20px;
+//     }
+//     
+// }
+@mixin max-screen($res, $prefix) {
+  @media (max-width: #{$res}px) {
+    @content;
+  }
+  .#{$class} {
+    @content;
+  }
+}
+
+// min-screen
+// 
+// example:
+// @include min-screen(480, root480) {
+// 
+// your css
+//     .test { color: red }
+//     #testDiv{
+//         text-align: center;
+//         font-size: 20px;
+//     }
+//     
+// }
+
+@mixin min-screen($res, $class) {
+  @media (min-width: #{$res}px) {
+    @content;
+  }
+  .#{$class} {
+    @content;
+  }
+}
+
+@mixin flexBox() {
+  display: box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+}
+
+@mixin flexItem($val) {
+  box-flex: $val;
+  -webkit-box-flex: $val;
+  -webkit-flex: $val;
+  -ms-flex: $val;
+  flex: $val;
+  width: 0;
+}
+
+@mixin box-sizing($value) {
+  @include prefixer(box-sizing, $value, webkit moz ms spec);
+}
+
+/* 两端对齐 */
+@mixin boxJustify() {
+  -webkit-box-pack: justify;
+  box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+/* 居容器中间 */
+@mixin boxCenter() {
+  -webkit-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+/* 三角箭头 */
+@mixin triangle($direction, $size, $color) {
+  font-size: 0;
+  line-height: 0;
+  border-width: $size;
+  border-style: solid;
+  @if $direction == top {
+    border-color: transparent transparent $color;
+  }
+  @if $direction == right {
+    border-color: transparent transparent transparent $color;
+  }
+  @if $direction == bottom {
+    border-color: $color transparent transparent;
+  }
+  @if $direction == left {
+    border-color: transparent $color transparent transparent;
+  }
+  @if $direction == topright {
+    border-color: $color transparent transparent transparent;
+  }
+  @if $direction == rightbottom {
+    border-color: transparent transparent $color transparent;
+  }
+}
+
+/**
+ * css3lib extend
+ *
+ * Created By McChen
+ *
+ * 2015/10/18
+ *
+ * chenjiahao@jd.com
+ */
+/* 1px hack */
+
+@mixin jm-border-t($size: $borderSize, $color: $bordercolor) {
+  border-top: $size solid $color;
+  @media screen and (-webkit-min-device-pixel-ratio: 2) {
+    border: 0;
+    background-position: left top;
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(.6, rgba(0, 0, 0, 0)), color-stop(.6, $color), to($color));
+    background-repeat: repeat-x;
+    -webkit-background-size: 100% $size;
+  }
+}
+
+@mixin jm-border-b($size: $borderSize, $color: $bordercolor) {
+  border-bottom: $size solid $color;
+  @media screen and (-webkit-min-device-pixel-ratio: 2) {
+    border: 0;
+    background-position: left bottom;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(.6, rgba(0, 0, 0, 0)), color-stop(.6, $color), to($color));
+    background-repeat: repeat-x;
+    -webkit-background-size: 100% $size;
+  }
+}
+
+@mixin jm-border-tb($size: $borderSize, $color...) {
+  border-top: $color $size solid;
+  border-bottom: $color $size solid;
+  background-image: none;
+  @media screen and (-webkit-min-device-pixel-ratio: 2) {
+    border: 0;
+    background-repeat: repeat-x;
+    -webkit-background-size: 100% $size;
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(.6, rgba(0, 0, 0, 0)), color-stop(.6, $color), to($color)), -webkit-gradient(linear, left top, left bottom, color-stop(.6, rgba(0, 0, 0, 0)), color-stop(.6, $color), to($color));
+    background-position: top, bottom;
+  }
+}
+
+@mixin jm-border-l($size: $borderSize, $color: $bordercolor) {
+  border-left: $size solid $color;
+  @media screen and (-webkit-min-device-pixel-ratio: 2) {
+    border: 0;
+    background-position: left top;
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(.6, rgba(0, 0, 0, 0)), color-stop(.6, $color), to($color));
+    background-repeat: repeat-y;
+    -webkit-background-size: $size 100%;
+  }
+}
+
+@mixin jm-border-r($size: $borderSize, $color: $bordercolor) {
+  border-right: $size solid $color;
+  @media screen and (-webkit-min-device-pixel-ratio: 2) {
+    border: 0;
+    background-position: right top;
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(.6, rgba(0, 0, 0, 0)), color-stop(.6, $color), to($color));
+    background-repeat: repeat-y;
+    -webkit-background-size: $size 100%;
+  }
+}
+
+@mixin jm-border-lr($size: $borderSize, $color...) {
+  border-left: $color $size solid;
+  border-right: $color $size solid;
+  background-image: none;
+  @media screen and (-webkit-min-device-pixel-ratio: 2) {
+    border: 0;
+    background-repeat: repeat-y;
+    -webkit-background-size: $size 100%;
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(.6, rgba(0, 0, 0, 0)), color-stop(.6, $color), to($color)), -webkit-gradient(linear, left top, right top, color-stop(.6, rgba(0, 0, 0, 0)), color-stop(.6, $color), to($color));
+    background-position: left, right;
+  }
+}
+
+@mixin jm-border($size: $borderSize, $color: $bordercolor) {
+  border: $size solid $color;
+  @media screen and (-webkit-min-device-pixel-ratio: 2) {
+    position: relative;
+    border: 0;
+  }
+  &:after {
+    @media screen and (-webkit-min-device-pixel-ratio: 2) {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: -webkit-gradient(linear, left bottom, left top, color-stop(.6, rgba(0, 0, 0, 0)), color-stop(.6, $color), to($color)), -webkit-gradient(linear, left top, right top, color-stop(.6, rgba(0, 0, 0, 0)), color-stop(.6, $color), to($color)), -webkit-gradient(linear, left top, left bottom, color-stop(.6, rgba(0, 0, 0, 0)), color-stop(.6, $color), to($color)), -webkit-gradient(linear, right top, left top, color-stop(.6, rgba(0, 0, 0, 0)), color-stop(.6, $color), to($color));
+      -webkit-background-size: 100% $size, $size 100%, 100% $size, $size 100%;
+      background-size: 100% $size, $size 100%, 100% $size, $size 100%;
+      background-repeat: no-repeat;
+      background-position: top, right, bottom, left;
+      padding: $size;
+      -webkit-box-sizing: border-box;
+      z-index: $z-index-border;
+      pointer-events: none;
+    }
+  }
+}
+
+@mixin jm-border-radius {
+  @include border-radius;
+}
+
+/*border-radius*/
+@mixin border-radius($border-color: $bordercolor, $border-radius: $border-radius-base, $border-before-radius: $border-radius-lg) {
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  @media screen and (-webkit-min-device-pixel-ratio: 2) {
+    position: relative;
+    border: 0;
+    &:before {
+      content: "";
+      width: 200%;
+      height: 200%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: 1px solid $border-color;
+      -webkit-transform: scale(.5);
+      -webkit-transform-origin: 0 0;
+      padding: 1px;
+      -webkit-box-sizing: border-box;
+      border-radius: $border-before-radius;
+      pointer-events: none;
+    }
+  }
+}
+
+/*fullLayer*/
+@mixin fullLayer {
+  width: 100%;
+  height: 100%;
+}
+
+/*nowrap*/
+@mixin nowrap {
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* 元素水平垂直居中 */
+@mixin mm {
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  box-pack: center;
+  -webkit-box-align: center;
+  box-align: center;
+}
+
+/* 元素水平居左垂直居中 */
+@mixin lm {
+  display: -webkit-box;
+  -webkit-box-pack: start;
+  box-pack: start;
+  -webkit-box-align: center;
+  box-align: center;
+}
+
+/* 元素水平居右垂直居中 */
+@mixin rm {
+  display: -webkit-box;
+  -webkit-box-pack: end;
+  box-pack: end;
+  -webkit-box-align: center;
+  box-align: center;
+}
+
+@mixin placeholder {
+  @include fullLayer;
+  @include mm;
+  position: absolute;
+  color: $txt-muted;
+  -webkit-box-orient: vertical;
+  -webkit-box-sizing: border-box;
+  z-index: $z-index-placehold;
+}
+
+/*placeholder-img*/
+@mixin placeholder-img {
+  @include fullLayer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: $z-index-img;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+}
+
+/*strip-units 去除值得单位*/
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+/*remCalc*/
+//Example: @include(width, 45)或@include(width, 45px)   @include(margin, 0, 1,1,2)
+//默认单位为px 可写可不写
+@mixin remCalc($property, $values...) {
+  $max: length($values); //返回$values列表的长度值
+  $remValues: '';
+
+  @for $i from 1 through $max {
+    $value: strip-units(nth($values, $i));
+    $browser-default-font-size: strip-units($browser-default-font-size);
+    $remValues: #{$remValues + $value/$browser-default-font-size}rem;
+
+    @if $i < $max {
+      $remValues: #{$remValues + " "};
+    }
+  }
+
+  #{$property}: $remValues;
+}
+
+

@@ -1,0 +1,10 @@
+{
+	"areaList":[
+		{"id":1001,"name":"一环到二环","isCod":true},
+		{"id":1002,"name":"二环到三环","isCod":true},
+		{"id":1003,"name":"三环到四环","isCod":true},
+		{"id":1004,"name":"四环到五环","isCod":true},
+		{"id":1005,"name":"五环到六环","isCod":true},
+		{"id":1006,"name":"六环以外","isCod":true}
+	]
+}

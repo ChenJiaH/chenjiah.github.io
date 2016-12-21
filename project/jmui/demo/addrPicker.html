@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-cn">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta http-equiv="pragma" content="no-cache">
+    <meta charset="utf-8">
+    <meta id="page_main" data-main="addrPicker">
+    <title>jm Demo - addrPicker</title>
+    <link rel="stylesheet" href="../css/1.0.0/jm.css"/>
+    <link rel="icon" href="../images/favicon.ico" mce_href="../images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<section id="jm-addrPicker">
+    <div class="column clearfix">
+        <div class="column-name">
+            <span>所在地区:</span>
+        </div>
+        <div class="column-input pr">
+            <div class="ipt-addrpicker" id="btnChooseAddr"><i class="icon icon-chooseArea abs-rm"></i></div>
+            <input id="addrInput" class="location" type="text" readonly="readonly" placeholder="请选择所在地址" empty="no"/>
+        </div>
+    </div>
+
+    <!-- 模拟滚动选择器 -->
+    <div class="picker-mask" id="addrPicker">
+        <div class="picker-wrap">
+            <div class="clearfix">
+                <a href="javascript:;" class="picker-btn fr" id="pickerSure">确定</a>
+                <a href="javascript:;" class="picker-btn fl" id="pickerCancel">取消</a>
+            </div>
+            <div class="picker-box clearfix">
+                <div class="picker-item pct30">
+                    <div class="picker-item-inner">
+                        <ul class="picker-ul ta-c">
+                            <li>北京</li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="picker-item pct30">
+                    <div class="picker-item-inner">
+                        <ul class="picker-ul">
+                            <li>海淀区</li>
+                            <li>朝阳区</li>
+                            <li>海淀区</li>
+                            <li>朝阳区</li>
+                            <li>海淀区</li>
+                            <li>朝阳区</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="picker-item pct40">
+                    <div class="picker-item-inner">
+                        <ul class="picker-ul">
+                            <li>三环到四环之间</li>
+                            <li>六环内</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="picker-box-mask picker-box-mask-t"></div>
+                <div class="picker-box-mask picker-box-mask-b"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="http://static.360buyimg.com/finance/mobile/base/1.0.0/js/lib/??zepto-1.1.4.js,fastclick.js"></script>
+<script type="text/javascript" src="../js/lib/sea/sea.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
+</body>
+</html>

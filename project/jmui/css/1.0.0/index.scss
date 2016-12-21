@@ -1,0 +1,29 @@
+@charset "UTF-8";
+@import "../common/_css3lib",
+"../common/_iconfont",
+"../common/_variable",
+"../common/_reset",
+"../common/_rem";
+
+
+// 通用
+html { font-size: $browser-default-font-size; min-height: 100%; min-width: 320px; max-width: 750px;}
+body { line-height: 1; background-color: $default-bg;}
+header { background-color: $jrApp-blue; color: $txt-white; font-size: $font-size-base; padding: 14px 0; position: relative; text-align: center;
+  a { color: $txt-white; display: block; padding: 9px 0;}
+  .icon-prev { font-size: 16px; padding: 5px; color: $txt-white; display: inline-block;}
+}
+footer { background-color: $bg-gray; font-size: $font-size-tips; position: relative; text-align: center; padding: 4px 0;
+  a { display: block; padding: 9px 0; color: $jrApp-blue;}
+  .icon-prev { font-size: 14px; color: $jrApp-blue;}
+  .icon-next { font-size: 14px; color: $jrApp-blue;}
+}
+.page { margin-top: 44px;
+  ul { padding-left: 1.5rem;
+    li { @include jm-border-b(2px,#e6e6e6);
+      a { color: $txt-normal; display: block; font-size: 1.8rem; padding: 1.5rem 1.5rem 1.5rem 3rem; position: relative;}
+      i { display: block; font-size: 1.8rem; color: $jrApp-blue;}
+      .icon-next { font-size: 1.6rem; color: $icon-gray; right: 1.5rem;}
+    }
+  }
+}

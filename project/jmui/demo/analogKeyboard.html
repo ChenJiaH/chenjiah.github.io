@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-cn">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta http-equiv="pragma" content="no-cache">
+    <meta charset="utf-8">
+    <meta id="page_main" data-main="analogKeyboard">
+    <title>jm Demo - analogKeyboard</title>
+    <link rel="stylesheet" href="../css/1.0.0/jm.css"/>
+    <link rel="icon" href="../images/favicon.ico" mce_href="../images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<section id="analogKeyboard">
+    <!--<i class="iconfont icon-backspace" style="color: red"></i>-->
+    <!--<i class="iconfont icon-uppercase" style="color: red"></i>-->
+    <div class="auto p15">
+        <div class="jm-analogKeyboard-input"></div>
+    </div>
+    <!--abc表示小写字母键盘 ABC表示大写字母键盘 number表示数字符号键盘 NUMBER表示数字符号键盘二-->
+    <div class="jm-analogKeyboard abc">
+        <!--小写字母键盘-->
+        <ul class="status-abc clearfix">
+            <li data-key="q">q</li>
+            <li data-key="w">w</li>
+            <li data-key="e">e</li>
+            <li data-key="r">r</li>
+            <li data-key="t">t</li>
+            <li data-key="y">y</li>
+            <li data-key="u">u</li>
+            <li data-key="i">i</li>
+            <li data-key="o">o</li>
+            <li data-key="p">p</li>
+            <li data-key="a">a</li>
+            <li data-key="s">s</li>
+            <li data-key="d">d</li>
+            <li data-key="f">f</li>
+            <li data-key="g">g</li>
+            <li data-key="h">h</li>
+            <li data-key="j">j</li>
+            <li data-key="k">k</li>
+            <li data-key="l">l</li>
+            <li class="uppercase"><i class="iconfont icon-uppercase"></i></li>
+            <li data-key="z">z</li>
+            <li data-key="x">x</li>
+            <li data-key="c">c</li>
+            <li data-key="v">v</li>
+            <li data-key="b">b</li>
+            <li data-key="n">n</li>
+            <li data-key="m">m</li>
+            <li class="backspace" data-key="del"><i class="iconfont icon-backspace"></i></li>
+            <li class="changeNumber">123</li>
+            <li data-key=",">,</li>
+            <li data-key=" ">空格</li>
+            <li data-key=".">.</li>
+            <li class="complete">完成</li>
+        </ul>
+
+        <!--大写字母键盘-->
+        <ul class="status-ABC clearfix">
+            <li data-key="Q">Q</li>
+            <li data-key="W">W</li>
+            <li data-key="E">E</li>
+            <li data-key="R">R</li>
+            <li data-key="T">T</li>
+            <li data-key="Y">Y</li>
+            <li data-key="U">U</li>
+            <li data-key="I">I</li>
+            <li data-key="O">O</li>
+            <li data-key="P">P</li>
+            <li data-key="A">A</li>
+            <li data-key="S">S</li>
+            <li data-key="D">D</li>
+            <li data-key="F">F</li>
+            <li data-key="G">G</li>
+            <li data-key="H">H</li>
+            <li data-key="J">J</li>
+            <li data-key="K">K</li>
+            <li data-key="L">L</li>
+            <li class="lowercase"><i class="iconfont icon-uppercase"></i></li>
+            <li data-key="Z">Z</li>
+            <li data-key="X">X</li>
+            <li data-key="C">C</li>
+            <li data-key="V">V</li>
+            <li data-key="B">B</li>
+            <li data-key="N">N</li>
+            <li data-key="M">M</li>
+            <li class="backspace" data-key="del"><i class="iconfont icon-backspace"></i></li>
+            <li class="changeNumber">123</li>
+            <li data-key=",">,</li>
+            <li data-key=" ">空格</li>
+            <li data-key=".">.</li>
+            <li class="complete">完成</li>
+        </ul>
+
+        <!--数字符号键盘-->
+        <ul class="status-number clearfix">
+            <li data-key="1">1</li>
+            <li data-key="2">2</li>
+            <li data-key="3">3</li>
+            <li data-key="4">4</li>
+            <li data-key="5">5</li>
+            <li data-key="6">6</li>
+            <li data-key="7">7</li>
+            <li data-key="8">8</li>
+            <li data-key="9">9</li>
+            <li data-key="0">0</li>
+            <li data-key="~">~</li>
+            <li data-key="!">!</li>
+            <li data-key="@">@</li>
+            <li data-key="#">#</li>
+            <li data-key="%">%</li>
+            <li data-key="'">'</li>
+            <li data-key="&">&</li>
+            <li data-key="*">*</li>
+            <li data-key="?">?</li>
+            <li class="changeNumberLetter2">123</li>
+            <li data-key="(">(</li>
+            <li data-key=")">)</li>
+            <li data-key="-">-</li>
+            <li data-key="_">_</li>
+            <li data-key=":">:</li>
+            <li data-key=";">;</li>
+            <li data-key="/">/</li>
+            <li class="backspace" data-key="del"><i class="iconfont icon-backspace"></i></li>
+            <li class="changeLetter">abc</li>
+            <li data-key=",">,</li>
+            <li data-key=" ">空格</li>
+            <li data-key=".">.</li>
+            <li class="complete">完成</li>
+        </ul>
+
+        <!--数字符号键盘(二)-->
+        <ul class="status-NUMBER clearfix">
+            <li data-key="1">1</li>
+            <li data-key="2">2</li>
+            <li data-key="3">3</li>
+            <li data-key="4">4</li>
+            <li data-key="5">5</li>
+            <li data-key="6">6</li>
+            <li data-key="7">7</li>
+            <li data-key="8">8</li>
+            <li data-key="9">9</li>
+            <li data-key="0">0</li>
+            <li data-key="<"><</li>
+            <li data-key=">">></li>
+            <li data-key="+">+</li>
+            <li data-key="=">=</li>
+            <li data-key="÷">÷</li>
+            <li data-key="^">^</li>
+            <li data-key="`">`</li>
+            <li data-key="[">[</li>
+            <li data-key="]">]</li>
+            <li class="changeNumberLetter">#+=</li>
+            <li data-key="\">\</li>
+            <li data-key="|">|</li>
+            <li data-key='"'>"</li>
+            <li data-key="$">$</li>
+            <li data-key="￥">￥</li>
+            <li data-key="{">{</li>
+            <li data-key="}">}</li>
+            <li class="backspace" data-key="del"><i class="iconfont icon-backspace"></i></li>
+            <li class="changeLetter">abc</li>
+            <li data-key=",">,</li>
+            <li data-key=" ">空格</li>
+            <li data-key=".">.</li>
+            <li class="complete">完成</li>
+        </ul>
+    </div>
+</section>
+
+<script src="http://static.360buyimg.com/finance/mobile/base/1.0.0/js/lib/??zepto-1.1.4.js,fastclick.js"></script>
+<script type="text/javascript" src="../js/lib/sea/sea.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
+<script>
+
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+@import "../common/_css3lib",
+"../common/_variable";
+
+.jm-lazyLoad { position: relative; width: 100%; height: 100%; overflow-y: scroll; -webkit-overflow-scrolling: touch;
+  img { position: relative; display: block; background: none;  border: none;}
+}
+// isscroll 样式
+#wrapper { position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden;
+  #scroller { width: 100%;}
+}

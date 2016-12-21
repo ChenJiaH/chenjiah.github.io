@@ -1,0 +1,27 @@
+@charset "UTF-8";
+@import "../common/_css3lib",
+"../common/_variable";
+/*
+ * Created By McChen
+ *
+ * 2015/10/18
+ *
+ * chenjiahao@jd.com
+ *
+ * version V1.0.0
+ *
+ */
+
+/* ==================== numKeyboard ==================== */
+.jm-keyboard-input { width: 240px;border-right:1px solid $bg-gray;}
+.jm-keyboard-input li { width: 40px; height: 40px; @include box-sizing(border-box); float: left; border-top: 1px solid $bg-gray; border-bottom: 1px solid $bg-gray;  position: relative; text-align: center; line-height: 40px;  background-color: $default-bg; border-right: 1px solid $bg-gray;
+  &:first-child { border-left: 1px solid $bg-gray;}
+  &:last-child { border-right: 1px solid $bg-gray;}
+}
+.jm-point { width: 6px; height: 6px; border-radius: 6px; overflow: hidden; position: absolute; top: 50%; margin-top: -3px; left: 50%; margin-left: -3px; background-color: #323232; -webkit-backface-visibility: hidden; }
+
+.jm-keyboard { height: 200px; background-color: $default-bg; position: fixed; bottom: 0; text-align: center; font-size: 20px; }
+.jm-keyboard li { width: 33.3%; @include box-sizing(border-box); height: 25%; border-bottom: 1px solid $bg-gray; border-right: 1px solid $bg-gray; float: left; line-height: 50px;
+  &.bg-gray { background-color: $bg-gray;}
+}
+.jm-keyboard li:active { background-color: $bg-gray; }

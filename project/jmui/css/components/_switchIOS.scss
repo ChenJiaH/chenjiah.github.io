@@ -1,0 +1,15 @@
+@import "../common/_css3lib",
+"../common/_variable";
+
+.jm-switchIOS {
+  .label-switch { width: 5.2rem; -webkit-border-radius: 1.6rem; border-radius: 1.6rem; @include box-sizing(border-box); height: 3.2rem; position: relative; cursor: pointer; -webkit-align-self: center; align-self: center;
+    input[type="checkbox"] { display: none; @include box-sizing(border-box); padding: 0;}
+    .checkbox { width: 5.2rem;  -webkit-border-radius: 1.6rem; border-radius: 1.6rem; height: 3.2rem; background-color: #e5e5e5; z-index: 0; margin: 0; padding: 0; -webkit-appearance: none; border: none; cursor: pointer; position: relative; @include transition-duration(300ms);}
+    .checkbox:before { content: ''; position: absolute; left: 0.2rem; top: 0.2rem; width: 4.8rem; -webkit-border-radius: 1.6rem; border-radius: 1.6rem; @include box-sizing(border-box); height: 2.8rem; background-color: #ffffff; z-index: 1; @include transition-duration(300ms); @include transform(scale(1));}
+    .checkbox:after { content: ''; position: absolute; left: 0.2rem; top: 0.2rem; width: 2.8rem; height: 2.8rem; -webkit-border-radius: 2.8rem; border-radius: 2.8rem; background-color: #ffffff; z-index: 2; box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4); @include transform(translateX(0px));@include transition-duration(300ms)}
+
+    input[type="checkbox"]:checked +.checkbox { background-color: #4cd964;}
+    input[type="checkbox"]:checked +.checkbox:before { @include transform(scale(0));}
+    input[type="checkbox"]:checked +.checkbox:after { @include transform(translateX(2.2rem));}
+  }
+}

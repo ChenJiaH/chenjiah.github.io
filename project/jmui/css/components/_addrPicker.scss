@@ -1,0 +1,29 @@
+@charset "UTF-8";
+@import "../common/_css3lib",
+"../common/_variable";
+
+#jm-addrPicker { line-height: 1;
+  .column { @include flexBox(); font-size: 1.5rem; color: #323232;}
+  .column-name { width: 7.8rem; padding: 1.8rem 0;}
+  .column-input {
+    #btnChooseAddr { position: absolute; left: 0; right: 0; top: 0; bottom: 0; width: 100%; height: 100%;}
+    #addrInput { width: 28.2rem; padding: 1.5rem 1.5rem 1.3rem 0; @include box-sizing(border-box);}
+  }
+}
+/* ==================== 仿原生 滚动选择 ==================== */
+.picker-mask {width: 100%; height: 100%; position: fixed; left: 0; top: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.4); display: none;}
+.picker-wrap {position: absolute; left: 0; bottom: 0; width: 100%; background-color: #f4f4f6;}
+.picker-mask.show {display: block;}
+.picker-btn {font-size: 1.7rem; color: #359df5; display: block; padding: 1.6rem;}
+.picker-box {width: 100%; height: 200px; padding: 10px 0; overflow: hidden; position: relative; background-color: #ffffff;}
+.picker-item {float: left;}
+.pickerStreet-item {float: left;}
+.picker-item-inner {width: 100%; margin-top: 80px; }
+.picker-ul {width: 100%; }
+.picker-ul > li {padding: 0 15px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; color: #322332; font-size: 16px; height: 40px; line-height: 40px;}
+.pickerStreet-ul {width: 100%; }
+.pickerStreet-ul > li {padding: 0 15px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; color: #322332; font-size: 16px; height: 40px; line-height: 40px;}
+
+.picker-box-mask {width: 100%; height: 89px; position: absolute; left: 0; z-index: 5; pointer-events: none;}
+.picker-box-mask-t {top: 0; background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.6)); background-image: linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.6)); border-bottom: 1px solid #cfcdd3;}
+.picker-box-mask-b {bottom: 0; background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 1)); background-image: linear-gradient(top, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 1)); border-top: 1px solid #cfcdd3;}

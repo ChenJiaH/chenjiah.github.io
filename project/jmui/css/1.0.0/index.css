@@ -1,0 +1,1371 @@
+@charset "UTF-8";
+/**
+ * css3lib\
+ *
+ * thanks: 
+ * http://bourbon.io/
+ * https://github.com/thomas-mcdonald/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/_mixins.scss
+ * https://github.com/marvin1023/sassCore/blob/master/core/_css3.scss
+ */
+/* 两端对齐 */
+/* 居容器中间 */
+/* 三角箭头 */
+/**
+ * css3lib extend
+ *
+ * Created By McChen
+ *
+ * 2015/10/18
+ *
+ * chenjiahao@jd.com
+ */
+/* 1px hack */
+/*border-radius*/
+/*fullLayer*/
+/*nowrap*/
+/* 元素水平垂直居中 */
+/* 元素水平居左垂直居中 */
+/* 元素水平居右垂直居中 */
+/*placeholder-img*/
+/*strip-units 去除值得单位*/
+/*remCalc*/
+/**
+ * vision:1.0.0
+ * title: jm 1.0.0版本iconfont
+ */
+/**================================================================
+ iconfont
+=================================================================*/
+@font-face {
+  font-family: 'iconfont';
+  src: url("../fonts/iconfont.eot");
+  /* IE9*/
+  src: url("../fonts/iconfont.eot?#iefix") format("embedded-opentype"), url("../fonts/iconfont.woff") format("woff"), url("../fonts/iconfont.ttf") format("truetype"), url("../fonts/iconfont.svg#iconfont") format("svg");
+  /* iOS 4.1- */ }
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1;
+  font-style: normal; }
+
+.icon-qrcode:before {
+  content: "\e600"; }
+
+.icon-heart:before {
+  content: "\e601"; }
+
+.icon-numKeyboard:before {
+  content: "\e602"; }
+
+.icon-justify:before {
+  content: "\e603"; }
+
+.icon-music:before {
+  content: "\e604"; }
+
+.icon-share:before {
+  content: "\e605"; }
+
+.icon-checkBox:before {
+  content: "\e606"; }
+
+.icon-base64:before {
+  content: "\e607"; }
+
+.icon-pageSlider:before {
+  content: "\e608"; }
+
+.icon-chart:before {
+  content: "\e609"; }
+
+.icon-pullToRefresh:before {
+  content: "\e60a"; }
+
+.icon-dialog:before {
+  content: "\e60b"; }
+
+.icon-analogKeyboard:before {
+  content: "\e60c"; }
+
+.icon-drop:before {
+  content: "\e60d"; }
+
+.icon-swipeSlider:before {
+  content: "\e60e"; }
+
+.icon-countdown:before {
+  content: "\e60f"; }
+
+.icon-placeholder:before {
+  content: "\e610"; }
+
+.icon-address:before {
+  content: "\e611"; }
+
+.icon-console:before {
+  content: "\e612"; }
+
+.icon-lazyLoad:before {
+  content: "\e613"; }
+
+.icon-switch:before {
+  content: "\e614"; }
+
+.icon-nowrap:before {
+  content: "\e615"; }
+
+.icon-md5:before {
+  content: "\e616"; }
+
+.icon-requestAnimation:before {
+  content: "\e617"; }
+
+.icon-background:before {
+  content: "\e618"; }
+
+.icon-jigsaw:before {
+  content: "\e619"; }
+
+.icon-preLoad:before {
+  content: "\e61a"; }
+
+.icon-border:before {
+  content: "\e61b"; }
+
+.icon-iscroll:before {
+  content: "\e61c"; }
+
+.icon-next:before {
+  content: "\e61d"; }
+
+/*==========================
+
+$stable-bg:             #f8f8f8;
+$default-bg:            #fff;
+$positive-bg:           #18b4ed;
+$header-height:         45px;
+$mask-bg:               rgba(0,0,0,.4);
+$input-wrap-bg:         #ebeced;
+
+$txt-default:           #000;
+$txt-info:              #777;
+$txt-muted:             #bbb;
+$txt-warning:           #ff4222;
+$txt-highlight:         #ff8444;
+$txt-link:              #00a5e0;
+$txt-feeds:             #314c83;
+
+$line-height-base:      1.5;
+$line-height-s:         1.3;
+$line-height-txt:       24px;
+$line-height-bar:       44px;
+$txt-padding-top:       10px;
+$txt-padding-bottom:    10px;
+
+$font-size-base:        16px;
+$font-size-title:       16px;
+$font-size-h1:          18px;
+$font-size-title-lg:    17px;
+$font-size-info:        16px;
+$font-size-sub:         14px;
+$font-size-tips:        12px;
+
+$wrap-padding:          15px;
+$wrap-padding-s:        10px;
+
+$wrap-link-padding:     30px;
+$wrap-link-padding-s:   25px;
+
+$border-radius-base:    4px;
+$border-radius-lg:      8px;
+$border-radius-max:     200px;
+
+$active-bg:             #e5e6e7;
+$active-opacity:        .5;
+
+$avatar-width:          50;
+$avatar-width-lg:       70;
+$avatar-width-s:        40;
+$avatar-width-tiled:    30;
+
+$reddot-bg:             #f74c31;
+$reddot-bg-muted:       #b6cae0;
+
+$button-height:         30px;
+$button-padding:        0 11px;
+$button-min-width:      55px;
+$button-size:           15px;
+$button-border-radius:  3px;
+$button-hot-area:       7px;
+$button-bg-color:       #fdfdfd;
+$button-bg-image:       -webkit-gradient(linear,left top, left bottom, color-stop(0.5, #fff), to(#fafafa));
+$button-text:           rgb(0,165,224);
+$button-border-color:   #cacccd;
+$button-active-bg:      #f2f2f2;
+$button-active-text:    rgba(0,165,224,.5);
+
+$button-lg-height:                      44px;
+$button-lg-size:                        18px;
+$button-lg-border-radius:               5px;
+
+$button-s-width:                        55px;
+$button-s-height:                       25px;
+$button-s-size:                         13px;
+
+$button-before-border-radius:           6px;
+$button-lg-before-border-radius:        10px;
+$button-wrap-padding:                   15px 10px;
+$button-wrap-padding-s:                 10px;
+
+$button-group-margin:                   10px;
+
+$button-primary-bg-color:               #18b4ed;
+$button-primary-bg-image:               -webkit-gradient(linear,left top, left bottom, color-stop(0.5, #1fbaf3), to(#18b4ed));
+$button-primary-text:                   rgb(255,255,255);
+$button-primary-border-color:           #0baae4;
+$button-primary-active-bg:              #1ca7da;
+$button-primary-active-text:            rgba(255,255,255,.5);
+
+
+$button-danger-bg-color:                #f75549;
+$button-danger-bg-image:                -webkit-gradient(linear,left top, left bottom, color-stop(0.5, #fc6156), to(#f75549));
+$button-danger-text:                    rgb(255,255,255);
+$button-danger-border-color:            #f43d30;
+$button-danger-active-bg:               #e2574d;
+$button-danger-active-text:             rgba(255,255,255,.5);
+
+$button-disabled-bg-color:              #e9ebec;
+$button-disabled-text:                  #ccc;
+
+$button-progress-bg-color:              #fefefe;
+$button-progress-bg-image:              -webkit-gradient(linear,left top, left bottom, color-stop(0.5, rgb(255,255,255)), to(rgb(250,250,250)));
+$button-progress-text:                  #ccc;
+$button-progress-disabled-border-color: #cacccd;
+$button-progress-inner-bg-image:         -webkit-gradient(linear,left top, left bottom, color-stop(0.5, #1fbaf3), to(#18b4ed));
+
+
+$list-thumb-width:                      50px;
+$list-thumb-height:                     50px;
+$list-thumb-width-s:                    28px;
+$list-thumb-height-s:                   28px;
+$list-img-width:                        100px;
+$list-img-height:                       68px;
+$list-icon-width:                       40px;
+$list-icon-height:                      40px;
+$list-img-margin:                       10px 10px 10px 0px;
+
+$actionsheet-bg:                        rgba(255,255,255,.84);
+$actionsheet-border:                    3px;
+$actionsheet-size:                      21px;
+$actionsheet-title-size:                13px;
+$actionsheet-title-line-height:         20px;
+$actionsheet-title-color:               #8a8a8a;
+$actionsheet-title-padding:             20px;
+$actionsheet-btn-last-margin:           8px 0;
+$actionsheet-del-color:                 #fd472b;
+$actionsheet-color:                     #0079ff;
+$actionsheet-active:                    .84;
+
+$dialog-cnt-bg:                         rgba(253,253,253,0.95);
+$dialog-cnt-width:                      270px;
+$dialog-bd-height-min:                  71px;
+$dialog-bd-padding:                     18px;
+$dialog-border-radius:                  6px;
+$dialog-hd-margin-bottom:               4px;
+$dialog-ft-height:                      42px;
+$dialog-btn-active:                     rgba(0,0,0,.1);
+$dialog-close-color:                    #828282;
+
+
+$form-label-width:                      95px;
+$form-textarea-height:                  65px;
+$form-textarea-margin-top:              15px;
+$form-right-close-right:                125px;
+$form-left-input-padding-left:          115px;
+$form-right-input-padding-right:        150px;
+
+$searchbar-height:                      30px;
+$searchbar-padding:                     10px;
+$searchbar-border:                      5px;
+$searchbar-border-lg:                   10px;
+
+$icon-arrow:                            "\f600";
+$icon-checked:                          "\f601";
+$icon-checked-s:                        "\f602";
+$icon-info-block:                       "\f603";
+$icon-success-block:                    "\f604";
+$icon-warn-block:                       "\f605";
+$icon-info:                             "\f606";
+$icon-success:                          "\f607";
+$icon-warn:                             "\f608";
+$icon-warn-lg:                          "\f609";
+$icon-unchecked:                        "\f610";
+$icon-unchecked-s:                      "\f611";
+$icon-vip:                              "\f612";
+$icon-svip:                             "\f613";
+$icon-return:                           "\f614";
+$icon-close:                            "\f60a";
+$icon-close-page:                       "\f60b";
+$icon-search:                           "\f60c";
+$icon-tag:                              "\f60d";
+$icon-tag-s:                            "\f60e";
+$icon-tag-pop:                          "\f60f";
+$icon-color:                            #8e8e93;
+
+$tips-padding:                          20px 15px;
+$tips-info:                             #0090ff;
+$tips-success:                          #65d521;
+$tips-warn:                             #f76249;
+
+$poptips-height:                        40px;
+$poptips-bg:                            rgba(0,0,0,.6);
+$poptips-border:                        3px;
+
+$tab-height:                            45px;
+$tab-current-color:                     #00a5e0;
+$tab-current-border:                    #00a5e0;
+
+=========================*/
+/* -------------------------------
+$z-index-placehold:                     -1;
+$z-index-img:                           1;
+$z-index-switch:                        2;
+$z-index-progress:                      9;
+$z-index-tag:                           9;
+$z-index-border:                        10;
+$z-index-notice:                        99;
+$z-index-tooltips:                      99;
+$z-index-head:                          100;
+$z-index-poptips:                       999;
+$z-index-overlay:                       9999;
+
+--------------------------------*/
+/**
+ * css3lib\
+ *
+ * thanks: 
+ * http://bourbon.io/
+ * https://github.com/thomas-mcdonald/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/_mixins.scss
+ * https://github.com/marvin1023/sassCore/blob/master/core/_css3.scss
+ */
+/* 两端对齐 */
+/* 居容器中间 */
+/* 三角箭头 */
+/**
+ * css3lib extend
+ *
+ * Created By McChen
+ *
+ * 2015/10/18
+ *
+ * chenjiahao@jd.com
+ */
+/* 1px hack */
+/*border-radius*/
+/*fullLayer*/
+/*nowrap*/
+/* 元素水平垂直居中 */
+/* 元素水平居左垂直居中 */
+/* 元素水平居右垂直居中 */
+/*placeholder-img*/
+/*strip-units 去除值得单位*/
+/*remCalc*/
+/**
+* 页面初始化scss
+* 基于neat.css    https://github.com/shenduxian1/cube/blob/gh-pages/build/neat.css
+* 版本:1.0.0
+* update:2014-03-03
+*change-log:
+        2014-12-12：
+            1.增加了h5-h100的关于高度height类
+            2.增加了上下，左右双方位的margin，padding类
+        2015-03-03
+           1.增加了fix定位的多角度，在安卓版商城APP里对translateX(-50%)会失效导致错位
+       2015-05-13
+            1.translate均改为3d
+            2.间距控制优化为5,10,15,20,25这5种
+       2015-9-10
+            1.字号增加了13,15,17,19等奇数
+*/
+/* ================================================================================
+                                                                                            1. reset
+   ================================================================================ */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0; }
+
+h1, h2, h3, h4, h5, h6, input, textarea, select, button {
+  font-size: 100%;
+  font-weight: normal; }
+
+ul, ol {
+  list-style-type: none;
+  list-style-image: none; }
+
+li {
+  list-style: none; }
+
+html, body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none; }
+
+a, img {
+  -webkit-touch-callout: none; }
+
+a {
+  text-decoration: none;
+  color: #333; }
+
+a:active, a:hover {
+  outline: 0 none; }
+
+a:focus {
+  outerline: 1px dotted; }
+
+img {
+  vertical-align: middle; }
+
+/**
+ * 防止所有浏览器中的<sub>和<sup>影响行高
+ * http://jsbin.com/usoyal/1/edit
+ */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/**
+ * 中文优先使用冬青黑体简体(OS X)、微软雅黑(Windows)和文泉驿微米黑(Linux)
+ * 西文使用 tahoma
+ * 1. 防止元素中「font-family」不能继承
+ * 2. 西文字体和 OS X 字体写在前面
+ * 3. Opera 12.1 之前版本不支持中文字体的英文名称
+ * 4. 微软雅黑「\5FAE\8F6F\96C5\9ED1」,中易宋体「\5B8B\4F53」
+ */
+body,
+button,
+input,
+select,
+textarea {
+  font-family: 'helvetica neue', tahoma, 'hiragino sans gb', stheiti, 'wenquanyi micro hei', \5FAE\8F6F\96C5\9ED1, \5B8B\4F53, sans-serif; }
+
+/**
+ * 1. 修正所有浏览器中字体不继承的问题
+ * 2. 修正所有浏览器中字号不继承的问题
+ * 3. 改善在所有浏览器下的垂直对齐方式
+ */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  vertical-align: baseline;
+  /* 3 */ }
+
+/**
+ * 1. 移除 IE6-11 中默认的垂直滚动条
+ * 2. 统一所有浏览器中的垂直对齐以及增强文字可读性
+ * 3. 禁止水平拖动，防止破坏布局
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+  resize: vertical;
+  /* 3 */ }
+
+/* ================================================================================
+                                                                                              1.2 html5 reset
+   ================================================================================ */
+section, article, aside, header, footer, nav, figure, menu {
+  display: block;
+  padding: 0;
+  margin: 0; }
+
+* {
+  -webkit-tap-highlight-color: transparent; }
+
+html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 {
+  -webkit-text-size-adjust: none; }
+
+input, button, select, textarea {
+  outline: none;
+  -webkit-appearance: none;
+  /*修正ios下的默认阴影*/ }
+
+input {
+  border: none; }
+
+input:focus::-webkit-input-placeholder {
+  color: #efefef; }
+
+/*
+* 页面字体初始大小设置
+*/
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  font-size: 62.5%;
+  /* 10/16=62.5% */ }
+
+body {
+  font-size: 14px;
+  line-height: 1.5; }
+
+/**
+ * 修正未定义为「block」的元素
+ */
+article, aside, figcaption, figure, footer, header, nav, section, summary {
+  display: block; }
+
+/* ================================================================================
+                                                                                                  2.css工具类
+   ================================================================================ */
+/**
+ *  页面容器
+ */
+html, body {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100%; }
+
+html {
+  height: 100%; }
+
+.ex-mode {
+  height: 100%;
+  overflow-y: scroll;
+  -webkit-touch-scrolling: touch; }
+
+.os-mode {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+
+/**
+ * 文字相关
+ */
+.size10 {
+  font-size: 10px; }
+
+.size12 {
+  font-size: 12px; }
+
+.size13 {
+  font-size: 13px; }
+
+.size14 {
+  font-size: 14px; }
+
+.size15 {
+  font-size: 15px; }
+
+.size16 {
+  font-size: 16px; }
+
+.size17 {
+  font-size: 17px; }
+
+.size18 {
+  font-size: 18px; }
+
+.size19 {
+  font-size: 19px; }
+
+.size20 {
+  font-size: 20px; }
+
+.size22 {
+  font-size: 22px; }
+
+.size24 {
+  font-size: 24px; }
+
+.size26 {
+  font-size: 26px; }
+
+.size28 {
+  font-size: 28px; }
+
+.size30 {
+  font-size: 30px; }
+
+.size32 {
+  font-size: 32px; }
+
+.size34 {
+  font-size: 34px; }
+
+.size36 {
+  font-size: 36px; }
+
+.size38 {
+  font-size: 38px; }
+
+.size40 {
+  font-size: 40px; }
+
+.font-bold {
+  font-weight: bold; }
+
+.ta-l {
+  text-align: left; }
+
+.ta-c {
+  text-align: center; }
+
+.ta-r {
+  text-align: right; }
+
+.va-tb {
+  vertical-align: text-bottom; }
+
+.va-m {
+  vertical-align: middle; }
+
+.block {
+  display: block; }
+
+.blockA {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+/*float 相关*/
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.clearfix {
+  display: inline-table;
+  display: block;
+  zoom: 1; }
+
+.clearfix:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden; }
+
+/**
+ * position 用于容器内元素定位
+ */
+.pr {
+  position: relative; }
+
+.abs-lt {
+  position: absolute;
+  left: 0;
+  top: 0; }
+
+.abs-lm {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translate3d(0, -50%, 0);
+  -moz-transform: translate3d(0, -50%, 0);
+  -ms-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0); }
+
+.abs-lb {
+  position: absolute;
+  left: 0;
+  bottom: 0; }
+
+.abs-mt {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  -webkit-transform: translate3d(-50%, 0, 0);
+  -moz-transform: translate3d(-50%, 0, 0);
+  -ms-transform: translate3d(-50%, 0, 0);
+  transform: translate3d(-50%, 0, 0); }
+
+.abs-mm {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  -moz-transform: translate3d(-50%, -50%, 0);
+  -ms-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0); }
+
+.abs-mb {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  -webkit-transform: translate3d(-50%, 0, 0);
+  -moz-transform: translate3d(-50%, 0, 0);
+  -ms-transform: translate3d(-50%, 0, 0);
+  transform: translate3d(-50%, 0, 0); }
+
+.abs-rt {
+  position: absolute;
+  right: 0;
+  top: 0; }
+
+.abs-rm {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translate3d(0, -50%, 0);
+  -moz-transform: translate3d(0, -50%, 0);
+  -ms-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0); }
+
+.abs-rb {
+  position: absolute;
+  right: 0;
+  bottom: 0; }
+
+.fix-lt {
+  position: fixed;
+  left: 0;
+  top: 0; }
+
+.fix-lm {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translate3d(0, -50%, 0);
+  -moz-transform: translate3d(0, -50%, 0);
+  -ms-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0); }
+
+.fix-lb {
+  position: fixed;
+  left: 0;
+  bottom: 0; }
+
+.fix-mt {
+  position: fixed;
+  left: 50%;
+  top: 0;
+  -webkit-transform: translate3d(-50%, 0, 0);
+  -moz-transform: translate3d(-50%, 0, 0);
+  -ms-transform: translate3d(-50%, 0, 0);
+  transform: translate3d(-50%, 0, 0); }
+
+.fix-mm {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  -moz-transform: translate3d(-50%, -50%, 0);
+  -ms-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0); }
+
+.fix-mb {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  -webkit-transform: translate3d(-50%, 0, 0);
+  -moz-transform: translate3d(-50%, 0, 0);
+  -ms-transform: translate3d(-50%, 0, 0);
+  transform: translate3d(-50%, 0, 0); }
+
+.fix-rt {
+  position: fixed;
+  right: 0;
+  top: 0; }
+
+.fix-rm {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translate3d(0, -50%, 0);
+  -moz-transform: translate3d(0, -50%, 0);
+  -ms-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0); }
+
+.fix-rb {
+  position: fixed;
+  right: 0;
+  bottom: 0; }
+
+/**
+ *layout 用于容器布局
+ */
+.center-box {
+  font-size: 0;
+  height: 100%;
+  /* 继承父级高度 */
+  letter-spacing: -5px; }
+
+.center-box .center-hack {
+  display: inline-block;
+  font-size: 0;
+  width: 0;
+  height: 100%;
+  vertical-align: middle; }
+
+.center-box .center-body {
+  letter-spacing: normal;
+  word-spacing: normal;
+  display: inline-block;
+  vertical-align: middle;
+  /* 保证文字垂直居中 */
+  padding: 0 !important;
+  /* 防止设置边距导致居中失效 */
+  margin: 0 !important;
+  width: 100%;
+  /* 保证连续字符也能居中 */
+  white-space: normal;
+  /* 保证连续字符换行 */
+  word-wrap: break-word; }
+
+.center-box .center-img {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  /* 图片默认水平居中 */
+  vertical-align: middle;
+  padding: 0 !important;
+  /* 防止设置边距导致居中失效 */
+  margin: 0 !important; }
+
+.center-box img {
+  vertical-align: middle;
+  /* 去除现代浏览器 img 底部空隙 */ }
+
+/**
+  *margin
+  */
+.auto {
+  margin-left: auto;
+  margin-right: auto; }
+
+.m5 {
+  margin: 5px; }
+
+.m10 {
+  margin: 10px; }
+
+.m15 {
+  margin: 15px; }
+
+.m20 {
+  margin: 20px; }
+
+.m25 {
+  margin: 25px; }
+
+.mtb5 {
+  margin-top: 5px;
+  margin-bottom: 5px; }
+
+.mtb10 {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+.mtb15 {
+  margin-top: 15px;
+  margin-bottom: 15px; }
+
+.mtb20 {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+
+.mtb25 {
+  margin-top: 25px;
+  margin-bottom: 25px; }
+
+.mlr5 {
+  margin-left: 5px;
+  margin-right: 5px; }
+
+.mlr10 {
+  margin-left: 10px;
+  margin-right: 10px; }
+
+.mlr15 {
+  margin-left: 15px;
+  margin-right: 15px; }
+
+.mlr20 {
+  margin-left: 20px;
+  margin-right: 20px; }
+
+.mlr25 {
+  margin-left: 25px;
+  margin-right: 25px; }
+
+.mt5 {
+  margin-top: 5px; }
+
+.mt10 {
+  margin-top: 10px; }
+
+.mt15 {
+  margin-top: 15px; }
+
+.mt20 {
+  margin-top: 20px; }
+
+.mt25 {
+  margin-top: 25px; }
+
+.mr5 {
+  margin-right: 5px; }
+
+.mr10 {
+  margin-right: 10px; }
+
+.mr15 {
+  margin-right: 15px; }
+
+.mr20 {
+  margin-right: 20px; }
+
+.mr25 {
+  margin-right: 25px; }
+
+.mb5 {
+  margin-bottom: 5px; }
+
+.mb10 {
+  margin-bottom: 10px; }
+
+.mb15 {
+  margin-bottom: 15px; }
+
+.mb20 {
+  margin-bottom: 20px; }
+
+.mb25 {
+  margin-bottom: 25px; }
+
+.ml5 {
+  margin-left: 5px; }
+
+.ml10 {
+  margin-left: 10px; }
+
+.ml15 {
+  margin-left: 15px; }
+
+.ml20 {
+  margin-left: 20px; }
+
+.ml25 {
+  margin-left: 25px; }
+
+/**
+ * padding
+ */
+.p5 {
+  padding: 5px; }
+
+.p10 {
+  padding: 10px; }
+
+.p15 {
+  padding: 15px; }
+
+.p20 {
+  padding: 20px; }
+
+.p25 {
+  padding: 25px; }
+
+.ptb5 {
+  padding-top: 5px;
+  padding-bottom: 5px; }
+
+.ptb10 {
+  padding-top: 10px;
+  padding-bottom: 10px; }
+
+.ptb15 {
+  padding-top: 15px;
+  padding-bottom: 15px; }
+
+.ptb20 {
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
+.ptb25 {
+  padding-top: 25px;
+  padding-bottom: 25px; }
+
+.plr5 {
+  padding-left: 5px;
+  padding-right: 5px; }
+
+.plr10 {
+  padding-left: 10px;
+  padding-right: 10px; }
+
+.plr15 {
+  padding-left: 15px;
+  padding-right: 15px; }
+
+.plr20 {
+  padding-left: 20px;
+  padding-right: 20px; }
+
+.plr25 {
+  padding-left: 25px;
+  padding-right: 25px; }
+
+.pt5 {
+  padding-top: 5px; }
+
+.pt10 {
+  padding-top: 10px; }
+
+.pt15 {
+  padding-top: 15px; }
+
+.pt20 {
+  padding-top: 20px; }
+
+.pt25 {
+  padding-top: 25px; }
+
+.pr5 {
+  padding-right: 5px; }
+
+.pr10 {
+  padding-right: 10px; }
+
+.pr15 {
+  padding-right: 15px; }
+
+.pr20 {
+  padding-right: 20px; }
+
+.pr25 {
+  padding-right: 25px; }
+
+.pb5 {
+  padding-bottom: 5px; }
+
+.pb10 {
+  padding-bottom: 10px; }
+
+.pb15 {
+  padding-bottom: 15px; }
+
+.pb20 {
+  padding-bottom: 20px; }
+
+.pb25 {
+  padding-bottom: 25px; }
+
+.pl5 {
+  padding-left: 5px; }
+
+.pl10 {
+  padding-left: 10px; }
+
+.pl15 {
+  padding-left: 15px; }
+
+.pl20 {
+  padding-left: 20px; }
+
+.pl25 {
+  padding-left: 25px; }
+
+/*占位元素*/
+.placeBlock-5 {
+  width: 100%;
+  height: 5px;
+  display: block; }
+
+.placeBlock-10 {
+  width: 100%;
+  height: 10px;
+  display: block; }
+
+.placeBlock-15 {
+  width: 100%;
+  height: 15px;
+  display: block; }
+
+.placeBlock-20 {
+  width: 100%;
+  height: 20px;
+  display: block; }
+
+.placeBlock-25 {
+  width: 100%;
+  height: 25px;
+  display: block; }
+
+.placeBlock-30 {
+  width: 100%;
+  height: 30px;
+  display: block; }
+
+.placeBlock-40 {
+  width: 100%;
+  height: 40px;
+  display: block; }
+
+.placeBlock-50 {
+  width: 100%;
+  height: 50px;
+  display: block; }
+
+/* 通用宽度 percent width value */
+.pct5 {
+  width: 5%; }
+
+.pct10 {
+  width: 10%; }
+
+.pct15 {
+  width: 15%; }
+
+.pct20 {
+  width: 20%; }
+
+.pct25 {
+  width: 25%; }
+
+.pct30 {
+  width: 30%; }
+
+.pct33 {
+  width: 33.3%; }
+
+.pct40 {
+  width: 40%; }
+
+.pct50 {
+  width: 50%; }
+
+.pct60 {
+  width: 60%; }
+
+.pct66 {
+  width: 66.6%; }
+
+.pct70 {
+  width: 70%; }
+
+.pct75 {
+  width: 75%; }
+
+.pct80 {
+  width: 80%; }
+
+.pct90 {
+  width: 90%; }
+
+.pct100 {
+  width: 100%; }
+
+.h10 {
+  height: 10%; }
+
+.h20 {
+  height: 20%; }
+
+.h30 {
+  height: 30%; }
+
+.h40 {
+  height: 40%; }
+
+.h50 {
+  height: 50%; }
+
+.h55 {
+  height: 55%; }
+
+.h60 {
+  height: 60%; }
+
+.h65 {
+  height: 65%; }
+
+.h70 {
+  height: 70%; }
+
+.h75 {
+  height: 75%; }
+
+.h80 {
+  height: 80%; }
+
+.h85 {
+  height: 85%; }
+
+.h90 {
+  height: 90%; }
+
+.h95 {
+  height: 95%; }
+
+.h100 {
+  height: 100%; }
+
+.fullLayer {
+  width: 100%;
+  height: 100%; }
+
+.jm-fixTips {
+  text-align: center;
+  font-size: 12px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  opacity: 1;
+  padding: 1.7rem 1.4rem;
+  white-space: nowrap;
+  -webkit-border-radius: 0.5rem;
+  border-radius: 0.5rem; }
+
+.jm-fixTips-fadeOut {
+  -webkit-animation: fadeOut 1s ease-in 2s;
+  -moz-animation: fadeOut 1s ease-in 2s;
+  -ms-animation: fadeOut 1s ease-in 2s;
+  animation: fadeOut 1s ease-in 2s; }
+
+.jm-windowMask {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%; }
+
+/*=====================
+以下是基于ip6 375宽度做的适配
+标准html{font-size:10px}
+=======================*/
+/*================================================================
+以下为基于ip5 宽度320做的适配，标准html{font-size:10px},即1rem = 10px
+=================================================================*/
+@media screen and (max-width: 319px) {
+  html {
+    font-size: 8.53333px; } }
+@media screen and (min-width: 320px) and (max-width: 359px) {
+  html {
+    font-size: 8.53333px; } }
+@media screen and (min-width: 360px) and (max-width: 374px) {
+  html {
+    font-size: 9.6px; } }
+@media screen and (min-width: 375px) and (max-width: 383px) {
+  html {
+    font-size: 10px; } }
+@media screen and (min-width: 384px) and (max-width: 399px) {
+  html {
+    font-size: 10.24px; } }
+@media screen and (min-width: 400px) and (max-width: 413px) {
+  html {
+    font-size: 10.66667px; } }
+@media screen and (min-width: 414px) {
+  html {
+    font-size: 11.04px; } }
+/*=================================================================
+以上只是rem初始化  具体模块还需要具体调，以下为相关适配
+@media screen and (min-width: 320px) {} //for iphone 5
+@media screen and (min-width: 375px) {} //for iphone 6
+@media screen and (min-width: 414px) {} //for iphone 6 plus
+@media screen and (min-aspect-ratio: 69/100) {} //for huawei荣耀6
+@media screen and (min-aspect-ratio: 7/10) {} //for mx3
+@media screen and (max-height: 480px) {} //for iphone 4
+@media screen and (max-height: 420px) {} //for iphone 4 微信
+@media only screen and (orientation: landscape) {} // for 横屏
+==============================================================*/
+html {
+  font-size: 10px;
+  min-height: 100%;
+  min-width: 320px;
+  max-width: 750px; }
+
+body {
+  line-height: 1;
+  background-color: #fff; }
+
+header {
+  background-color: #359df5;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 14px 0;
+  position: relative;
+  text-align: center; }
+  header a {
+    color: #ffffff;
+    display: block;
+    padding: 9px 0; }
+  header .icon-prev {
+    font-size: 16px;
+    padding: 5px;
+    color: #ffffff;
+    display: inline-block; }
+
+footer {
+  background-color: #e6e6e6;
+  font-size: 12px;
+  position: relative;
+  text-align: center;
+  padding: 4px 0; }
+  footer a {
+    display: block;
+    padding: 9px 0;
+    color: #359df5; }
+  footer .icon-prev {
+    font-size: 14px;
+    color: #359df5; }
+  footer .icon-next {
+    font-size: 14px;
+    color: #359df5; }
+
+.page {
+  margin-top: 44px; }
+  .page ul {
+    padding-left: 1.5rem; }
+    .page ul li {
+      border-bottom: 2px solid #e6e6e6; }
+      @media screen and (-webkit-min-device-pixel-ratio: 2) {
+        .page ul li {
+          border: 0;
+          background-position: left bottom;
+          background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.6, transparent), color-stop(0.6, #e6e6e6), to(#e6e6e6));
+          background-repeat: repeat-x;
+          -webkit-background-size: 100% 2px; } }
+      .page ul li a {
+        color: #323232;
+        display: block;
+        font-size: 1.8rem;
+        padding: 1.5rem 1.5rem 1.5rem 3rem;
+        position: relative; }
+      .page ul li i {
+        display: block;
+        font-size: 1.8rem;
+        color: #359df5; }
+      .page ul li .icon-next {
+        font-size: 1.6rem;
+        color: #cccccc;
+        right: 1.5rem; }
