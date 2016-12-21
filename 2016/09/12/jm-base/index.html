@@ -152,7 +152,7 @@
 
 
   <div id="toc" class="toc-article">
-    <strong class="toc-title">文章目录</strong>
+    <strong class="toc-title">Posts List</strong>
     <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性"><span class="toc-text">属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#version"><span class="toc-text">version</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timestamp"><span class="toc-text">timestamp</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#API"><span class="toc-text">API</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#animate-obj-target-time-type"><span class="toc-text">animate(obj, target, time, type)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ajax-config"><span class="toc-text">ajax(config)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#createDiv-className，-innerHtml"><span class="toc-text">createDiv(className， innerHtml)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#format-str-data"><span class="toc-text">format(str, data)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#formatTime-time-format"><span class="toc-text">formatTime(time, format)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#getBrowserInfo-time-format"><span class="toc-text">getBrowserInfo(time, format)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#getCookie-name"><span class="toc-text">getCookie(name)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#getUrlString-name"><span class="toc-text">getUrlString(name)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lazyLoad-images"><span class="toc-text">lazyLoad($images)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pageLock"><span class="toc-text">pageLock()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pageUnlock"><span class="toc-text">pageUnlock()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#toast-obj"><span class="toc-text">toast(obj)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用法"><span class="toc-text">用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#License"><span class="toc-text">License</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Github"><span class="toc-text">Github</span></a></li></ol>
   </div>
 
@@ -590,7 +590,7 @@
   <span id="cover" class="cover hide"></span>
   <div id="modal-dialog" class="modal-dialog hide-dialog">
     <div class="modal-header">
-      <span id="close" class="btn-close">关闭</span>
+      <span id="close" class="btn-close">Close</span>
     </div>
     <hr>
     <div class="modal-body">
@@ -728,22 +728,119 @@
   window.onload = function() {
     loadScript('/js/bundle.js?235683', function() {
         // load success
-        if(document.getElementById("jm-funnyBackground")){
-            var usedIn = isPc() ? "pc" : "mobile";
-            var funnyBg = new FunnyBackground({
-                canvas : document.getElementById("jm-funnyBackground"),
-                usedIn : usedIn
-            });
-            function isPc(){
-                var userAgentInfo = navigator.userAgent;
-                var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
-                var flag = true;
-                for (var v = 0; v < Agents.length; v++) {
-                    if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }
+        var config = {
+            particles: {
+                number: {
+                    value: 20,
+                    density: {
+                        enable: true,
+                        value_area: 1000
+                    }
+                },
+                color: {
+                    value: "#e1e1e1"
+                },
+                shape: {
+                    type: "circle",
+                    stroke: {
+                        width: 0,
+                        color: "#000000"
+                    },
+                    polygon: {
+                        nb_sides: 5
+                    },
+                    image: {
+                        src: "img/github.svg",
+                        width: 100,
+                        height: 100
+                    }
+                },
+                opacity: {
+                    value: .5,
+                    random: false,
+                    anim: {
+                        enable: false,
+                        speed: 1,
+                        opacity_min: .1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 15,
+                    random: true,
+                    anim: {
+                        enable: false,
+                        speed: 180,
+                        size_min: .1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 650,
+                    color: "#cfcfcf",
+                    opacity: .26,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: "none",
+                    random: true,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                    attract: {
+                        enable: false,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
                 }
-                return flag;
-            }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: {
+                        enable: false,
+                        mode: "repulse"
+                    },
+                    onclick: {
+                        enable: false,
+                        mode: "push"
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 400,
+                        line_linked: {
+                            opacity: 1
+                        }
+                    },
+                    bubble: {
+                        distance: 400,
+                        size: 40,
+                        duration: 2,
+                        opacity: 8,
+                        speed: 3
+                    },
+                    repulse: {
+                        distance: 200,
+                        duration: .4
+                    },
+                    push: {
+                        particles_nb: 4
+                    },
+                    remove: {
+                        particles_nb: 2
+                    }
+                }
+            },
+            retina_detect: true
         }
+        particlesJS.load('particles-js', config, function() {
+            console.log('callback - particles.js config loaded');
+        });
     });
   }
 </script>

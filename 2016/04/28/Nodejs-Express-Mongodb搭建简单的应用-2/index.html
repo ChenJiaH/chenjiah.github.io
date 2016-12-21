@@ -152,7 +152,7 @@
 
 
   <div id="toc" class="toc-article">
-    <strong class="toc-title">文章目录</strong>
+    <strong class="toc-title">Posts List</strong>
     <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#开发前准备"><span class="toc-text">开发前准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#非webstorm开发"><span class="toc-text">非webstorm开发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建一个express项目"><span class="toc-text">创建一个express项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对package-json进行编辑，主要是依赖dependencies"><span class="toc-text">对package.json进行编辑，主要是依赖dependencies</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装依赖，完成之后执行node-app-js"><span class="toc-text">安装依赖，完成之后执行node app.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浏览器打开localhost-3000即可发现一个简单express页面建立完成了"><span class="toc-text">浏览器打开localhost:3000即可发现一个简单express页面建立完成了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置入口文件及express参数"><span class="toc-text">配置入口文件及express参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#webstorm开发"><span class="toc-text">webstorm开发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#直接new一个新Node-js-Express-App-项目，直接搞定上面全部流程"><span class="toc-text">直接new一个新Node.js Express App 项目，直接搞定上面全部流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装mongodb，安装完成后在bin文件夹路径下执行："><span class="toc-text">安装mongodb，安装完成后在bin文件夹路径下执行：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新开一个cmd进入bin文件夹后，执行："><span class="toc-text">新开一个cmd进入bin文件夹后，执行：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新建一个属于自己的数据库，并写入数据"><span class="toc-text">新建一个属于自己的数据库，并写入数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#把mongo连接到node"><span class="toc-text">把mongo连接到node</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#往数据库中写入数据，可以通过ajax，然后render数据库的数据。"><span class="toc-text">往数据库中写入数据，可以通过ajax，然后render数据库的数据。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Do-It"><span class="toc-text">Do It!</span></a></li></ol>
   </div>
 
@@ -279,7 +279,7 @@
   <span id="cover" class="cover hide"></span>
   <div id="modal-dialog" class="modal-dialog hide-dialog">
     <div class="modal-header">
-      <span id="close" class="btn-close">关闭</span>
+      <span id="close" class="btn-close">Close</span>
     </div>
     <hr>
     <div class="modal-body">
@@ -417,22 +417,119 @@
   window.onload = function() {
     loadScript('/js/bundle.js?235683', function() {
         // load success
-        if(document.getElementById("jm-funnyBackground")){
-            var usedIn = isPc() ? "pc" : "mobile";
-            var funnyBg = new FunnyBackground({
-                canvas : document.getElementById("jm-funnyBackground"),
-                usedIn : usedIn
-            });
-            function isPc(){
-                var userAgentInfo = navigator.userAgent;
-                var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
-                var flag = true;
-                for (var v = 0; v < Agents.length; v++) {
-                    if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }
+        var config = {
+            particles: {
+                number: {
+                    value: 20,
+                    density: {
+                        enable: true,
+                        value_area: 1000
+                    }
+                },
+                color: {
+                    value: "#e1e1e1"
+                },
+                shape: {
+                    type: "circle",
+                    stroke: {
+                        width: 0,
+                        color: "#000000"
+                    },
+                    polygon: {
+                        nb_sides: 5
+                    },
+                    image: {
+                        src: "img/github.svg",
+                        width: 100,
+                        height: 100
+                    }
+                },
+                opacity: {
+                    value: .5,
+                    random: false,
+                    anim: {
+                        enable: false,
+                        speed: 1,
+                        opacity_min: .1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 15,
+                    random: true,
+                    anim: {
+                        enable: false,
+                        speed: 180,
+                        size_min: .1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 650,
+                    color: "#cfcfcf",
+                    opacity: .26,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: "none",
+                    random: true,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                    attract: {
+                        enable: false,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
                 }
-                return flag;
-            }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: {
+                        enable: false,
+                        mode: "repulse"
+                    },
+                    onclick: {
+                        enable: false,
+                        mode: "push"
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 400,
+                        line_linked: {
+                            opacity: 1
+                        }
+                    },
+                    bubble: {
+                        distance: 400,
+                        size: 40,
+                        duration: 2,
+                        opacity: 8,
+                        speed: 3
+                    },
+                    repulse: {
+                        distance: 200,
+                        duration: .4
+                    },
+                    push: {
+                        particles_nb: 4
+                    },
+                    remove: {
+                        particles_nb: 2
+                    }
+                }
+            },
+            retina_detect: true
         }
+        particlesJS.load('particles-js', config, function() {
+            console.log('callback - particles.js config loaded');
+        });
     });
   }
 </script>
