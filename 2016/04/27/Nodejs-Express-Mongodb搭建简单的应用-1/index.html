@@ -152,7 +152,7 @@
 
 
   <div id="toc" class="toc-article">
-    <strong class="toc-title">Posts List</strong>
+    <strong class="toc-title">文章目录</strong>
     <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Node-js应用场景"><span class="toc-text">Node.js应用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Node-js最重要特性"><span class="toc-text">Node.js最重要特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现高性能的两种机制"><span class="toc-text">实现高性能的两种机制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-非阻塞型I-O"><span class="toc-text">一. 非阻塞型I/O</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二-事件环"><span class="toc-text">二. 事件环</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Node-js-v0-10中的核心模块"><span class="toc-text">Node.js v0.10中的核心模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Node-js-v0-10中追加的类、函数与对象"><span class="toc-text">Node.js v0.10中追加的类、函数与对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#栗子-Demo"><span class="toc-text">栗子(Demo)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结语"><span class="toc-text">结语</span></a></li></ol>
   </div>
 
@@ -458,7 +458,7 @@
   <span id="cover" class="cover hide"></span>
   <div id="modal-dialog" class="modal-dialog hide-dialog">
     <div class="modal-header">
-      <span id="close" class="btn-close">Close</span>
+      <span id="close" class="btn-close">关闭</span>
     </div>
     <hr>
     <div class="modal-body">
@@ -706,9 +706,7 @@
             },
             retina_detect: true
         }
-        particlesJS.load('particles-js', config, function() {
-            console.log('callback - particles.js config loaded');
-        });
+        particlesJS('particles-js', config);
     });
   }
 </script>

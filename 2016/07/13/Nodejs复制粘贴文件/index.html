@@ -152,7 +152,7 @@
 
 
   <div id="toc" class="toc-article">
-    <strong class="toc-title">Posts List</strong>
+    <strong class="toc-title">文章目录</strong>
     <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#背景"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#步骤"><span class="toc-text">步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#将文件转为Buffer"><span class="toc-text">将文件转为Buffer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Buffer解码成文件生成到指定路径"><span class="toc-text">Buffer解码成文件生成到指定路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jm-copy-base64"><span class="toc-text">jm-copy-base64</span></a></li></ol></li></ol>
   </div>
 
@@ -260,7 +260,7 @@
   <span id="cover" class="cover hide"></span>
   <div id="modal-dialog" class="modal-dialog hide-dialog">
     <div class="modal-header">
-      <span id="close" class="btn-close">Close</span>
+      <span id="close" class="btn-close">关闭</span>
     </div>
     <hr>
     <div class="modal-body">
@@ -508,9 +508,7 @@
             },
             retina_detect: true
         }
-        particlesJS.load('particles-js', config, function() {
-            console.log('callback - particles.js config loaded');
-        });
+        particlesJS('particles-js', config);
     });
   }
 </script>

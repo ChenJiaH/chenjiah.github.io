@@ -152,7 +152,7 @@
 
 
   <div id="toc" class="toc-article">
-    <strong class="toc-title">Posts List</strong>
+    <strong class="toc-title">文章目录</strong>
     <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#开发前准备"><span class="toc-text">开发前准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#非webstorm开发"><span class="toc-text">非webstorm开发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建一个express项目"><span class="toc-text">创建一个express项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对package-json进行编辑，主要是依赖dependencies"><span class="toc-text">对package.json进行编辑，主要是依赖dependencies</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装依赖，完成之后执行node-app-js"><span class="toc-text">安装依赖，完成之后执行node app.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浏览器打开localhost-3000即可发现一个简单express页面建立完成了"><span class="toc-text">浏览器打开localhost:3000即可发现一个简单express页面建立完成了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置入口文件及express参数"><span class="toc-text">配置入口文件及express参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#webstorm开发"><span class="toc-text">webstorm开发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#直接new一个新Node-js-Express-App-项目，直接搞定上面全部流程"><span class="toc-text">直接new一个新Node.js Express App 项目，直接搞定上面全部流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装mongodb，安装完成后在bin文件夹路径下执行："><span class="toc-text">安装mongodb，安装完成后在bin文件夹路径下执行：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新开一个cmd进入bin文件夹后，执行："><span class="toc-text">新开一个cmd进入bin文件夹后，执行：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新建一个属于自己的数据库，并写入数据"><span class="toc-text">新建一个属于自己的数据库，并写入数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#把mongo连接到node"><span class="toc-text">把mongo连接到node</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#往数据库中写入数据，可以通过ajax，然后render数据库的数据。"><span class="toc-text">往数据库中写入数据，可以通过ajax，然后render数据库的数据。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Do-It"><span class="toc-text">Do It!</span></a></li></ol>
   </div>
 
@@ -279,7 +279,7 @@
   <span id="cover" class="cover hide"></span>
   <div id="modal-dialog" class="modal-dialog hide-dialog">
     <div class="modal-header">
-      <span id="close" class="btn-close">Close</span>
+      <span id="close" class="btn-close">关闭</span>
     </div>
     <hr>
     <div class="modal-body">
@@ -527,9 +527,7 @@
             },
             retina_detect: true
         }
-        particlesJS.load('particles-js', config, function() {
-            console.log('callback - particles.js config loaded');
-        });
+        particlesJS('particles-js', config);
     });
   }
 </script>
