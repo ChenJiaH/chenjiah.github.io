@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>jm-base | McChen - 博客</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="Javascript," />
+  
+
+  <meta name="description" content="jm-base">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jm-base">
+<meta property="og:url" content="http://mcchen.club/2016/09/12/jm-base/index.html">
+<meta property="og:site_name" content="McChen - 博客">
+<meta property="og:description" content="jm-base">
+<meta property="og:updated_time" content="2016-12-21T02:57:41.785Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jm-base">
+<meta name="twitter:description" content="jm-base">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=d671a41f" rel="stylesheet">
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?2b0aba80cce5bf5627dd15f538ec6fc6";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性"><span class="toc-text">属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#version"><span class="toc-text">version</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timestamp"><span class="toc-text">timestamp</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#API"><span class="toc-text">API</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#animate-obj-target-time-type"><span class="toc-text">animate(obj, target, time, type)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ajax-config"><span class="toc-text">ajax(config)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#createDiv-className，-innerHtml"><span class="toc-text">createDiv(className， innerHtml)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#format-str-data"><span class="toc-text">format(str, data)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#formatTime-time-format"><span class="toc-text">formatTime(time, format)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#getBrowserInfo-time-format"><span class="toc-text">getBrowserInfo(time, format)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#getCookie-name"><span class="toc-text">getCookie(name)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#getUrlString-name"><span class="toc-text">getUrlString(name)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lazyLoad-images"><span class="toc-text">lazyLoad($images)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pageLock"><span class="toc-text">pageLock()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pageUnlock"><span class="toc-text">pageUnlock()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#toast-obj"><span class="toc-text">toast(obj)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用法"><span class="toc-text">用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#License"><span class="toc-text">License</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Github"><span class="toc-text">Github</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-jm-base" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">jm-base</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2016.09.12</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>McChen</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://mcchen.club//2016/09/12/jm-base/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>A universal tool in any surrounding.<br>任何环境下通用的jm工具（封装了一些常用方法）</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install jm-base</div></pre></td></tr></table></figure>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><h3 id="version"><a href="#version" class="headerlink" title="version"></a>version</h3><p>版本号</p>
+<h3 id="timestamp"><a href="#timestamp" class="headerlink" title="timestamp"></a>timestamp</h3><p>更新时间戳</p>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h3 id="animate-obj-target-time-type"><a href="#animate-obj-target-time-type" class="headerlink" title="animate(obj, target, time, type)"></a>animate(obj, target, time, type)</h3><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>obj</td>
+<td>Object</td>
+<td><code>无</code></td>
+<td>jquery对象</td>
+</tr>
+<tr>
+<td>target</td>
+<td>String</td>
+<td><code>&quot;无&quot;</code></td>
+<td>transform属性值</td>
+</tr>
+<tr>
+<td>time</td>
+<td>String</td>
+<td><code>&quot;无&quot;</code></td>
+<td>动画时间，单位/s</td>
+</tr>
+<tr>
+<td>type</td>
+<td>String</td>
+<td><code>ease-out</code></td>
+<td>动画过渡方式</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ajax-config"><a href="#ajax-config" class="headerlink" title="ajax(config)"></a>ajax(config)</h3><p>config为参数配置对象</p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>url</td>
+<td>String</td>
+<td><code>&quot;无&quot;</code></td>
+<td>request url</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Object</td>
+<td><code>{}</code></td>
+<td>request params</td>
+</tr>
+<tr>
+<td>type</td>
+<td>String</td>
+<td><code>&quot;get&quot;</code></td>
+<td>请求类型，可选<code>&quot;get&quot;</code>、<code>&quot;post&quot;</code></td>
+</tr>
+<tr>
+<td>dataType</td>
+<td>String</td>
+<td><code>&quot;json&quot;</code></td>
+<td>数据类型，可选<code>&quot;json&quot;</code>、<code>&quot;jsonp&quot;</code></td>
+</tr>
+<tr>
+<td>traditional</td>
+<td>Boolean</td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td>callback</td>
+<td>Function</td>
+<td><code>callback(data)</code></td>
+<td>成功回调函数</td>
+</tr>
+<tr>
+<td>failFn</td>
+<td>Function</td>
+<td><code>failFn()</code></td>
+<td>失败回调函数</td>
+</tr>
+</tbody>
+</table>
+<h3 id="createDiv-className，-innerHtml"><a href="#createDiv-className，-innerHtml" class="headerlink" title="createDiv(className， innerHtml)"></a>createDiv(className， innerHtml)</h3><table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>className</td>
+<td>String</td>
+<td><code>&quot;无&quot;</code></td>
+<td>class名</td>
+</tr>
+<tr>
+<td>innerHtml</td>
+<td>String</td>
+<td><code>{}</code></td>
+<td>inner内容</td>
+</tr>
+</tbody>
+</table>
+<p>返回一个原生dom对象</p>
+<h3 id="format-str-data"><a href="#format-str-data" class="headerlink" title="format(str, data)"></a>format(str, data)</h3><table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>str</td>
+<td>String</td>
+<td><code>&quot;无&quot;</code></td>
+<td>html模板</td>
+</tr>
+<tr>
+<td>data</td>
+<td>JSON</td>
+<td><code>{}</code></td>
+<td>数据</td>
+</tr>
+</tbody>
+</table>
+<p>返回一个填充数据的html片段</p>
+<h3 id="formatTime-time-format"><a href="#formatTime-time-format" class="headerlink" title="formatTime(time, format)"></a>formatTime(time, format)</h3><table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>time</td>
+<td>Number</td>
+<td><code>无</code></td>
+<td>时间戳</td>
+</tr>
+<tr>
+<td>format</td>
+<td>String</td>
+<td><code>&quot;无&quot;</code></td>
+<td>输出时间格式 “yyyy-MM-dd HH:mm:ss” 年月日 时分秒 格式自定义</td>
+</tr>
+</tbody>
+</table>
+<p>返回一个自定义格式化好的时间字符串</p>
+<h3 id="getBrowserInfo-time-format"><a href="#getBrowserInfo-time-format" class="headerlink" title="getBrowserInfo(time, format)"></a>getBrowserInfo(time, format)</h3><p>返回一个结果对象，属性值有<code>systemType</code>和<code>appType</code></p>
+<table>
+<thead>
+<tr>
+<th>systemType属性值</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iOS</td>
+<td>Boolean</td>
+<td><code>无</code></td>
+<td>是否iOS系统</td>
+</tr>
+<tr>
+<td>Android</td>
+<td>Boolean</td>
+<td><code>无</code></td>
+<td>是否Android系统</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>appType属性值</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mqq</td>
+<td>Boolean</td>
+<td><code>无</code></td>
+<td>是否处于手机qq环境</td>
+</tr>
+<tr>
+<td>wx</td>
+<td>Boolean</td>
+<td><code>无</code></td>
+<td>是否处于微信环境</td>
+</tr>
+<tr>
+<td>jdApp</td>
+<td>Boolean</td>
+<td><code>无</code></td>
+<td>是否处于京东APP环境</td>
+</tr>
+<tr>
+<td>jrApp</td>
+<td>Boolean</td>
+<td><code>无</code></td>
+<td>是否处于金融APP环境</td>
+</tr>
+<tr>
+<td>wyApp</td>
+<td>Boolean</td>
+<td><code>无</code></td>
+<td>是否处于京东钱包APP环境</td>
+</tr>
+<tr>
+<td>jdStock</td>
+<td>Boolean</td>
+<td><code>无</code></td>
+<td>是否处于京东股票APP环境</td>
+</tr>
+</tbody>
+</table>
+<h3 id="getCookie-name"><a href="#getCookie-name" class="headerlink" title="getCookie(name)"></a>getCookie(name)</h3><table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td><code>无</code></td>
+<td>cookie-name</td>
+</tr>
+</tbody>
+</table>
+<p>返回cookie值</p>
+<h3 id="getUrlString-name"><a href="#getUrlString-name" class="headerlink" title="getUrlString(name)"></a>getUrlString(name)</h3><table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td><code>无</code></td>
+<td>url参数</td>
+</tr>
+</tbody>
+</table>
+<p>返回url参数值</p>
+<h3 id="lazyLoad-images"><a href="#lazyLoad-images" class="headerlink" title="lazyLoad($images)"></a>lazyLoad($images)</h3><table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$images</td>
+<td>Object</td>
+<td><code>$(&quot;img[data-src]&quot;)</code></td>
+<td>需要懒加载的图片对象</td>
+</tr>
+</tbody>
+</table>
+<p>返回一个是否完成的标志</p>
+<h3 id="pageLock"><a href="#pageLock" class="headerlink" title="pageLock()"></a>pageLock()</h3><p>移动端页面移动锁定</p>
+<h3 id="pageUnlock"><a href="#pageUnlock" class="headerlink" title="pageUnlock()"></a>pageUnlock()</h3><p>移动端页面移动解锁</p>
+<h3 id="toast-obj"><a href="#toast-obj" class="headerlink" title="toast(obj)"></a>toast(obj)</h3><p>传入一个toast配置对象</p>
+<table>
+<thead>
+<tr>
+<th>参数值</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>text</td>
+<td>String</td>
+<td><code>&quot;无&quot;</code></td>
+<td>toast信息</td>
+</tr>
+<tr>
+<td>pos</td>
+<td>String/Object</td>
+<td><code>&quot;top&quot;</code></td>
+<td>toast位置字符串或者css配置对象</td>
+</tr>
+<tr>
+<td>autoClose</td>
+<td>Boolean</td>
+<td><code>true</code></td>
+<td>是否自动消失</td>
+</tr>
+<tr>
+<td>maxWidth</td>
+<td>String</td>
+<td><code>&quot;无&quot;</code></td>
+<td>最大宽度</td>
+</tr>
+</tbody>
+</table>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p>兼容AMD/CMD;<br>支持Node.js;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// import jm from 'jm'; // ES6</span></div><div class="line"><span class="keyword">var</span> jm = <span class="built_in">require</span>(<span class="string">'jm'</span>);</div><div class="line">jm.API</div></pre></td></tr></table></figure>
+<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>MIT</p>
+<h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h2><p>Github地址及使用文档：<a href="https://github.com/ChenJiaH/jm-base" target="_blank" rel="external">jm-base</a></p>
+<hr>
+<p>如果能给您带去些许帮助，鄙人不甚欢心。如有错误，恳请交流指出，谢谢！<br>转载请注明出处：<a href="http://mcchen.club/">http://mcchen.club/</a></p>
+<hr>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持McChen</div>
+        <ul class="theme.donation.items.length">
+        
+          <li class="item">
+            <img src="/images/qr-wechat.png" alt="">
+          </li>
+        
+          <li class="item">
+            <img src="/images/qr-alipay.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'mcchen';
+    
+    var disqus_url = 'http://mcchen.club/2016/09/12/jm-base/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//mcchen.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
