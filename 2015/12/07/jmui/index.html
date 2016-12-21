@@ -185,11 +185,6 @@
 
 
       
-        <span>
-          <i class="icon-comment"></i>
-          <a href="http://mcchen.club//2015/12/07/jmui/#disqus_thread"></a>
-        </span>
-      
 
       
       <i class="fa fa-eye"></i> 
@@ -199,6 +194,9 @@
         </span>
       
 
+      
+        <i class="icon-comment"></i> 
+        <span class="ds-thread-count" data-thread-key="post-jmui"><i class="fa fa-spinner fa-spin"></i></span> 条评论
       
       
     </div>
@@ -751,33 +749,29 @@
   
       <div class="fexo-comments comments-post">
     
-  <section class="disqus-comments">
-    <div id="disqus_thread">
-      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
+
+    
+  <section class="duoshuo-comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-jmui" 
+      data-title="jmui" data-url="http://mcchen.club/2015/12/07/jmui/index.html"></div>
+    <!-- 多说评论框 end -->
   </section>
 
-  <script>
-    var disqus_shortname = 'mcchen';
-    
-    var disqus_url = 'http://mcchen.club/2015/12/07/jmui/';
-    
-    (function(){
-      var dsq = document.createElement('script');
-      dsq.type = 'text/javascript';
-      dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
+
+
+
+  <script type="text/javascript">
+  var duoshuoQuery = {short_name:"mcchen"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
   </script>
-
-  <script id="dsq-count-scr" src="//mcchen.disqus.com/count.js" async></script>
-
-
-
-    
-
-
 
 
   </div>
