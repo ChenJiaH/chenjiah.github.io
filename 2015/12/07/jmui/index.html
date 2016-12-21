@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://mcchen.club/2015/12/07/jmui/index.html">
 <meta property="og:site_name" content="McChen - 博客">
 <meta property="og:description" content="jmui">
-<meta property="og:updated_time" content="2016-12-21T02:49:44.725Z">
+<meta property="og:updated_time" content="2016-12-21T04:16:55.665Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jmui">
 <meta name="twitter:description" content="jmui">
@@ -242,15 +242,15 @@
 <tbody>
 <tr>
 <td style="text-align:left">lazyLoad</td>
-<td style="text-align:left">图片懒加载，返回<code>Boolean</code>。<code>true</code>表示全部加载完成,<code>false</code>表示没有全部加载完成<br>Demo实例：<a href="http://jr.jd.com" target="_blank" rel="external">请狠狠戳我</a></td>
+<td style="text-align:left">图片懒加载，返回<code>Boolean</code>。<code>true</code>表示全部加载完成,<code>false</code>表示没有全部加载完成<br>Demo实例：<a href="http://mcchen.club/project/jmui/demo/lazyLoad.html">请狠狠戳我</a></td>
 </tr>
 <tr>
 <td style="text-align:left">requestAnimationFrame</td>
-<td style="text-align:left">对于现代浏览器使用<code>requestAnimationFrame</code>代替<code>setTimeOut</code><br>Demo实例：<a href="http://jr.jd.com" target="_blank" rel="external">请狠狠戳我</a></td>
+<td style="text-align:left">对于现代浏览器使用<code>requestAnimationFrame</code>代替<code>setTimeOut</code><br>Demo实例：<a href="http://mcchen.club/project/jmui/demo/requestAnimationFrameAndTween.html">请狠狠戳我</a></td>
 </tr>
 <tr>
 <td style="text-align:left">tween</td>
-<td style="text-align:left">将缓动曲线集合添加至<code>Math.Tween</code>类<br>Demo实例：<a href="http://jr.jd.com" target="_blank" rel="external">请狠狠戳我</a></td>
+<td style="text-align:left">将缓动曲线集合添加至<code>Math.Tween</code>类<br>Demo实例：<a href="http://mcchen.club/project/jmui/demo/requestAnimationFrameAndTween.html">请狠狠戳我</a></td>
 </tr>
 <tr>
 <td style="text-align:left">pageLock</td>
@@ -327,7 +327,8 @@
 </tr>
 </tbody>
 </table>
-<h2 id="部分组件文档"><a href="#部分组件文档" class="headerlink" title="部分组件文档"></a>部分组件文档</h2><h3 id="addrPicker"><a href="#addrPicker" class="headerlink" title="addrPicker"></a>addrPicker</h3><p>js模块，地址选择器</p>
+<h2 id="部分组件文档"><a href="#部分组件文档" class="headerlink" title="部分组件文档"></a>部分组件文档</h2><p>完整组件列表戳这里：<a href="http://mcchen.club/project/jmui/demo/index.html">http://mcchen.club/project/jmui/demo/index.html</a></p>
+<h3 id="addrPicker"><a href="#addrPicker" class="headerlink" title="addrPicker"></a>addrPicker</h3><p>js模块，地址选择器</p>
 <blockquote>
 <p>语法：<code>new AddrPicker({config});</code></p>
 </blockquote>
@@ -398,7 +399,7 @@
 </tbody>
 </table>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> addrPicker(&#123;</div><div class="line">                <span class="attr">selecteBtn</span>: $(<span class="string">"#btnChooseAddr"</span>),</div><div class="line">                <span class="attr">addrPickerBox</span>: $(<span class="string">"#addrPicker"</span>),</div><div class="line">                <span class="attr">moveBox</span>: $(<span class="string">".picker-item"</span>),</div><div class="line">                <span class="attr">moveObj</span>: $(<span class="string">".picker-ul"</span>),</div><div class="line">                <span class="attr">btnSure</span>: $(<span class="string">"#pickerSure"</span>),</div><div class="line">                <span class="attr">btnCancel</span>: $(<span class="string">"#pickerCancel"</span>),</div><div class="line">                <span class="attr">addrInput</span>: $(<span class="string">"#addrInput"</span>),</div><div class="line">                <span class="attr">lineHeight</span>: <span class="number">40</span>,</div><div class="line">                <span class="attr">ajaxUrl</span>: &#123;<span class="string">"province"</span>: <span class="string">"../data/provinces.json"</span>, <span class="string">"city"</span>: <span class="string">"../data/citys.json"</span>, <span class="string">"area"</span>: <span class="string">"../data/areas.json"</span>&#125;,</div><div class="line">                <span class="attr">sureFn</span>: <span class="function"><span class="keyword">function</span>(<span class="params">id,text</span>) </span>&#123;</div><div class="line">                    $(<span class="string">"#addrProvince"</span>).val(id[<span class="number">0</span>] + <span class="string">","</span> + text[<span class="number">0</span>])</div><div class="line">                    $(<span class="string">"#addrCity"</span>).val(id[<span class="number">1</span>] + <span class="string">","</span> + text[<span class="number">1</span>])</div><div class="line">                    $(<span class="string">"#addrArea"</span>).val(id[<span class="number">2</span>] + <span class="string">","</span> + text[<span class="number">2</span>])</div><div class="line">                &#125;</div><div class="line">            &#125;);</div></pre></td></tr></table></figure>
-<p>Demo实例：<a href="http://jr.jd.com" target="_blank" rel="external">请狠狠戳我</a></p>
+<p>Demo实例：<a href="http://mcchen.club/project/jmui/demo/addrPicker.html">请狠狠戳我</a></p>
 <h3 id="countDown"><a href="#countDown" class="headerlink" title="countDown"></a>countDown</h3><p>js模块，倒计时插件</p>
 <blockquote>
 <p>语法：<code>new CountDown({config});</code></p>
@@ -450,7 +451,7 @@
 </tbody>
 </table>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> CountDown(&#123;</div><div class="line">                <span class="attr">$day</span>: $(<span class="string">".day"</span>),</div><div class="line">                <span class="attr">$hour</span>: $(<span class="string">".hour"</span>),</div><div class="line">                <span class="attr">$min</span>: $(<span class="string">".min"</span>),</div><div class="line">                <span class="attr">$second</span>: $(<span class="string">".second"</span>),</div><div class="line">                <span class="attr">totalSecond</span>: <span class="number">10</span>,</div><div class="line">                <span class="attr">endFn</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                    alert(<span class="string">"终于等到你，还好我没放弃---------然并卵"</span>);</div><div class="line">                &#125;</div><div class="line">            &#125;);</div></pre></td></tr></table></figure>
-<p>Demo实例：<a href="http://jr.jd.com" target="_blank" rel="external">请狠狠戳我</a></p>
+<p>Demo实例：<a href="http://mcchen.club/project/jmui/demo/countDown.html">请狠狠戳我</a></p>
 <h3 id="dropElement"><a href="#dropElement" class="headerlink" title="dropElement"></a>dropElement</h3><p>js模块，元素飘落插件</p>
 <blockquote>
 <p>语法：<code>new DropElement({config});</code></p>
@@ -497,14 +498,14 @@
 </tbody>
 </table>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> DropElement(&#123;</div><div class="line">                <span class="attr">sizeArr</span>: [[<span class="number">10</span>, <span class="number">24</span>], [<span class="number">13</span>, <span class="number">15</span>], [<span class="number">16</span>, <span class="number">19</span>], [<span class="number">12</span>, <span class="number">14</span>], [<span class="number">10</span>, <span class="number">15</span>]],</div><div class="line">                <span class="attr">count</span>: <span class="number">15</span>,</div><div class="line">                <span class="attr">during</span>: <span class="number">3000</span>,</div><div class="line">                <span class="attr">splitTime</span>: <span class="number">300</span>,</div><div class="line">                <span class="attr">loop</span>: <span class="literal">true</span></div><div class="line">            &#125;);</div></pre></td></tr></table></figure>
-<p>Demo实例：<a href="http://jr.jd.com" target="_blank" rel="external">请狠狠戳我</a></p>
+<p>Demo实例：<a href="http://mcchen.club/project/jmui/demo/dropElement.html">请狠狠戳我</a></p>
 <h3 id="iscroll"><a href="#iscroll" class="headerlink" title="iscroll"></a>iscroll</h3><p>js模块，web最流畅的滚动插件</p>
 <blockquote>
 <p>语法：<code>new IScroll(&quot;#wrapper&quot;, {config});</code></p>
 </blockquote>
 <p>参数请点这里：<a href="https://github.com/cubiq/iscroll/" target="_blank" rel="external">https://github.com/cubiq/iscroll/</a></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> IScroll(<span class="string">"#wrapper"</span>, &#123;<span class="attr">mouseWheel</span>: <span class="literal">true</span>, <span class="attr">probeType</span>: <span class="number">3</span>&#125;);</div></pre></td></tr></table></figure>
-<p>Demo实例：<a href="http://jr.jd.com" target="_blank" rel="external">请狠狠戳我</a></p>
+<p>Demo实例：<a href="http://mcchen.club/project/jmui/demo/iscroll.html">请狠狠戳我</a></p>
 <h3 id="md5"><a href="#md5" class="headerlink" title="md5"></a>md5</h3><p>js模块，MD5转换插件</p>
 <blockquote>
 <p>语法：<code>new MD5({config});</code></p>
@@ -536,7 +537,7 @@
 </tbody>
 </table>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> MD5(&#123;</div><div class="line">                <span class="attr">$btn</span>:$(<span class="string">".jmui-md5-btnTransform"</span>),</div><div class="line">                <span class="attr">str</span>:$(<span class="string">".jmui-md5-str"</span>).text(),</div><div class="line">                <span class="attr">endFn</span>: <span class="function"><span class="keyword">function</span> (<span class="params">str</span>) </span>&#123;</div><div class="line">                    $(<span class="string">".jmui-md5-str"</span>).text(str);</div><div class="line">                &#125;</div><div class="line">            &#125;)</div></pre></td></tr></table></figure>
-<p>Demo实例：<a href="http://jr.jd.com" target="_blank" rel="external">请狠狠戳我</a></p>
+<p>Demo实例：<a href="http://mcchen.club/project/jmui/demo/md5.html">请狠狠戳我</a></p>
 <h3 id="preLoad"><a href="#preLoad" class="headerlink" title="preLoad"></a>preLoad</h3><p>js模块，预加载插件</p>
 <blockquote>
 <p>语法：<code>new PreLoad({config});</code></p>
@@ -568,7 +569,7 @@
 </tbody>
 </table>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> PreLoad(&#123;</div><div class="line">                <span class="attr">tasks</span>:[</div><div class="line">                    <span class="string">"1.png"</span>,</div><div class="line">                    <span class="string">"2.png"</span>,</div><div class="line">                    <span class="string">"3.png"</span></div><div class="line">                ],</div><div class="line">                <span class="attr">finishedFn</span>:<span class="function"><span class="keyword">function</span>(<span class="params">total</span>)</span>&#123;</div><div class="line">                    <span class="built_in">console</span>.log(<span class="string">"已经加载完成了，共加载"</span>+total+<span class="string">"个资源"</span>);</div><div class="line">                &#125;</div><div class="line">            &#125;);</div></pre></td></tr></table></figure>
-<p>Demo实例：<a href="http://jr.jd.com" target="_blank" rel="external">请狠狠戳我</a></p>
+<p>Demo实例：<a href="http://mcchen.club/project/jmui/demo/preLoad.html">请狠狠戳我</a></p>
 <h3 id="qrcode"><a href="#qrcode" class="headerlink" title="qrcode"></a>qrcode</h3><p>js模块，二维码插件</p>
 <blockquote>
 <p>语法：<code>new QRCode(object,{config});</code></p>
@@ -621,7 +622,7 @@
 </table>
 <p>参数请点这里：<a href="https://github.com/davidshimjs/qrcodejs" target="_blank" rel="external">https://github.com/davidshimjs/qrcodejs</a></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> QRCode(<span class="built_in">document</span>.getElementById(<span class="string">"qrcode"</span>), &#123;</div><div class="line">                <span class="attr">text</span>: <span class="string">"http://jr.jd.com?"</span> + <span class="built_in">Math</span>.random(),</div><div class="line">                <span class="attr">width</span>: <span class="number">61</span>,</div><div class="line">                <span class="attr">height</span>: <span class="number">61</span>,</div><div class="line">                <span class="attr">colorDark</span>: <span class="string">"#000000"</span>,</div><div class="line">                <span class="attr">colorLight</span>: <span class="string">"#ffffff"</span></div><div class="line">            &#125;)；</div></pre></td></tr></table></figure>
-<p>Demo实例：<a href="http://jr.jd.com" target="_blank" rel="external">请狠狠戳我</a></p>
+<p>Demo实例：<a href="http://mcchen.club/project/jmui/demo/qrcode.html">请狠狠戳我</a></p>
 <hr>
 <p>如果能给您带去些许帮助，鄙人不甚欢心。如有错误，恳请交流指出，谢谢！<br>转载请注明出处：<a href="http://mcchen.club/">http://mcchen.club/</a></p>
 <hr>
