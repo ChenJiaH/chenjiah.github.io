@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>修复IScroll点击无效问题，增加scrollTo数值容错处理 | McChen - 博客</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="Javascript,IScroll," />
+  
+
+  <meta name="description" content="修复IScroll点击无效问题，增加scrollTo数值容错处理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="修复IScroll点击无效问题，增加scrollTo数值容错处理">
+<meta property="og:url" content="http://mcchen.club/2016/03/04/修复IScroll点击无效问题，增加scrollTo数值容错处理/index.html">
+<meta property="og:site_name" content="McChen - 博客">
+<meta property="og:description" content="修复IScroll点击无效问题，增加scrollTo数值容错处理">
+<meta property="og:updated_time" content="2016-12-26T03:18:16.365Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="修复IScroll点击无效问题，增加scrollTo数值容错处理">
+<meta name="twitter:description" content="修复IScroll点击无效问题，增加scrollTo数值容错处理">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=d671a41f" rel="stylesheet">
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?2b0aba80cce5bf5627dd15f538ec6fc6";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/atom.xml"
+            rel="noopener noreferrer"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#修复IScroll点击BUG"><span class="toc-text">修复IScroll点击BUG</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#版本号"><span class="toc-text">版本号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#针对不同机型进行IScroll配置参数click的修改"><span class="toc-text">针对不同机型进行IScroll配置参数click的修改</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#增加scrollTo数值容错处理"><span class="toc-text">增加scrollTo数值容错处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#出现原因"><span class="toc-text">出现原因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方案"><span class="toc-text">解决方案</span></a></li></ol></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-修复IScroll点击无效问题，增加scrollTo数值容错处理" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">修复IScroll点击无效问题，增加scrollTo数值容错处理</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2016.03.04</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>McChen</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
+  </span>
+
+
+
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+        <i class="icon-comment"></i> 
+        <span class="ds-thread-count" data-thread-key="post-修复IScroll点击无效问题，增加scrollTo数值容错处理"><i class="fa fa-spinner fa-spin"></i></span> 条评论
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h2 id="修复IScroll点击BUG"><a href="#修复IScroll点击BUG" class="headerlink" title="修复IScroll点击BUG"></a>修复IScroll点击BUG</h2><p>由于做移动端开发，使用IScroll的的时候，在IScroll区域有需要点击时部分安卓机点击无效。若是设置click为true，则iOS需双击才能触发点击事件。</p>
+<h3 id="版本号"><a href="#版本号" class="headerlink" title="版本号"></a>版本号</h3><p>IScroll: v5.1.3</p>
+<h3 id="针对不同机型进行IScroll配置参数click的修改"><a href="#针对不同机型进行IScroll配置参数click的修改" class="headerlink" title="针对不同机型进行IScroll配置参数click的修改"></a>针对不同机型进行IScroll配置参数click的修改</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">IScroll</span> (<span class="params">el, options</span>) </span>&#123;</div><div class="line"><span class="comment">// INSERT POINT: DEFAULTS</span></div><div class="line">    <span class="comment">// fix click in bad Android</span></div><div class="line">    <span class="keyword">this</span>.options.click = <span class="keyword">this</span>.fixIScrollClickInAndroid();</div><div class="line">&#125;</div><div class="line">IScroll.prototype = &#123;</div><div class="line">    <span class="attr">version</span>: <span class="string">'5.1.3'</span>,</div><div class="line">    <span class="attr">fixIScrollClickInAndriod</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span> (<span class="regexp">/iPhone|iPad|iPod|Macintosh/i</span>.test(navigator.userAgent)) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">        <span class="keyword">if</span> (<span class="regexp">/Chrome/i</span>.test(navigator.userAgent)) <span class="keyword">return</span> (<span class="regexp">/Android/i</span>.test(navigator.userAgent));</div><div class="line">        <span class="keyword">if</span> (<span class="regexp">/Silk/i</span>.test(navigator.userAgent)) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">        <span class="keyword">if</span> (<span class="regexp">/Android/i</span>.test(navigator.userAgent)) &#123;</div><div class="line">        <span class="keyword">var</span> s = navigator.userAgent.substr(navigator.userAgent.indexOf(<span class="string">'Android'</span>)+<span class="number">8</span>,<span class="number">5</span>);</div><div class="line">        <span class="comment">//return parseFloat(s[0]+s[3]) &lt; 44 ? false : true&#125;</span></div><div class="line">        <span class="keyword">return</span> <span class="built_in">parseFloat</span>(s[<span class="number">0</span>]+s[<span class="number">2</span>]+s[<span class="number">4</span>]) &lt;= <span class="number">442</span> &amp;&amp; <span class="built_in">parseFloat</span>(s[<span class="number">0</span>]+s[<span class="number">2</span>]+s[<span class="number">4</span>]) &gt; <span class="number">430</span> ? <span class="literal">true</span> : <span class="literal">false</span>&#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="增加scrollTo数值容错处理"><a href="#增加scrollTo数值容错处理" class="headerlink" title="增加scrollTo数值容错处理"></a>增加scrollTo数值容错处理</h2><p>在返回页面的时候需要定位，所以把第一次进入的位置存入sessionStorage了，取出来时调用scrollTo(0,pos)无效。</p>
+<h3 id="出现原因"><a href="#出现原因" class="headerlink" title="出现原因"></a>出现原因</h3><p>IScroll对于数值设置为Number，当存入sessionStorage会转为字符串，若取出来不进行parseFloat处理，将返NaN导致无法定位</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><ul>
+<li>对从sessionStorage中取出来的数值，进行parseFloat处理</li>
+<li>修改IScroll关于scrollTo位置的源码，增加 || 0 操作</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myScroll = <span class="keyword">new</span> Scroll(<span class="string">"#wrapper"</span>);</div><div class="line"><span class="built_in">window</span>.sessionStorage.setItem(<span class="string">"pos"</span>,myScroll.y);</div><div class="line">myScroll.scrollTo(<span class="built_in">parseFloat</span>(<span class="built_in">window</span>.sessionStorage.getItem(<span class="string">"pos"</span>)))； <span class="comment">// 也可修改scrollTo方法做 || 0 转换为数值处理</span></div></pre></td></tr></table></figure>
+<hr>
+<p>如果能给您带去些许帮助，鄙人不甚欢心。如有错误，恳请交流指出，谢谢！<br>转载请注明出处：<a href="http://mcchen.club/">http://mcchen.club/</a></p>
+<hr>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持McChen</div>
+        <ul class="theme.donation.items.length">
+        
+          <li class="item">
+            <img src="/images/qr-wechat.png" alt="">
+          </li>
+        
+          <li class="item">
+            <img src="/images/qr-alipay.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/atom.xml"
+              rel="noopener noreferrer"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+  <section class="duoshuo-comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-修复IScroll点击无效问题，增加scrollTo数值容错处理" 
+      data-title="修复IScroll点击无效问题，增加scrollTo数值容错处理" data-url="http://mcchen.club/2016/03/04/修复IScroll点击无效问题，增加scrollTo数值容错处理/index.html"></div>
+    <!-- 多说评论框 end -->
+  </section>
+
+
+
+
+  <script type="text/javascript">
+  var duoshuoQuery = {short_name:"mcchen"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+        // load success
+    });
+  }
+</script>
+
+</body>
+</html>

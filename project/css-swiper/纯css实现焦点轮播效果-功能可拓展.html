@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta charset="UTF-8">
+    <title>纯CSS焦点轮播</title>
+    <style type="text/css">
+        body {  background-color: #f0f0f0;  }
+        .focus_img { position: relative; height: 300px; width: 500px; overflow: hidden; margin: auto; border: solid 2px #000000;}
+        ul { position: absolute; padding: 0; margin: 0; }
+        .img_list { top: 0; left: 0; -webkit-animation: img_list 10s 2s infinite;}
+        .img_list li { width: 500px; height: 300px; overflow: hidden;}
+        .img_list img { height: 300px; width: 500px;}
+        .img_index { bottom: 10px;right: 10px;}
+        .img_index li {float: left; width: 16px; height: 16px; border: solid 1px #cccccc; background-color: #ffffff; color:#000000; text-align: center;line-height: 16px;overflow: hidden;cursor: pointer;margin-right: 2px;  }
+        .one { background-color: #000000; color: #ffffff; -webkit-animation: one 10s 2s infinite;}
+        .two { -webkit-animation: two 10s 2s infinite;}
+        .three {-webkit-animation: three 10s 2s infinite;}
+        .four {-webkit-animation: four 10s 2s infinite;}
+        .five {-webkit-animation: five 10s 2s infinite;}
+        @-webkit-keyframes img_list {
+            0%{ -webkit-transform: translate(0,0);}
+            10%,20% {-webkit-transform: translate(0,-300px);}
+            30%,40% {-webkit-transform: translate(0,-600px);}
+            50%,60% {-webkit-transform: translate(0,-900px);}
+            70%,80% {-webkit-transform: translate(0,-1200px);}
+            90%,100% {-webkit-transform: translate(0,0);}
+        }
+
+        @-webkit-keyframes one {
+            10%,20%,30%,40%,50%,60%,70%,80%{ background-color: #ffffff; color: #000000;}
+            0%,90%,100%{ background-color: #000000;color: #ffffff;}
+        }
+        @-webkit-keyframes two {
+            0%,30%,40%,50%,60%,70%,80%,90%,100%{ background-color: #ffffff; color: #000000;}
+            10%,20%{ background-color: #000000;color: #ffffff;}
+        }
+        @-webkit-keyframes three {
+            0%,10%,20%,50%,60%,70%,80%,90%,100%{ background-color: #ffffff; color: #000000;}
+            30%,40%{ background-color: #000000;color: #ffffff;}
+        }
+        @-webkit-keyframes four {
+            0%,10%,20%,30%,40%,70%,80%,90%,100%{ background-color: #ffffff; color: #000000;}
+            50%,60%{ background-color: #000000;color: #ffffff;}
+        }
+        @-webkit-keyframes five {
+            0%,10%,20%,30%,40%,50%,60%,90%,100%{ background-color: #ffffff; color: #000000;}
+            70%,80%{ background-color: #000000;color: #ffffff;}
+        }
+    </style>
+</head>
+<body>
+<div class="focus_img">
+    <ul class="img_list">
+        <li><img src="https://ss0.bdstatic.com/-0U0bnSm1A5BphGlnYG/tam-ogel/1d68b8f42a077e5fc13dd53282b884ad_121_121.jpg" alt=""/></li>
+        <li><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2677286959,1418084722&fm=58&s=05F07D3288656D01446505DD0100C022" alt=""/></li>
+        <li><img src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3509313783,3642023323&fm=58" alt=""/></li>
+        <li><img src="https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/833581989.png" alt=""/></li>
+        <li><img src="https://ss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/wisegame/pic/item/c0cc7cd98d1001e9e09d1675b10e7bec54e79723.jpg" alt=""/></li>
+    </ul>
+    <ul class="img_index">
+        <li class="one">1</li>
+        <li class="two">2</li>
+        <li class="three">3</li>
+        <li class="four">4</li>
+        <li class="five">5</li>
+    </ul>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+</html>

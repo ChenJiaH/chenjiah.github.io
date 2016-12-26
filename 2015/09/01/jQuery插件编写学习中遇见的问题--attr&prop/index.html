@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>jQuery插件编写学习中遇见的问题--attr&amp;prop | McChen - 博客</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="Javascript,JQuery," />
+  
+
+  <meta name="description" content="jQuery插件编写学习中遇见的问题--attr&amp;prop">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery插件编写学习中遇见的问题--attr&prop">
+<meta property="og:url" content="http://mcchen.club/2015/09/01/jQuery插件编写学习中遇见的问题--attr&prop/index.html">
+<meta property="og:site_name" content="McChen - 博客">
+<meta property="og:description" content="jQuery插件编写学习中遇见的问题--attr&amp;prop">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/742480/201509/742480-20150901164056778-1551868345.gif">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/742480/201509/742480-20150901163815294-1325047430.gif">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/742480/201509/742480-20150901164509310-1096291165.png">
+<meta property="og:updated_time" content="2016-12-26T04:22:26.849Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery插件编写学习中遇见的问题--attr&prop">
+<meta name="twitter:description" content="jQuery插件编写学习中遇见的问题--attr&amp;prop">
+<meta name="twitter:image" content="http://images2015.cnblogs.com/blog/742480/201509/742480-20150901164056778-1551868345.gif">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=d671a41f" rel="stylesheet">
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?2b0aba80cce5bf5627dd15f538ec6fc6";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/atom.xml"
+            rel="noopener noreferrer"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code"><span class="toc-text">Code</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#html-部分"><span class="toc-text">html 部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#css部分"><span class="toc-text">css部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#插件编写"><span class="toc-text">插件编写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#效果图"><span class="toc-text">效果图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#浅析原因"><span class="toc-text">浅析原因</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-jQuery插件编写学习中遇见的问题--attr&amp;prop" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">jQuery插件编写学习中遇见的问题--attr&amp;prop</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2015.09.01</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>McChen</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
+  </span>
+
+
+
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+        <i class="icon-comment"></i> 
+        <span class="ds-thread-count" data-thread-key="post-jQuery插件编写学习中遇见的问题--attr&amp;prop"><i class="fa fa-spinner fa-spin"></i></span> 条评论
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>最近在学习JQuery的插件的编写，有两种方式:</p>
+<ul>
+<li>.fn.extend    作用于对象原型上</li>
+<li>.extend   作用于JQuery对象上</li>
+</ul>
+<p>我接下来编写的是表格奇偶数不同色，checkbox选择则高亮宣誓，使用$.fn.extend</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><h3 id="html-部分"><a href="#html-部分" class="headerlink" title="html 部分"></a>html 部分</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">id</span>=<span class="string">"table1"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">thead</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span><span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>姓名<span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>性别<span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>所在地<span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span>/&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>张三<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>女<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>浙江杭州<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span>/&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>李四<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>男<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>湖南长沙<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span>/&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>王二<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>女<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>浙江温州<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span>/&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>McChen<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>男<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>北京<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span>/&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>NVSHEN<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>女<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>浙江杭州<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>html无非就是一个简单的表格，接下来随意设置样式</p>
+<h3 id="css部分"><a href="#css部分" class="headerlink" title="css部分"></a>css部分</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.even</span> &#123; <span class="attribute">background</span>:<span class="number">#FFF38F</span>;&#125; <span class="selector-class">.odd</span> &#123; <span class="attribute">background</span>: <span class="number">#FFFFEE</span>;&#125; <span class="selector-class">.selected</span> &#123; <span class="attribute">background</span>: <span class="number">#ff0000</span>;&#125;</div></pre></td></tr></table></figure>
+<p>简单说一下 even是偶数行样式，odd是奇数行样式，selected是选中的样式即高亮。</p>
+<h3 id="插件编写"><a href="#插件编写" class="headerlink" title="插件编写"></a>插件编写</h3><p>接下来是重点，遇见的问题也在这。先附上使用attr时的代码。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">;(<span class="function"><span class="keyword">function</span> (<span class="params">$</span>) </span>&#123;</div><div class="line">$.fn.extend(&#123;</div><div class="line">    <span class="string">"tableColor"</span>: <span class="function"><span class="keyword">function</span> (<span class="params">options</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> aaa = $.extend(&#123;</div><div class="line">                  <span class="attr">odd</span> : <span class="string">"odd"</span>,</div><div class="line">                   <span class="attr">even</span> : <span class="string">"even"</span>,</div><div class="line">                  <span class="attr">selected</span> : <span class="string">"selected"</span></div><div class="line">               &#125;,options);</div><div class="line">                $(<span class="string">"tbody&gt;tr:odd"</span>,<span class="keyword">this</span>).addClass(aaa.odd);</div><div class="line">                $(<span class="string">"tbody&gt;tr:even"</span>,<span class="keyword">this</span>).addClass(aaa.even);</div><div class="line">                $(<span class="string">"tbody&gt;tr"</span>,<span class="keyword">this</span>).on(<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                    <span class="keyword">var</span> hasSelected = $(<span class="keyword">this</span>).hasClass(aaa.selected);  <span class="comment">//判断是否选中</span></div><div class="line">                 <span class="comment">//判断是否选中然后增加或移除class</span></div><div class="line">                    $(<span class="keyword">this</span>)[hasSelected?<span class="string">"removeClass"</span>:<span class="string">"addClass"</span>](aaa.selected)</div><div class="line">                       .find(<span class="string">":checkbox"</span>).attr(<span class="string">"checked"</span>,!hasSelected);</div><div class="line">               &#125;);</div><div class="line">               $(<span class="string">"tbody&gt;tr:has(:checked)"</span>,<span class="keyword">this</span>).addClass(aaa.selected);</div><div class="line">               <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">            &#125;)</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line">&#125;)(jQuery);</div><div class="line"><span class="comment">//------------------------以上是插件编写的代码</span></div></pre></td></tr></table></figure>
+<p>接下来是插件的使用方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//------------------------开始测试插件的应用</span></div><div class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    $(<span class="string">"#table1"</span>).tableColor()</div><div class="line">        .find(<span class="string">"th"</span>).css(<span class="string">"color"</span>,<span class="string">"red"</span>);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>个人看来jq插件需要具备最基本的两点:</p>
+<ul>
+<li>可以自定义参数</li>
+<li>返回的是对象可以进行链式操作</li>
+</ul>
+<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p>先看使用attr设置checked的效果图如下：</p>
+<p><img src="http://images2015.cnblogs.com/blog/742480/201509/742480-20150901164056778-1551868345.gif" alt="Alt text"></p>
+<p>我们将attr换成prop之后效果如下：</p>
+<p><img src="http://images2015.cnblogs.com/blog/742480/201509/742480-20150901163815294-1325047430.gif" alt="Alt text"></p>
+<p>当我们使用attr设置checked属性时，发现只有初次生效，解决的办法是使用prop。</p>
+<h2 id="浅析原因"><a href="#浅析原因" class="headerlink" title="浅析原因"></a>浅析原因</h2><p>官方对于prop()的解释是获取在匹配的元素集中的第一个元素的属性值，它的返回值不同于attr，为true或false。（attr返回checked或””），因此总结一下适用范围：</p>
+<ol>
+<li>添加属性名称该属性就会生效应该使用prop();</li>
+<li>是有true,false两个属性使用prop();</li>
+<li>其他则使用attr();</li>
+</ol>
+<p>但是，官方推荐使用的是attr，这我有点不知甚解。</p>
+<p><img src="http://images2015.cnblogs.com/blog/742480/201509/742480-20150901164509310-1096291165.png" alt="Alt text"></p>
+<hr>
+<p>如果能给您带去些许帮助，鄙人不甚欢心。如有错误，恳请交流指出，谢谢！<br>转载请注明出处：<a href="http://mcchen.club/">http://mcchen.club/</a></p>
+<hr>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持McChen</div>
+        <ul class="theme.donation.items.length">
+        
+          <li class="item">
+            <img src="/images/qr-wechat.png" alt="">
+          </li>
+        
+          <li class="item">
+            <img src="/images/qr-alipay.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/atom.xml"
+              rel="noopener noreferrer"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+  <section class="duoshuo-comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-jQuery插件编写学习中遇见的问题--attr&amp;prop" 
+      data-title="jQuery插件编写学习中遇见的问题--attr&amp;prop" data-url="http://mcchen.club/2015/09/01/jQuery插件编写学习中遇见的问题--attr&amp;prop/index.html"></div>
+    <!-- 多说评论框 end -->
+  </section>
+
+
+
+
+  <script type="text/javascript">
+  var duoshuoQuery = {short_name:"mcchen"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+        // load success
+    });
+  }
+</script>
+
+</body>
+</html>

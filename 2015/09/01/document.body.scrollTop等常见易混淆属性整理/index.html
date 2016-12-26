@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>document.body.scrollTop等常见易混淆属性整理 | McChen - 博客</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="Javascript,资料整理," />
+  
+
+  <meta name="description" content="document.body.scrollTop等常见易混淆属性整理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="document.body.scrollTop等常见易混淆属性整理">
+<meta property="og:url" content="http://mcchen.club/2015/09/01/document.body.scrollTop等常见易混淆属性整理/index.html">
+<meta property="og:site_name" content="McChen - 博客">
+<meta property="og:description" content="document.body.scrollTop等常见易混淆属性整理">
+<meta property="og:updated_time" content="2016-12-26T04:20:56.888Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="document.body.scrollTop等常见易混淆属性整理">
+<meta name="twitter:description" content="document.body.scrollTop等常见易混淆属性整理">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=d671a41f" rel="stylesheet">
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?2b0aba80cce5bf5627dd15f538ec6fc6";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/atom.xml"
+            rel="noopener noreferrer"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#混淆属性"><span class="toc-text">混淆属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#document-body-clientWidth"><span class="toc-text">document.body.clientWidth</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#document-body-offsetWidth"><span class="toc-text">document.body.offsetWidth</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#document-body-offsetHieght"><span class="toc-text">document.body.offsetHieght</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#document-body-scrollWidth"><span class="toc-text">document.body.scrollWidth</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#document-body-scrollHieght"><span class="toc-text">document.body.scrollHieght</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#document-body-scrollTop"><span class="toc-text">document.body.scrollTop</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#document-body-scrollLeft"><span class="toc-text">document.body.scrollLeft</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#window-screenTop"><span class="toc-text">window.screenTop</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#window-screenLeft"><span class="toc-text">window.screenLeft</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#window-screen-height"><span class="toc-text">window.screen.height</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#window-screen-width"><span class="toc-text">window.screen.width</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#window-screen-availHeight"><span class="toc-text">window.screen.availHeight</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#window-screen-availWidth"><span class="toc-text">window.screen.availWidth</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#scrollHeight"><span class="toc-text">scrollHeight</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#scrollLeft"><span class="toc-text">scrollLeft</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#scrollTop"><span class="toc-text">scrollTop</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#scrollWidth"><span class="toc-text">scrollWidth</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#offsetHeight"><span class="toc-text">offsetHeight</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#offsetLeft"><span class="toc-text">offsetLeft</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#offsetTop"><span class="toc-text">offsetTop</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#event-clientX"><span class="toc-text">event.clientX</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#event-clientY"><span class="toc-text">event.clientY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#event-offsetX"><span class="toc-text">event.offsetX</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#event-offsetY"><span class="toc-text">event.offsetY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#document-documentElement-scrollTop"><span class="toc-text">document.documentElement.scrollTop</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#event-clientX-document-documentElement-scrollTop"><span class="toc-text">event.clientX+document.documentElement.scrollTop</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tips"><span class="toc-text">Tips</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-document.body.scrollTop等常见易混淆属性整理" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">document.body.scrollTop等常见易混淆属性整理</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2015.09.01</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>McChen</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
+  </span>
+
+
+
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+        <i class="icon-comment"></i> 
+        <span class="ds-thread-count" data-thread-key="post-document.body.scrollTop等常见易混淆属性整理"><i class="fa fa-spinner fa-spin"></i></span> 条评论
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Javascript中有一些常见易混淆的属性，下面我做了一份大概的整理。</p>
+<h2 id="混淆属性"><a href="#混淆属性" class="headerlink" title="混淆属性"></a>混淆属性</h2><h3 id="document-body-clientWidth"><a href="#document-body-clientWidth" class="headerlink" title="document.body.clientWidth"></a>document.body.clientWidth</h3><p>网页可见区域宽</p>
+<h3 id="document-body-offsetWidth"><a href="#document-body-offsetWidth" class="headerlink" title="document.body.offsetWidth"></a>document.body.offsetWidth</h3><p>网页可见区域宽（包括边线的宽）</p>
+<h3 id="document-body-offsetHieght"><a href="#document-body-offsetHieght" class="headerlink" title="document.body.offsetHieght"></a>document.body.offsetHieght</h3><p>网页可见区域高（包括边线的高）</p>
+<h3 id="document-body-scrollWidth"><a href="#document-body-scrollWidth" class="headerlink" title="document.body.scrollWidth"></a>document.body.scrollWidth</h3><p>网页正文全文宽</p>
+<h3 id="document-body-scrollHieght"><a href="#document-body-scrollHieght" class="headerlink" title="document.body.scrollHieght"></a>document.body.scrollHieght</h3><p>网页正文全文高</p>
+<h3 id="document-body-scrollTop"><a href="#document-body-scrollTop" class="headerlink" title="document.body.scrollTop"></a>document.body.scrollTop</h3><p>网页被卷去的高</p>
+<h3 id="document-body-scrollLeft"><a href="#document-body-scrollLeft" class="headerlink" title="document.body.scrollLeft"></a>document.body.scrollLeft</h3><p>网页被卷去的左</p>
+<h3 id="window-screenTop"><a href="#window-screenTop" class="headerlink" title="window.screenTop"></a>window.screenTop</h3><p>网页正文部分上</p>
+<h3 id="window-screenLeft"><a href="#window-screenLeft" class="headerlink" title="window.screenLeft"></a>window.screenLeft</h3><p>网页正文部分左</p>
+<h3 id="window-screen-height"><a href="#window-screen-height" class="headerlink" title="window.screen.height"></a>window.screen.height</h3><p>屏幕分辨率的高</p>
+<h3 id="window-screen-width"><a href="#window-screen-width" class="headerlink" title="window.screen.width"></a>window.screen.width</h3><p>屏幕分辨率的宽</p>
+<h3 id="window-screen-availHeight"><a href="#window-screen-availHeight" class="headerlink" title="window.screen.availHeight"></a>window.screen.availHeight</h3><p>屏幕可用工作区高度</p>
+<h3 id="window-screen-availWidth"><a href="#window-screen-availWidth" class="headerlink" title="window.screen.availWidth"></a>window.screen.availWidth</h3><p>屏幕可用工作区宽度</p>
+<h3 id="scrollHeight"><a href="#scrollHeight" class="headerlink" title="scrollHeight"></a>scrollHeight</h3><p>获取对象的滚动高度</p>
+<h3 id="scrollLeft"><a href="#scrollLeft" class="headerlink" title="scrollLeft"></a>scrollLeft</h3><p>设置或获取位于对象左边界和窗口中目前可见内容的最左端之间的距离</p>
+<h3 id="scrollTop"><a href="#scrollTop" class="headerlink" title="scrollTop"></a>scrollTop</h3><p>设置或获取位于对象最顶端和窗口中可见内容的最顶端之间的距离</p>
+<h3 id="scrollWidth"><a href="#scrollWidth" class="headerlink" title="scrollWidth"></a>scrollWidth</h3><p>获取对象的滚动宽度</p>
+<h3 id="offsetHeight"><a href="#offsetHeight" class="headerlink" title="offsetHeight"></a>offsetHeight</h3><p>获取对象相对于版面或由父坐标 offsetParent 属性指定的父坐标的高度</p>
+<h3 id="offsetLeft"><a href="#offsetLeft" class="headerlink" title="offsetLeft"></a>offsetLeft</h3><p>获取对象相对于版面或由 offsetParent 属性指定的父坐标的计算左侧位置</p>
+<h3 id="offsetTop"><a href="#offsetTop" class="headerlink" title="offsetTop"></a>offsetTop</h3><p>获取对象相对于版面或由 offsetTop 属性指定的父坐标的计算顶端位置</p>
+<h3 id="event-clientX"><a href="#event-clientX" class="headerlink" title="event.clientX"></a>event.clientX</h3><p>相对文档的水平坐标</p>
+<h3 id="event-clientY"><a href="#event-clientY" class="headerlink" title="event.clientY"></a>event.clientY</h3><p>相对文档的垂直坐标</p>
+<h3 id="event-offsetX"><a href="#event-offsetX" class="headerlink" title="event.offsetX"></a>event.offsetX</h3><p>相对容器的水平坐标</p>
+<h3 id="event-offsetY"><a href="#event-offsetY" class="headerlink" title="event.offsetY"></a>event.offsetY</h3><p>相对容器的垂直坐标</p>
+<h3 id="document-documentElement-scrollTop"><a href="#document-documentElement-scrollTop" class="headerlink" title="document.documentElement.scrollTop"></a>document.documentElement.scrollTop</h3><p>垂直方向滚动的值</p>
+<h3 id="event-clientX-document-documentElement-scrollTop"><a href="#event-clientX-document-documentElement-scrollTop" class="headerlink" title="event.clientX+document.documentElement.scrollTop"></a>event.clientX+document.documentElement.scrollTop</h3><p>相对文档的水平座标+垂直方向滚动的量</p>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>要获取当前页面的滚动条纵坐标位置，用：document.documentElement.scrollTop;</p>
+<p>而不是：document.body.scrollTop;</p>
+<p>documentElement 对应的是 html 标签，而 body 对应的是 body 标签</p>
+<hr>
+<p>如果能给您带去些许帮助，鄙人不甚欢心。如有错误，恳请交流指出，谢谢！<br>转载请注明出处：<a href="http://mcchen.club/">http://mcchen.club/</a></p>
+<hr>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持McChen</div>
+        <ul class="theme.donation.items.length">
+        
+          <li class="item">
+            <img src="/images/qr-wechat.png" alt="">
+          </li>
+        
+          <li class="item">
+            <img src="/images/qr-alipay.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/atom.xml"
+              rel="noopener noreferrer"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+  <section class="duoshuo-comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-document.body.scrollTop等常见易混淆属性整理" 
+      data-title="document.body.scrollTop等常见易混淆属性整理" data-url="http://mcchen.club/2015/09/01/document.body.scrollTop等常见易混淆属性整理/index.html"></div>
+    <!-- 多说评论框 end -->
+  </section>
+
+
+
+
+  <script type="text/javascript">
+  var duoshuoQuery = {short_name:"mcchen"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+        // load success
+    });
+  }
+</script>
+
+</body>
+</html>
