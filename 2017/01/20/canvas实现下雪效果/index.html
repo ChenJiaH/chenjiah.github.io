@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>canvas实现下雪效果 | McChen - 博客</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="Javascript,Canvas," />
+  
+
+  <meta name="description" content="canvas实现下雪效果">
+<meta property="og:type" content="article">
+<meta property="og:title" content="canvas实现下雪效果">
+<meta property="og:url" content="http://mcchen.club/2017/01/20/canvas实现下雪效果/index.html">
+<meta property="og:site_name" content="McChen - 博客">
+<meta property="og:description" content="canvas实现下雪效果">
+<meta property="og:updated_time" content="2017-01-20T07:19:52.944Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="canvas实现下雪效果">
+<meta name="twitter:description" content="canvas实现下雪效果">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=d671a41f" rel="stylesheet">
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?2b0aba80cce5bf5627dd15f538ec6fc6";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+  <a href="https://github.com/ChenJiaH"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/atom.xml"
+            rel="noopener noreferrer"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Demo"><span class="toc-text">Demo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现"><span class="toc-text">实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#requestAnimationFrame"><span class="toc-text">requestAnimationFrame</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化基本配置"><span class="toc-text">初始化基本配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#核心，不断渲染雪花位置的函数"><span class="toc-text">核心，不断渲染雪花位置的函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#补充新鲜雪花"><span class="toc-text">补充新鲜雪花</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-canvas实现下雪效果" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">canvas实现下雪效果</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2017.01.20</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>McChen</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
+  </span>
+
+
+
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+        <i class="icon-comment"></i> 
+        <span class="ds-thread-count" data-thread-key="post-canvas实现下雪效果"><i class="fa fa-spinner fa-spin"></i></span> 条评论
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>该Demo主要是requestAnimationFrame的一个简单应用，实现了粒子效果，网上也有一些其他的粒子效果的实现的根本原理也大致相同，只是运动路径算法差异。</p>
+<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><p><a href="http://mcchen.club/project/canvas-snowing/snowing.html">请狠狠戳我</a></p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="requestAnimationFrame"><a href="#requestAnimationFrame" class="headerlink" title="requestAnimationFrame"></a>requestAnimationFrame</h3><p>首先，你需要明白requestAnimationFrame是个什么东东。</p>
+<blockquote>
+<p>在浏览器动画程序中，我们通常使用一个定时器来循环每隔几毫秒移动目标物体一次，来让它动起来。如今有一个好消息，浏览器开发商们决定：“嗨，为什么我们不在浏览器里提供这样一个API呢，这样一来我们可以为用户优化他们的动画。”所以，这个requestAnimationFrame()函数就是针对动画效果的API，你可以把它用在DOM上的风格变化或画布动画或WebGL中。</p>
+</blockquote>
+<p>那么使用它有什么优势呢？</p>
+<blockquote>
+<p>浏览器可以优化并行的动画动作，更合理的重新排列动作序列，并把能够合并的动作放在一个渲染周期内完成，从而呈现出更流畅的动画效果。如果在一个浏览器标签页里运行一个动画，当这个标签页不可见时，浏览器会暂停它，这会减少CPU，内存的压力，节省电池电量。</p>
+</blockquote>
+<p>所以，我们第一步现在代码中增加一个<code>rAF</code>方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 使用最优频率requestAnimationFrame代替定时器，当然如果浏览器如果不支持的话，还是使用定时器完成</span></div><div class="line"><span class="built_in">window</span>.rAF = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">window</span>.requestAnimationFrame ||</div><div class="line">            <span class="built_in">window</span>.webkitRequestAnimationFrame ||</div><div class="line">            <span class="built_in">window</span>.mozRequestAnimationFrame ||</div><div class="line">            <span class="built_in">window</span>.oRequestAnimationFrame ||</div><div class="line">            <span class="built_in">window</span>.msRequestAnimationFrame ||</div><div class="line">            <span class="function"><span class="keyword">function</span> (<span class="params">callback</span>) </span>&#123;</div><div class="line">                setTimeout(callback, <span class="number">1000</span> / <span class="number">60</span>);</div><div class="line">            &#125;;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<h3 id="初始化基本配置"><a href="#初始化基本配置" class="headerlink" title="初始化基本配置"></a>初始化基本配置</h3><p>首先我们可以设置一些默认的值，便于后续做修改调整或者适配等。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// 默认配置</div><div class="line">var defaultSetting = &#123;</div><div class="line">    width: 900, // canvas默认宽度，后面修改为频幕宽度</div><div class="line">    height: 300,    // canvas默认高度</div><div class="line">    canvas: null,   // canvas对象</div><div class="line">    ctx: null,  // 画布content(2x)</div><div class="line">    snowArr: [],    // 雪花的数组</div><div class="line">    total: 80   // 雪花的数量</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>接下来往雪花数组中推入指定数量的雪花对象，当然，每一个雪花我们可以给它设定自己的属性，长宽，渐变等。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">defaultSetting.width = <span class="built_in">window</span>.innerWidth || <span class="built_in">document</span>.documentElement.clientWidth ||  <span class="built_in">document</span>.body.clientWidth;</div><div class="line">defaultSetting.canvas = <span class="built_in">document</span>.getElementById(<span class="string">"canvas"</span>);</div><div class="line">defaultSetting.canvas.setAttribute(<span class="string">"width"</span>,defaultSetting.width);</div><div class="line">defaultSetting.ctx = defaultSetting.canvas.getContext(<span class="string">"2d"</span>);</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; defaultSetting.total;i++)&#123;</div><div class="line">    defaultSetting.snowArr.push(&#123;</div><div class="line">        <span class="string">"left"</span>:Tools.createRandom(<span class="number">0</span>, defaultSetting.width), <span class="comment">// 工具函数createRandom是创建一个m上下n的随机数</span></div><div class="line">        <span class="string">"top"</span>:Tools.createRandom(<span class="number">0</span>, defaultSetting.height),</div><div class="line">        <span class="string">"deg"</span>:Tools.createRandom(<span class="number">-6</span>, <span class="number">6</span>),</div><div class="line">        <span class="string">"scale"</span>:Tools.createRandom(<span class="number">3</span>, <span class="number">6</span>)</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这个时候我们就得到了开始时刻雪花的数组和相关属性值</p>
+<h3 id="核心，不断渲染雪花位置的函数"><a href="#核心，不断渲染雪花位置的函数" class="headerlink" title="核心，不断渲染雪花位置的函数"></a>核心，不断渲染雪花位置的函数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">updateSnow</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">// 清除画布，重新绘制下一帧雪花的位置</span></div><div class="line">    defaultSetting.ctx.clearRect(<span class="number">0</span>, <span class="number">0</span>, defaultSetting.width, defaultSetting.height);</div><div class="line">    defaultSetting.ctx.save();</div><div class="line"></div><div class="line">    <span class="comment">// 循环雪花数组，分别绘制每一个雪花的位置</span></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;defaultSetting.snowArr.length; i++)&#123;</div><div class="line">        <span class="keyword">var</span> h = <span class="number">0.5</span> * defaultSetting.snowArr[i].scale;</div><div class="line">        defaultSetting.snowArr[i].left = defaultSetting.snowArr[i].left + <span class="built_in">Math</span>.tan(Tools.radian(defaultSetting.snowArr[i].deg))*h/<span class="number">2</span>;</div><div class="line">        defaultSetting.snowArr[i].top = defaultSetting.snowArr[i].top + h;</div><div class="line"></div><div class="line">        <span class="comment">// 删除画面外的雪花</span></div><div class="line">        <span class="keyword">if</span>(defaultSetting.snowArr[i].left &lt; <span class="number">0</span> || defaultSetting.snowArr[i].left &gt; defaultSetting.width || defaultSetting.snowArr[i].top &gt; defaultSetting.height)&#123;</div><div class="line">            defaultSetting.snowArr.splice(i--, <span class="number">1</span>);</div><div class="line">            <span class="keyword">continue</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">var</span> width_i = defaultSetting.snowArr[i].scale;</div><div class="line">        <span class="comment">// 雪花边界投影</span></div><div class="line">        <span class="keyword">var</span> ra = defaultSetting.ctx.createRadialGradient(defaultSetting.snowArr[i].left, defaultSetting.snowArr[i].top, width_i/<span class="number">4</span>, defaultSetting.snowArr[i].left, defaultSetting.snowArr[i].top, width_i);</div><div class="line">        ra.addColorStop(<span class="number">0</span>, <span class="string">"rgba(255,255,255,0.8)"</span>);</div><div class="line">        ra.addColorStop(<span class="number">1</span>, <span class="string">"rgba(255,255,255,0.1)"</span>);</div><div class="line">        defaultSetting.ctx.fillStyle = ra;</div><div class="line">        defaultSetting.ctx.beginPath();</div><div class="line">        defaultSetting.ctx.arc(defaultSetting.snowArr[i].left, defaultSetting.snowArr[i].top, width_i, <span class="number">0</span>, <span class="number">2</span>*<span class="built_in">Math</span>.PI);</div><div class="line">        defaultSetting.ctx.fill();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    defaultSetting.ctx.restore();</div><div class="line"></div><div class="line">    <span class="comment">// 持续刷新雪花的位置</span></div><div class="line">    rAF(updateSnow);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这样我们就得到了一组80个不断运动的雪花，但是这样的话不会有源源不断的新雪花加入，所以，最后一步，我们还需要不断补充新鲜雪花。</p>
+<h3 id="补充新鲜雪花"><a href="#补充新鲜雪花" class="headerlink" title="补充新鲜雪花"></a>补充新鲜雪花</h3><p>这个时候就会发现开始把雪花数组给单独提出来是多么明智，只需要不断push到该数组就行了</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 增加新的雪花</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createNewSnow</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span>(defaultSetting.snowArr.length &lt; <span class="number">200</span>)&#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">20</span>; i++)&#123;</div><div class="line">                defaultSetting.snowArr.push(&#123;</div><div class="line">                    <span class="string">"left"</span>:Tools.createRandom(<span class="number">0</span>, defaultSetting.width),</div><div class="line">                    <span class="string">"top"</span>:<span class="number">0</span>,</div><div class="line">                    <span class="string">"deg"</span>:Tools.createRandom(<span class="number">-6</span>, <span class="number">6</span>),</div><div class="line">                    <span class="string">"scale"</span>:Tools.createRandom(<span class="number">3</span>, <span class="number">6</span>)</div><div class="line">                &#125;);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        createNewSnow();</div><div class="line">    &#125;, <span class="built_in">Math</span>.random()*<span class="number">200</span>+<span class="number">500</span>);</div><div class="line">&#125;</div><div class="line">createNewSnow();</div></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>一个简单的粒子下雪效果就是这么简单，进一步可以去试试alloy团队的粒子效果。</p>
+<hr>
+<p>如果能给您带去些许帮助，鄙人不甚欢心。如有错误，恳请交流指出，谢谢！<br>转载请注明出处：<a href="http://mcchen.club/">http://mcchen.club/</a></p>
+<hr>
+
+    
+  </div>
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持McChen</div>
+        <ul class="theme.donation.items.length">
+        
+          <li class="item">
+            <img src="/images/qr-wechat.png" alt="">
+          </li>
+        
+          <li class="item">
+            <img src="/images/qr-alipay.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="hide pull-left" href="/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2017/01/04/[译文]如果你是一个前端开发者，那么2017年你该学习什么/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/atom.xml"
+              rel="noopener noreferrer"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+  <section class="duoshuo-comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-canvas实现下雪效果" 
+      data-title="canvas实现下雪效果" data-url="http://mcchen.club/2017/01/20/canvas实现下雪效果/index.html"></div>
+    <!-- 多说评论框 end -->
+  </section>
+
+
+
+
+  <script type="text/javascript">
+  var duoshuoQuery = {short_name:"mcchen"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+        // load success
+    });
+  }
+</script>
+
+</body>
+</html>

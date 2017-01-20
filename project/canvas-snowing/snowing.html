@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <title>canvas绘制下雪Demo</title>
+    <meta name="description" content="McChen,前端,博客,学习,前端开发,用户体验,mcchen.frontend,blog,nodejs,JavaScript,vuejs,css,electron">
+    <meta name="keywords" content="McChen,F2E,前端,canvas,动效">
+    <link rel="icon" href="http://mcchen.club//favicon.ico" type="image/x-icon">
+</head>
+<body style="background-color: #76D1FE; margin: 0;">
+
+<div class="canvas-box">
+    <canvas id="canvas" style="width: 100%;"></canvas>
+</div>
+
+</body>
+<script type="text/javascript">
+    // 使用最优频率requestAnimationFrame代替定时器
+    window.rAF = (function(){
+        return window.requestAnimationFrame ||
+                window.webkitRequestAnimationFrame ||
+                window.mozRequestAnimationFrame ||
+                window.oRequestAnimationFrame ||
+                window.msRequestAnimationFrame ||
+                function (callback) {
+                    setTimeout(callback, 1000 / 60);
+                };
+    })();
+    // 辅助方法
+    var Tools = {
+        createRandom: function(n,m){
+            return Math.floor(Math.random()*(m-n) + n);
+        },
+
+        radian: function(deg){
+            return deg*Math.PI/180;
+        }
+    };
+    // 默认配置
+    var defaultSetting = {
+        width: 900,
+        height: 300,
+        canvas: null,
+        ctx: null,
+        snowArr: [],
+        total: 80
+    };
+
+    // 页面加载完成后开始执行动画
+    document.addEventListener("DOMContentLoaded",function(){
+        defaultSetting.width = window.innerWidth || document.documentElement.clientWidth ||  document.body.clientWidth;
+        defaultSetting.canvas = document.getElementById("canvas");
+        defaultSetting.canvas.setAttribute("width",defaultSetting.width);
+        defaultSetting.ctx = defaultSetting.canvas.getContext("2d");
+
+        for(var i = 0; i < defaultSetting.total;i++){
+            defaultSetting.snowArr.push({
+                "left":Tools.createRandom(0, defaultSetting.width),
+                "top":Tools.createRandom(0, defaultSetting.height),
+                "deg":Tools.createRandom(-6, 6),
+                "scale":Tools.createRandom(3, 6)
+            });
+        }
+
+        function updateSnow(){
+            defaultSetting.ctx.clearRect(0, 0, defaultSetting.width, defaultSetting.height);
+            defaultSetting.ctx.save();
+
+            for(var i=0; i<defaultSetting.snowArr.length; i++){
+                var h = 0.5 * defaultSetting.snowArr[i].scale;
+                defaultSetting.snowArr[i].left = defaultSetting.snowArr[i].left + Math.tan(Tools.radian(defaultSetting.snowArr[i].deg))*h/2;
+                defaultSetting.snowArr[i].top = defaultSetting.snowArr[i].top + h;
+
+                // 删除画面外的雪花
+                if(defaultSetting.snowArr[i].left < 0 || defaultSetting.snowArr[i].left > defaultSetting.width || defaultSetting.snowArr[i].top > defaultSetting.height){
+                    defaultSetting.snowArr.splice(i--, 1);
+                    continue;
+                }
+
+                var width_i = defaultSetting.snowArr[i].scale;
+                // 雪花边界投影
+                var ra = defaultSetting.ctx.createRadialGradient(defaultSetting.snowArr[i].left, defaultSetting.snowArr[i].top, width_i/4, defaultSetting.snowArr[i].left, defaultSetting.snowArr[i].top, width_i);
+                ra.addColorStop(0, "rgba(255,255,255,0.8)");
+                ra.addColorStop(1, "rgba(255,255,255,0.1)");
+                defaultSetting.ctx.fillStyle = ra;
+
+                defaultSetting.ctx.beginPath();
+                defaultSetting.ctx.arc(defaultSetting.snowArr[i].left, defaultSetting.snowArr[i].top, width_i, 0, 2*Math.PI);
+                defaultSetting.ctx.fill();
+            }
+
+            defaultSetting.ctx.restore();
+
+            // 持续刷新雪花的位置
+            rAF(updateSnow);
+        }
+
+        //初始画雪花
+        updateSnow();
+
+        // 增加新的雪花
+        function createNewSnow(){
+            setTimeout(function(){
+                if(defaultSetting.snowArr.length < 200){
+                    for(var i=0; i<20; i++){
+                        defaultSetting.snowArr.push({
+                            "left":Tools.createRandom(0, defaultSetting.width),
+                            "top":0,
+                            "deg":Tools.createRandom(-6, 6),
+                            "scale":Tools.createRandom(3, 6)
+                        });
+                    }
+                }
+                createNewSnow();
+            }, Math.random()*200+500);
+        }
+        createNewSnow();
+    });
+</script>
+</html>
