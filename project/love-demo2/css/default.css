@@ -1,0 +1,6 @@
+﻿html, body{margin:0;padding:0;background:#ffe;font-size:12px;overflow:hidden; border: none;}
+
+#mycanvas {
+    width: 100vw;
+    height: 100vh;
+}
