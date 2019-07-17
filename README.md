@@ -1,6 +1,6 @@
 ## 博客主页
 
-[http://mcchen.club](http://mcchen.club)
+[http://chenjiahao.xyz/](http://chenjiahao.xyz/)
 
 已准备全面从博客园、知乎、segmentfault等迁移至此，欢迎交流，QQ：542516220（非工作时间处理）
 
