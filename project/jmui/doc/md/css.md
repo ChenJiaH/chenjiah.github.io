@@ -1,1 +1,0 @@
-参见：http://demo.jr.jd.com/gulid/section-1/css.html

@@ -1,0 +1,27 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1564567299441'); /* IE9 */
+  src: url('iconfont.eot?t=1564567299441#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1564567299441') format('woff'),
+  url('iconfont.ttf?t=1564567299441') format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-weibo:before {
+  content: "\e869";
+}
+
+.icon-github:before {
+  content: "\e732";
+}
+
+.icon-twitter:before {
+  content: "\e92a";
+}
+

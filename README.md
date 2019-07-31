@@ -1,24 +1,29 @@
-## 博客主页
+# Home
 
 [http://chenjiahao.xyz/](http://chenjiahao.xyz/)
 
-已准备全面从博客园、知乎、segmentfault等迁移至此，欢迎交流，QQ：542516220（非工作时间处理）
+English | [CN](README_CN.md)
 
-## 申明
+## Blog
 
-* 关注订阅 请watch
-* 支持点赞 请star
+[http://chenjiahao.xyz/blog](http://chenjiahao.xyz/blog)
 
-您的点赞关注是我前行路上最大的动力
+## Bio
 
-## 目标
+No pain, no gains!
 
-Stay Hungry, Stay Foolish.
+## Friend Chain
 
-## 友链
+You can contact me in the following ways:
 
-交换友链可以邮件mcchen.club@gmail.com或者联系QQ：542516220
+- Email: chenjiahao.xyz@gmail.com
+- WeChat: mickcymousebaby
 
-## 感谢
+## Support
 
-感谢[@forsigner](https://github.com/forsigner/fexo)提供的主题[fexo](https://github.com/forsigner/fexo)
+- watch :eyes:
+- star :star2:
+
+## License
+
+[MIT](LICENSE)
