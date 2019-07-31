@@ -2,13 +2,13 @@
 
 [http://chenjiahao.xyz/](http://chenjiahao.xyz/)
 
-English | [CN](README_CN.md)
+English | [Chinese](README_CN.md)
 
 ## Blog
 
 [http://chenjiahao.xyz/blog](http://chenjiahao.xyz/blog)
 
-## Bio
+## Motto
 
 No pain, no gains!
 
