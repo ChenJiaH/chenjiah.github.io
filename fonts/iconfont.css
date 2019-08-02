@@ -1,8 +1,8 @@
 @font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1564567299441'); /* IE9 */
-  src: url('iconfont.eot?t=1564567299441#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1564567299441') format('woff'),
-  url('iconfont.ttf?t=1564567299441') format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  src: url('iconfont.eot?t=1564739344885'); /* IE9 */
+  src: url('iconfont.eot?t=1564739344885#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1564739344885') format('woff'),
+  url('iconfont.ttf?t=1564739344885') format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
 }
 
 .iconfont {
@@ -15,6 +15,10 @@
 
 .icon-weibo:before {
   content: "\e869";
+}
+
+.icon-wechat:before {
+  content: "\e738";
 }
 
 .icon-github:before {

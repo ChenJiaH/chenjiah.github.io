@@ -186,13 +186,23 @@ canvas { position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
 .bio { font-size: 16px; color: #727682;}
 .light { width: 400px; height: 1px; margin: 16px 0; background-image: -webkit-linear-gradient(bottom, transparent, #d5d5d5, transparent); background-image: linear-gradient(0deg, transparent, #d5d5d5, transparent); background-image: -webkit-linear-gradient(0deg, transparent, #d5d5d5, transparent); }
 .nav {
-  li { position: relative;}
+  li { position: relative;
+    a { position: relative; cursor: pointer;}
+    &:last-child {
+      a:hover {
+        .wechat-img { visibility: visible; transform: translate(0, 0) translateZ(0); }
+      }
+    }
+  }
   li + li {
     &:before { content: ''; position: absolute; left: -0.5px; width: 1px; height: 18px; background-color: #f0f2f5;}
   }
   i { font-size: 16px; margin: 0 12px; color: #727682; cursor: pointer; -webkit-transition: color 0.3s; transition: color 0.3s;
     &:hover { color: #283039;}
   }
+}
+.wechat-img { visibility: hidden; position: absolute; left: 100%; bottom: 0; width: 120px; height: 120px; background-color: #ffffff; box-sizing: border-box; box-shadow: 0 0 8px 4px rgba(0,0,0,0.05); transition: transform 0.2s ease-out; transform: translate(5px, 0) translateZ(0);
+  img { width: 100%; height: 100%;}
 }
 .button { display: block; width: 100px; border-radius: 20px; margin: 16px auto; border: 1px solid #f0f2f5; color: #283039; font-size: 12px; box-sizing: border-box; cursor: pointer;}
 
