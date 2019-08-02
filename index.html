@@ -36,7 +36,7 @@
       </a>
     </li>
     <li class="flex flex-middle">
-      <a class="flex" target="_blank" rel="noreferrer noopener" title="WeChat">
+      <a class="flex" target="_blank" rel="noreferrer noopener" href="javascript:;" title="WeChat">
         <i class="iconfont icon-wechat"></i>
         <div class="wechat-img">
           <img src="qrcode.jpg" alt="">
@@ -308,8 +308,12 @@
 	var positionUniforms;
 	var velocityUniforms;
 	var birdUniforms;
-	init();
-	animate();
+	if (!/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+		init();
+		animate();
+	} else {
+		document.getElementsByClassName('content')[0].style.backgroundColor = 'transparent'
+  }
 	function init() {
 		container = document.createElement( 'div' );
 		document.body.appendChild( container );

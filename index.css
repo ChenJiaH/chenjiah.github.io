@@ -99,7 +99,8 @@ html {
   height: 100%; }
 
 body {
-  overflow: hidden; }
+  overflow: hidden;
+  background-color: #ffffff; }
 
 .flex {
   display: -webkit-box;
@@ -178,6 +179,7 @@ canvas {
 
 .content {
   position: relative;
+  width: 100%;
   z-index: 2;
   background-color: rgba(255, 255, 255, 0.7); }
 
@@ -204,8 +206,8 @@ canvas {
 .light {
   width: 80%;
   max-width: 400px;
+  margin: 16px auto;
   height: 1px;
-  margin: 16px 0;
   background-image: -webkit-linear-gradient(bottom, transparent, #d5d5d5, transparent);
   background-image: linear-gradient(0deg, transparent, #d5d5d5, transparent);
   background-image: -webkit-linear-gradient(0deg, transparent, #d5d5d5, transparent); }
@@ -213,8 +215,7 @@ canvas {
 .nav li {
   position: relative; }
   .nav li a {
-    position: relative;
-    cursor: pointer; }
+    position: relative; }
   .nav li:last-child a:hover .wechat-img, .nav li:last-child a:active .wechat-img {
     visibility: visible;
     transform: translate(0, 0) translateZ(0); }
@@ -232,7 +233,7 @@ canvas {
   cursor: pointer;
   -webkit-transition: color 0.3s;
   transition: color 0.3s; }
-  .nav i:hover {
+  .nav i:hover, .nav i:active {
     color: #283039; }
 
 .wechat-img {
