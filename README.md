@@ -1,12 +1,12 @@
 # Home
 
-[http://chenjiahao.xyz/](http://chenjiahao.xyz/)
+[https://chenjiahao.xyz/](https://chenjiahao.xyz/)
 
 English | [Chinese](README_CN.md)
 
 ## Blog
 
-[http://chenjiahao.xyz/blog](http://chenjiahao.xyz/blog)
+[https://chenjiahao.xyz/blog](https://chenjiahao.xyz/blog)
 
 ## Motto
 
