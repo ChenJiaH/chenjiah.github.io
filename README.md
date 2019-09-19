@@ -17,7 +17,10 @@ No pain, no gains!
 You can contact me in the following ways:
 
 - Email: chenjiahao.xyz@gmail.com
-- WeChat: mickcymousebaby
+
+## Official Account
+
+![Official Account](official-account.jpg)
 
 ## Support
 

@@ -16,8 +16,11 @@
 
 你可以通过以下方式联系我：
 
-- 邮箱: chenjiahao.xyz@gmail.com
-- 微信: mickcymousebaby
+- 邮箱： chenjiahao.xyz@gmail.com
+
+## 公众号
+
+![Official Account](official-account.jpg)
 
 ## 支持
 
