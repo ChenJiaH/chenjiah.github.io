@@ -20,7 +20,7 @@ You can contact me in the following ways:
 
 ## Official Account
 
-![Official Account](official-account.jpg)
+![Wechat - 前端成长记](official-account.jpg)
 
 ## Support
 

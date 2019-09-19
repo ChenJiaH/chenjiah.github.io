@@ -20,7 +20,7 @@
 
 ## 公众号
 
-![Official Account](official-account.jpg)
+![微信公众号 - 前端成长记](official-account.jpg)
 
 ## 支持
 
