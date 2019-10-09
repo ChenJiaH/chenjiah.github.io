@@ -1,12 +1,12 @@
 # 主页
 
-[http://chenjiahao.xyz/](http://chenjiahao.xyz/)
+[https://chenjiahao.xyz/](http://chenjiahao.xyz/)
 
 [英文](README.md) | 中文
 
 ## 博客
 
-[http://chenjiahao.xyz/blog](http://chenjiahao.xyz/blog)
+[https://chenjiahao.xyz/blog](http://chenjiahao.xyz/blog)
 
 ## 座右铭
 
